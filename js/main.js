@@ -274,7 +274,10 @@ function openRegistrationNoticeModal(title, targetKey, currentUrl) {
     directBtn.href = currentUrl || 'https://forms.google.com/';
   }
 
-  // Tailor content based on whether it is Farewell or Current Student
+  const interUniKeys = ['roboSoccer', 'projectShowcasing', 'itQuiz', 'freeFire', 'eFootball'];
+  const southernOnlyKeys = ['programmingContest', 'consoleGaming'];
+
+  // Tailor content based on registration category
   if (targetKey === 'alumni') {
     if (modalBadge) {
       modalBadge.textContent = 'Farewell Pass • 1,500 BDT';
@@ -313,8 +316,73 @@ function openRegistrationNoticeModal(title, targetKey, currentUrl) {
         </div>
       `;
     }
+  } else if (interUniKeys.includes(targetKey)) {
+    if (modalBadge) {
+      modalBadge.textContent = '🌐 Inter-University Competition';
+      modalBadge.className = 'text-xs uppercase tracking-wider text-cyan-400 font-bold';
+    }
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <p class="text-slate-300 text-sm">
+          Open to students from <strong class="text-white">all universities across Bangladesh</strong>!
+        </p>
+
+        <div class="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/30 space-y-2.5 text-xs text-slate-200">
+          <div class="flex items-center justify-between pb-2 border-b border-cyan-500/20">
+            <span class="text-cyan-300 font-semibold">bKash Send Money:</span>
+            <div class="flex items-center gap-2">
+              <span class="font-mono font-bold text-white text-sm">01610181160</span>
+              <button type="button" onclick="copyToClipboard('01610181160', 'bKash Number Copied!')" class="text-cyan-400 hover:text-white underline text-[11px]">Copy</button>
+            </div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">&bull;</span>
+            <span><strong>Payment Method:</strong> Students from other universities pay their segment fee via <strong>bKash Send Money</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">&bull;</span>
+            <span><strong>Segment Fee:</strong> Entry fees for this contest will be announced directly inside the official registration form.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">&bull;</span>
+            <span>Save your <strong>bKash Transaction ID (TrxID)</strong> and submit it inside the segment registration form.</span>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
+          🏛️ <strong>For Southern University Students:</strong> If you hold the <strong class="text-white">1,000 BDT All-Access Student Pass</strong>, this competition is <strong class="text-cyan-400">100% Free</strong> with zero additional entry fee!
+        </div>
+      `;
+    }
+  } else if (southernOnlyKeys.includes(targetKey)) {
+    if (modalBadge) {
+      modalBadge.textContent = '🏛️ Southern University Only (CSE & CSIT)';
+      modalBadge.className = 'text-xs uppercase tracking-wider text-amber-400 font-bold';
+    }
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <p class="text-slate-300 text-sm">
+          This competition is open exclusively to students of <strong class="text-white">Southern University Bangladesh (Dept. of CSE &amp; CSIT)</strong>.
+        </p>
+
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2 text-xs text-slate-200">
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">&bull;</span>
+            <span>Included <strong>100% Free</strong> with your <strong class="text-white">1,000 BDT All-Access Student Pass</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">&bull;</span>
+            <span>Pay 1,000 BDT in cash directly to your assigned <strong>Batch Representative</strong> by Oct 17, 2026.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">&bull;</span>
+            <span>Submit the registration form with your receipt serial before Oct 27, 2026.</span>
+          </div>
+        </div>
+      `;
+    }
   } else {
-    // Current Student / Segment competitions
+    // Current Student Pass (targetKey === 'main')
     if (modalBadge) {
       modalBadge.textContent = 'Current Student Pass • 1,000 BDT';
       modalBadge.className = 'text-xs uppercase tracking-wider text-cyan-400 font-bold';
@@ -322,7 +390,7 @@ function openRegistrationNoticeModal(title, targetKey, currentUrl) {
     if (modalBody) {
       modalBody.innerHTML = `
         <p class="text-slate-300 text-sm">
-          Current students must pay <strong class="text-cyan-400 font-bold">1,000 BDT</strong> directly to their <strong class="text-white">Batch Representative</strong> to confirm their registration:
+          Current Southern University students must pay <strong class="text-cyan-400 font-bold">1,000 BDT</strong> directly to their <strong class="text-white">Batch Representative</strong> to confirm their registration:
         </p>
 
         <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2 text-xs text-slate-200">
@@ -421,7 +489,7 @@ const SEGMENT_DETAILS = {
     date: "November 3 & November 5, 2026",
     venue: "Main Campus Tech Exhibit Arena",
     teamSize: "1 to 4 Members per team",
-    fee: "Free with Student Pass / Open for External Teams",
+    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
     description: "Display innovative software, AI/ML models, IoT systems, and robotics hardware before high-profile industry judges, venture mentors, and corporate sponsors. Open to teams from all universities across Bangladesh!",
     highlights: [
       "Open to university student teams from across Bangladesh",
@@ -438,7 +506,7 @@ const SEGMENT_DETAILS = {
     date: "Day 1: November 3, 2026",
     venue: "Robotics Combat Arena, Ground Floor",
     teamSize: "2 to 4 Members per bot team",
-    fee: "Free with Student Pass / Open for External Teams",
+    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
     description: "High-octane robotic soccer showdown! Build, pilot, and maneuver custom-engineered wireless soccer bots to dominate possession and strike goals in a tense, enclosed stadium. Open to all universities!",
     highlights: [
       "Open to university engineering & robotics teams nationwide",
@@ -455,7 +523,7 @@ const SEGMENT_DETAILS = {
     date: "Day 1: November 3, 2026",
     venue: "Auditorium / Seminar Hall",
     teamSize: "Teams of 2",
-    fee: "Free with Student Pass / Open for External Teams",
+    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
     description: "Put your technical knowledge to the ultimate test. Topics span algorithms, CS fundamentals, cybersecurity, tech history, breakthrough AI developments, and emerging hardware. Open to students from all universities!",
     highlights: [
       "Open to 2-member teams from all Bangladeshi universities",
@@ -471,7 +539,7 @@ const SEGMENT_DETAILS = {
     date: "Prelims Online • LAN Finals Nov 3, 2026",
     venue: "Esports Arena, Campus Hall",
     teamSize: "Squad (4 Players + 1 Sub)",
-    fee: "Free with Student Pass / Open for External Teams",
+    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
     description: "Southern University's largest Free Fire tournament yet. Open to squads from all universities across Bangladesh! Qualify through high-intensity online brackets and fight for the ultimate championship live on campus.",
     highlights: [
       "Open to university squads across Bangladesh",
@@ -488,7 +556,7 @@ const SEGMENT_DETAILS = {
     date: "Day 1 Online Matches",
     venue: "Online Competitive Bracket",
     teamSize: "1v1 Solo",
-    fee: "Free with Student Pass / Open for External Teams",
+    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
     description: "Test your tactical vision, pinpoint passing, and clutch goal-scoring in the official Innovesta E-Football tournament. Played online with live knockout brackets. Open to all university competitors nationwide!",
     highlights: [
       "Open to university students nationwide",
