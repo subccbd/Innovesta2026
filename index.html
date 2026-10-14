@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Innovesta 2026 | Registration Portal</title>
+  <title>INNOVESTA 2026 — Official Registration Portal | SUBCC</title>
   
-  <!-- Tailwind CSS CDN for instant styling -->
+  <!-- SEO & Meta -->
+  <meta name="description" content="Official Registration Portal for INNOVESTA 2026 organized by Southern University Bangladesh Computer Club (SUBCC). Register for All-Access Student Pass, Alumni Farewell, or Inter-University Competitions.">
+  <meta name="theme-color" content="#07090e">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logos/subcc-white.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
           colors: {
             cyber: {
               950: '#06080d',
               900: '#090d16',
+              850: '#0d1320',
               800: '#111827',
               cyan: '#00f0ff',
               crimson: '#e11d48'
@@ -24,117 +41,528 @@
       }
     }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Main Custom Styling -->
+  <link rel="stylesheet" href="css/style.css">
+
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #070a10;
-      background-image: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 60%);
+    /* Ultra-Clean Modern Glass Styling */
+    .glass-frosted {
+      background: rgba(13, 19, 32, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-frosted:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease;
+    }
+
+    .glass-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(0, 240, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .glass-interactive-cyan {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .glass-interactive-cyan:hover {
+      border-color: rgba(0, 240, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -15px rgba(0, 240, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-interactive-crimson {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .glass-interactive-crimson:hover {
+      border-color: rgba(225, 29, 72, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -15px rgba(225, 29, 72, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
-<body class="min-h-screen text-slate-100 flex flex-col justify-between selection:bg-cyan-400 selection:text-black">
+<body class="min-h-screen text-slate-100 flex flex-col justify-between relative selection:bg-cyan-400 selection:text-black overflow-x-hidden font-sans">
 
-  <!-- TOP HEADER -->
-  <header class="py-6 border-b border-white/10 bg-cyber-950/60 backdrop-blur-md">
-    <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+  <!-- AMBIENT GLOW ORBS (Subtle & Luxurious) -->
+  <div class="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-[-10%] right-[-5%] w-[600px] h-[450px] bg-rose-500/8 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+  <div class="fixed inset-0 cyber-grid-overlay opacity-25 pointer-events-none -z-10"></div>
+
+  <!-- =========================================================================
+       1. FLOATING MINIMAL HEADER
+       ========================================================================= -->
+  <header class="sticky top-0 z-40 w-full pt-4 pb-2 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto glass-frosted rounded-2xl py-3 px-5 sm:px-6 flex items-center justify-between">
+      
+      <!-- Brand Logos -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/logos/subcc-white.png" alt="SUBCC" class="h-8 w-auto object-contain transition-transform group-hover:scale-105">
+        <div class="h-4 w-px bg-white/15"></div>
+        <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026" class="h-6 w-auto object-contain transition-transform group-hover:scale-105">
+      </a>
+
+      <!-- Right Header Actions -->
       <div class="flex items-center gap-3">
-        <img src="assets/logos/subcc-white.png" alt="SUBCC" class="h-9 w-auto object-contain">
-        <div class="h-5 w-px bg-white/20"></div>
-        <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026" class="h-7 w-auto object-contain">
+        <!-- Live Status Pill -->
+        <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-semibold text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Registrations Active</span>
+        </div>
+
+        <!-- Full Event Guide Link -->
+        <a href="index1.html" class="glass-pill px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-1.5 group">
+          <span>Full Event Hub &amp; Rules</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+        </a>
       </div>
-      <span class="text-[11px] font-bold uppercase tracking-widest text-cyan-400 border border-cyan-400/30 px-2.5 py-1 rounded-full bg-cyan-500/10">
-        SUBCC Official
-      </span>
+
     </div>
   </header>
 
-  <!-- MAIN CARD / REGISTRATION HUB -->
-  <main class="flex-1 flex items-center justify-center py-10 px-4">
-    <div class="w-full max-w-xl bg-cyber-900/90 border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center">
+  <!-- =========================================================================
+       2. HERO SECTION (CLEAN, MINIMAL, CLASSY)
+       ========================================================================= -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    
+    <!-- Hero Text -->
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
       
-      <!-- Subtle Neon Glow -->
-      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-cyan-300 tracking-wide mb-5 shadow-sm">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span>Southern University Bangladesh Computer Club (SUBCC)</span>
+      </div>
 
-      <!-- Hero Title -->
-      <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026" class="h-16 sm:h-20 w-auto mx-auto mb-6 drop-shadow-[0_0_25px_rgba(0,240,255,0.3)]">
-      
-      <h1 class="text-xl sm:text-2xl font-black uppercase tracking-wide text-white">
-        Official Registration Portal
+      <!-- Main Title -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black font-display tracking-tight text-white">
+        INNOVESTA <span class="text-gradient-cyan">2026</span>
       </h1>
-      <p class="text-xs sm:text-sm text-slate-400 mt-2">
-        Organized by <span class="text-slate-200 font-semibold">Southern University Bangladesh Computer Club (SUBCC)</span>
+      
+      <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-xl mx-auto font-normal leading-relaxed">
+        Empowering Innovation, Honoring Legacy. Choose your pass below to submit your official registration.
       </p>
 
-      <!-- Quick Metadata -->
-      <div class="mt-6 grid grid-cols-2 gap-3 text-left bg-cyber-950/80 p-4 rounded-2xl border border-white/5 text-xs">
-        <div>
-          <span class="text-slate-400 block">📅 Event Dates</span>
-          <strong class="text-white">Nov 3 &amp; Nov 5, 2026</strong>
+      <!-- Clean 3-Item Quick Info Bar -->
+      <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-300 glass-frosted px-5 py-2.5 rounded-2xl border border-white/10">
+        <div class="flex items-center gap-1.5">
+          <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i>
+          <span>November 3 &amp; 5, 2026</span>
         </div>
-        <div>
-          <span class="text-slate-400 block">📍 Venue</span>
-          <strong class="text-white">Main Campus, SUB</strong>
+        <div class="hidden sm:block text-white/20">&bull;</div>
+        <div class="flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
+          <span>Main Campus, Chattogram</span>
         </div>
-        <div>
-          <span class="text-slate-400 block">⏳ Registration Deadline</span>
-          <strong class="text-rose-400">17th October, 2026</strong>
-        </div>
-        <div>
-          <span class="text-slate-400 block">📋 Form Deadline</span>
-          <strong class="text-cyan-300">27th October, 2026</strong>
+        <div class="hidden sm:block text-white/20">&bull;</div>
+        <div class="flex items-center gap-1.5">
+          <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
+          <span>Payment Deadline: <strong class="text-white ml-0.5">Oct 17</strong></span>
         </div>
       </div>
-
-      <!-- MAIN REGISTRATION BUTTONS -->
-      <div class="mt-8 space-y-4">
-        
-        <!-- 1. Current Students Registration -->
-        <!-- REPLACE 'https://forms.google.com/' WITH YOUR ACTUAL GOOGLE FORM LINK -->
-        <a href="https://forms.google.com/" target="_blank" rel="noopener" class="block w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 text-slate-950 font-black text-sm tracking-wide shadow-lg shadow-cyan-500/20 hover:scale-[1.02] active:scale-[0.99] transition-all">
-          <span>Register as Current Student (1,000 BDT)</span>
-          <span class="block text-[11px] font-semibold text-slate-900/80 mt-0.5">Pay 1,000 BDT in cash to your Batch Representative</span>
-        </a>
-
-        <!-- 2. Alumni Farewell Registration -->
-        <!-- REPLACE 'https://forms.google.com/' WITH YOUR ACTUAL FAREWELL FORM LINK -->
-        <a href="https://forms.google.com/" target="_blank" rel="noopener" class="block w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-sm tracking-wide shadow-lg shadow-rose-500/20 hover:scale-[1.02] active:scale-[0.99] transition-all">
-          <span>Alumni Farewell Registration (1,500 BDT)</span>
-          <span class="block text-[11px] font-normal text-rose-100/90 mt-0.5">Pay 1,500 BDT via bKash Send Money to 01610181160</span>
-        </a>
-
-        <!-- 3. Inter-University Segments -->
-        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300">
-          <span class="font-bold text-cyan-300 block mb-1">🌐 Students from Other Universities:</span>
-          <span>You can participate in <strong>Robo Soccer, Project Showcasing, IT Quiz, Free Fire LAN &amp; eFootball</strong>. Forms opening shortly!</span>
-        </div>
-
-        <!-- 4. Link to Full Event Hub & Rules -->
-        <a href="index1.html" class="block w-full py-3 px-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-cyan-400/30 text-cyan-300 font-bold text-xs tracking-wide transition-all">
-          Explore Full Event Hub, Segments &amp; Rules &rarr;
-        </a>
-      </div>
-
-      <!-- HOTLINE SUPPORT
-      <div class="mt-6 pt-5 border-t border-white/10 text-xs text-slate-400">
-        <p class="font-semibold text-slate-300 mb-1">Need assistance or representative confirmation?</p>
-        <p>
-          Hotline: 
-          <a href="tel:01610181160" class="text-cyan-400 font-bold hover:underline">01610181160</a> &bull; 
-          <a href="tel:01852283056" class="text-cyan-400 font-bold hover:underline">01852283056</a> &bull; 
-          <a href="tel:01749048044" class="text-cyan-400 font-bold hover:underline">01749048044</a>
-        </p>
-      </div> -->
 
     </div>
+
+    <!-- =========================================================================
+         3. PRIMARY PASSES (2 PRISTINE GLASS CARDS)
+         ========================================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10">
+      
+      <!-- CARD 1: CURRENT STUDENTS PASS -->
+      <div class="glass-frosted glass-interactive-cyan p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-cyan-400/25 relative overflow-hidden group">
+        
+        <!-- Subtle Top Glow -->
+        <div class="absolute -top-16 -right-16 w-36 h-36 bg-cyan-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div>
+          <!-- Card Header & Badge -->
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-400/20">
+              Current Students
+            </span>
+            <span class="text-xs font-semibold text-slate-400">All-Access Pass</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display">
+            Innovesta 2026 Pass
+          </h2>
+          
+          <p class="text-slate-400 text-xs sm:text-sm mt-1.5 leading-relaxed">
+            Full entry to every competition, campus feast, and the November 5 closing concert for Southern University students.
+          </p>
+
+          <!-- Price Display -->
+          <div class="mt-6 p-4 rounded-2xl bg-white/[0.02] border border-white/5 flex items-baseline justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 block uppercase font-medium">Registration Fee</span>
+              <div class="text-3xl sm:text-4xl font-black text-white font-display mt-0.5">
+                1,000 <span class="text-cyan-400 text-lg font-bold">BDT</span>
+              </div>
+            </div>
+            <span class="text-[11px] font-semibold text-cyan-300 px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+              Cash to Batch Rep
+            </span>
+          </div>
+
+          <!-- Clean Perks List -->
+          <ul class="mt-6 space-y-2.5 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span><strong>Free Entry to All 7+ Competitions</strong> (zero extra fee)</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span><strong>Official Campus Food &amp; Lunch</strong> on event days</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span><strong>Grand Musical Concert Access</strong> (Nov 5 Headliner Band)</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span>Full tech exhibits, robotics arena &amp; festival zone access</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card Action -->
+        <div class="mt-8 pt-5 border-t border-white/10">
+          <button data-reg-target="main" class="w-full btn-primary-glow py-3.5 px-6 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-cyan-500/20">
+            <span>Register as Current Student</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+          <p class="text-[11px] text-center text-slate-400 mt-2.5">
+            Pay 1,000 BDT in cash to your Batch Representative to confirm.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CARD 2: ALUMNI FAREWELL PASS -->
+      <div class="glass-frosted glass-interactive-crimson p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-rose-500/30 relative overflow-hidden group">
+        
+        <!-- Subtle Top Glow -->
+        <div class="absolute -top-16 -right-16 w-36 h-36 bg-rose-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div>
+          <!-- Card Header & Badge -->
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-rose-500/10 text-rose-300 border border-rose-400/20">
+              Alumni &amp; Farewell
+            </span>
+            <span class="text-xs font-semibold text-rose-300">Farewell Gala</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display">
+            Alumni Farewell Pass
+          </h2>
+          
+          <p class="text-slate-400 text-xs sm:text-sm mt-1.5 leading-relaxed">
+            Exclusive celebration pass for graduating CSE &amp; CSIT students and alumni to reunite, network, and celebrate.
+          </p>
+
+          <!-- Price Display -->
+          <div class="mt-6 p-4 rounded-2xl bg-white/[0.02] border border-white/5 flex items-baseline justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 block uppercase font-medium">Registration Fee</span>
+              <div class="text-3xl sm:text-4xl font-black text-rose-300 font-display mt-0.5">
+                1,500 <span class="text-rose-400 text-lg font-bold">BDT</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-[11px] font-semibold text-rose-300 px-2.5 py-1 rounded-lg bg-rose-500/10 border border-rose-500/20">
+              <span>bKash Send Money</span>
+            </div>
+          </div>
+
+          <!-- Clean Perks List -->
+          <ul class="mt-6 space-y-2.5 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+              <span><strong>Alumni Farewell Gala Presentation</strong> &amp; official reception</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+              <span><strong>Campus Farewell Feast &amp; Lunch</strong> with faculty &amp; peers</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+              <span><strong>Grand Headliner Musical Concert</strong> (Nov 5 Evening)</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+              <span>Alumni Networking Lounge, fest crest &amp; souvenir credentials</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card Action -->
+        <div class="mt-8 pt-5 border-t border-white/10">
+          <button data-reg-target="alumni" class="w-full btn-crimson-glow py-3.5 px-6 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-rose-500/20">
+            <span>Register for Alumni Farewell</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- bKash Quick Copy Bar -->
+          <div class="mt-2.5 flex items-center justify-center gap-2 text-[11px] text-slate-400">
+            <span>Send Money to:</span>
+            <span class="font-mono font-bold text-rose-300">01610181160</span>
+            <button onclick="copyToClipboard('01610181160', 'bKash Number copied!')" class="text-cyan-400 hover:text-white underline text-[11px]" title="Copy bKash Number">
+              Copy
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         4. INTER-UNIVERSITY COMPETITIONS SECTION (FAST-TRACK)
+         ========================================================================= -->
+    <div class="glass-frosted p-6 sm:p-8 rounded-3xl border border-cyan-500/20 relative overflow-hidden mb-10">
+      
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-white/10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[11px] font-bold text-cyan-300 uppercase tracking-wide mb-2">
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span>Inter-University Competitions</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white font-display">
+            For Students from Other Universities
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-xl">
+            Students representing universities across Bangladesh can register directly for our <strong>5 official Inter-University segments</strong> below:
+          </p>
+        </div>
+
+        <a href="index1.html#inter-university" class="shrink-0 glass-pill px-4 py-2 rounded-xl text-xs font-semibold text-cyan-300 hover:text-white flex items-center gap-1.5">
+          <span>View Competition Rules</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 5 Clean Segment Quick-Registration Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-6">
+        
+        <!-- 1. Robo Soccer -->
+        <button data-reg-target="roboSoccer" class="glass-pill p-3.5 rounded-2xl flex items-center justify-between text-left group cursor-pointer hover:border-amber-400/40">
+          <div class="flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-400/20">
+              <i data-lucide="bot" class="w-4 h-4"></i>
+            </span>
+            <div>
+              <h4 class="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">Robo Soccer</h4>
+              <span class="text-[11px] text-slate-400">Inter-University Battle Arena</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-amber-400 transition-colors"></i>
+        </button>
+
+        <!-- 2. Project Showcasing -->
+        <button data-reg-target="projectShowcasing" class="glass-pill p-3.5 rounded-2xl flex items-center justify-between text-left group cursor-pointer hover:border-blue-400/40">
+          <div class="flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-400/20">
+              <i data-lucide="layout-grid" class="w-4 h-4"></i>
+            </span>
+            <div>
+              <h4 class="text-sm font-bold text-white group-hover:text-blue-300 transition-colors">Project Showcasing</h4>
+              <span class="text-[11px] text-slate-400">Software, IoT &amp; AI Exhibits</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+        </button>
+
+        <!-- 3. IT Quiz -->
+        <button data-reg-target="itQuiz" class="glass-pill p-3.5 rounded-2xl flex items-center justify-between text-left group cursor-pointer hover:border-purple-400/40">
+          <div class="flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-400/20">
+              <i data-lucide="brain-circuit" class="w-4 h-4"></i>
+            </span>
+            <div>
+              <h4 class="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">IT Quiz</h4>
+              <span class="text-[11px] text-slate-400">CS Trivia &amp; Knowledge Brawl</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-purple-400 transition-colors"></i>
+        </button>
+
+        <!-- 4. Free Fire LAN -->
+        <button data-reg-target="freeFire" class="glass-pill p-3.5 rounded-2xl flex items-center justify-between text-left group cursor-pointer hover:border-rose-400/40">
+          <div class="flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-400/20">
+              <i data-lucide="crosshair" class="w-4 h-4"></i>
+            </span>
+            <div>
+              <h4 class="text-sm font-bold text-white group-hover:text-rose-300 transition-colors">Free Fire LAN</h4>
+              <span class="text-[11px] text-slate-400">Esports LAN Championship</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-rose-400 transition-colors"></i>
+        </button>
+
+        <!-- 5. E-Football -->
+        <button data-reg-target="eFootball" class="glass-pill p-3.5 rounded-2xl flex items-center justify-between text-left group cursor-pointer hover:border-emerald-400/40">
+          <div class="flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-400/20">
+              <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+            </span>
+            <div>
+              <h4 class="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">E-Football</h4>
+              <span class="text-[11px] text-slate-400">Online Tactical Tournament</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors"></i>
+        </button>
+
+        <!-- 6. Explore Full Hub -->
+        <a href="index1.html#segments" class="glass-pill p-3.5 rounded-2xl flex items-center justify-between text-left group hover:border-cyan-400/40">
+          <div class="flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-400/20">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+            </span>
+            <div>
+              <h4 class="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">All 7+ Competitions</h4>
+              <span class="text-[11px] text-slate-400">Explore Rules &amp; Schedules</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400 group-hover:text-cyan-400 transition-colors"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         5. NEED ASSISTANCE? EVENT REPRESENTATIVES (MINIMALIST BAR)
+         ========================================================================= -->
+    <div class="glass-frosted p-5 rounded-2xl border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs">
+      <div>
+        <span class="font-bold text-white block">Need Help or Payment Verification?</span>
+        <span class="text-slate-400">Contact your designated batch representative or event coordinators:</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a href="tel:01610181160" class="glass-pill px-3 py-1.5 rounded-xl font-medium text-slate-300 hover:text-white flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Zihadul: 01610181160</span>
+        </a>
+        <a href="tel:01852283056" class="glass-pill px-3 py-1.5 rounded-xl font-medium text-slate-300 hover:text-white flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Farhad: 01852283056</span>
+        </a>
+        <a href="tel:01749048044" class="glass-pill px-3 py-1.5 rounded-xl font-medium text-slate-300 hover:text-white flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Diganta: 01749048044</span>
+        </a>
+      </div>
+    </div>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer class="py-4 text-center text-xs text-slate-400 border-t border-white/5">
-    &copy; 2026 Southern University Bangladesh Computer Club (SUBCC). All Rights Reserved.
+  <!-- =========================================================================
+       6. MINIMAL CLASSY FOOTER
+       ========================================================================= -->
+  <footer class="w-full py-6 px-4 border-t border-white/10 mt-12 bg-cyber-950/80 text-xs text-slate-400">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <span>&copy; 2026 Southern University Bangladesh Computer Club (SUBCC).</span>
+        <span class="block sm:inline sm:ml-1 text-slate-400">Dept. of CSE &amp; CSIT.</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs">
+        <a href="mailto:subccctg@gmail.com" class="hover:text-cyan-400 transition-colors">subccctg@gmail.com</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="index1.html" class="text-cyan-400 hover:underline font-semibold">Explore Full Event Hub &rarr;</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- =========================================================================
+       7. INTERACTIVE REGISTRATION NOTICE MODAL
+       ========================================================================= -->
+  <div id="reg-notice-modal" class="modal-overlay modal-hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="modal-content glass-frosted border border-cyan-400/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative bg-cyber-950/95 shadow-2xl">
+      
+      <button class="modal-close-btn absolute top-5 right-5 p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/5">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-400/20">
+          <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span id="reg-modal-badge" class="text-xs uppercase tracking-wider text-cyan-400 font-bold">Official Registration</span>
+          <h3 id="reg-modal-title" class="text-lg sm:text-xl font-black text-white font-display">Innovesta 2026 Registration</h3>
+        </div>
+      </div>
+
+      <div id="reg-modal-body" class="space-y-3 text-sm text-slate-300 mt-4 leading-relaxed">
+        <p>
+          Before filling out the Google Form, please verify that you have completed your offline payment:
+        </p>
+
+        <div class="p-4 rounded-xl bg-white/5 border border-white/5 space-y-2 text-xs">
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">1.</span>
+            <span>Pay <strong class="text-white">1,000 BDT</strong> in cash directly to your Batch Representative by <strong class="text-rose-300">Oct 17, 2026</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">2.</span>
+            <span>Collect your <strong class="text-white">payment receipt / serial number</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-cyan-400 font-bold">3.</span>
+            <span>Enter the serial number in the registration Google Form before <strong class="text-cyan-300">Oct 27, 2026</strong>.</span>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-xs text-cyan-200">
+          ℹ️ <strong>For Organizers / Admin:</strong> To link your official Google Form, open <code class="text-white bg-slate-800 px-1.5 py-0.5 rounded">js/registration-links.js</code> and paste the URL in the designated field.
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row items-center gap-3">
+        <a id="reg-modal-direct-btn" href="https://forms.google.com/" target="_blank" rel="noopener" class="w-full btn-primary-glow py-3 rounded-xl text-xs sm:text-sm font-bold text-center flex items-center justify-center gap-2">
+          <span>Proceed to Google Form</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+        <button class="modal-close-btn w-full sm:w-auto px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold border border-white/10 text-slate-400 hover:text-white">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT IMPORTS -->
+  <script src="js/registration-links.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize Lucide icons on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
 
 </body>
 </html>
