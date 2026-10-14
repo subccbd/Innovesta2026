@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovesta 2026 | Registration Portal</title>
+  
+  <!-- Tailwind CSS CDN for instant styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              950: '#06080d',
+              900: '#090d16',
+              800: '#111827',
+              cyan: '#00f0ff',
+              crimson: '#e11d48'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #070a10;
+      background-image: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 60%);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 flex flex-col justify-between selection:bg-cyan-400 selection:text-black">
+
+  <!-- TOP HEADER -->
+  <header class="py-6 border-b border-white/10 bg-cyber-950/60 backdrop-blur-md">
+    <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/logos/subcc-white.png" alt="SUBCC" class="h-9 w-auto object-contain">
+        <div class="h-5 w-px bg-white/20"></div>
+        <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026" class="h-7 w-auto object-contain">
+      </div>
+      <!-- <span class="text-[11px] font-bold uppercase tracking-widest text-cyan-400 border border-cyan-400/30 px-2.5 py-1 rounded-full bg-cyan-500/10">
+        SUBCC Official -->
+      </span>
+    </div>
+  </header>
+
+  <!-- MAIN CARD / REGISTRATION HUB -->
+  <main class="flex-1 flex items-center justify-center py-10 px-4">
+    <div class="w-full max-w-xl bg-cyber-900/90 border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center">
+      
+      <!-- Subtle Neon Glow -->
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Hero Title -->
+      <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026" class="h-16 sm:h-20 w-auto mx-auto mb-6 drop-shadow-[0_0_25px_rgba(0,240,255,0.3)]">
+      
+      <h1 class="text-xl sm:text-2xl font-black uppercase tracking-wide text-white">
+        Official Registration Portal
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 mt-2">
+        Organized by <span class="text-slate-200 font-semibold">Southern University Bangladesh Computer Club (SUBCC)</span>
+      </p>
+
+      <!-- Quick Metadata -->
+      <div class="mt-6 grid grid-cols-2 gap-3 text-left bg-cyber-950/80 p-4 rounded-2xl border border-white/5 text-xs">
+        <div>
+          <span class="text-slate-400 block">📅 Event Dates</span>
+          <strong class="text-white">Nov 3 &amp; Nov 5, 2026</strong>
+        </div>
+        <div>
+          <span class="text-slate-400 block">📍 Venue</span>
+          <strong class="text-white">Main Campus, SUB</strong>
+        </div>
+        <div>
+          <span class="text-slate-400 block">⏳ Registration Deadline</span>
+          <strong class="text-rose-400">17th October, 2026</strong>
+        </div>
+        <div>
+          <span class="text-slate-400 block">📋 Form Deadline</span>
+          <strong class="text-cyan-300">27th October, 2026</strong>
+        </div>
+      </div>
+
+      <!-- MAIN REGISTRATION BUTTONS -->
+      <div class="mt-8 space-y-4">
+        
+        <!-- 1. Current Students Registration -->
+        <!-- REPLACE 'https://forms.google.com/' WITH YOUR ACTUAL GOOGLE FORM LINK -->
+        <a href="https://forms.google.com/" target="_blank" rel="noopener" class="block w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 text-slate-950 font-black text-sm tracking-wide shadow-lg shadow-cyan-500/20 hover:scale-[1.02] active:scale-[0.99] transition-all">
+          <span>Register as Current Student (1,000 BDT)</span>
+          <span class="block text-[11px] font-semibold text-slate-900/80 mt-0.5">Pay 1,000 BDT in cash to your Batch Representative</span>
+        </a>
+
+        <!-- 2. Alumni Farewell Registration -->
+        <!-- REPLACE 'https://forms.google.com/' WITH YOUR ACTUAL FAREWELL FORM LINK -->
+        <a href="https://forms.google.com/" target="_blank" rel="noopener" class="block w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-sm tracking-wide shadow-lg shadow-rose-500/20 hover:scale-[1.02] active:scale-[0.99] transition-all">
+          <span>Alumni Farewell Registration (1,500 BDT)</span>
+          <span class="block text-[11px] font-normal text-rose-100/90 mt-0.5">Pay 1,500 BDT via bKash Send Money to 01610181160</span>
+        </a>
+
+        <!-- 3. Inter-University Segments -->
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300">
+          <span class="font-bold text-cyan-300 block mb-1">🌐 Students from Other Universities:</span>
+          <span>You can participate in <strong>Robo Soccer, Project Showcasing, IT Quiz, Free Fire LAN &amp; eFootball</strong>. Forms opening shortly!</span>
+        </div>
+      </div>
+
+      <!-- HOTLINE SUPPORT
+      <div class="mt-6 pt-5 border-t border-white/10 text-xs text-slate-400">
+        <p class="font-semibold text-slate-300 mb-1">Need assistance or representative confirmation?</p>
+        <p>
+          Hotline: 
+          <a href="tel:01610181160" class="text-cyan-400 font-bold hover:underline">01610181160</a> &bull; 
+          <a href="tel:01852283056" class="text-cyan-400 font-bold hover:underline">01852283056</a> &bull; 
+          <a href="tel:01749048044" class="text-cyan-400 font-bold hover:underline">01749048044</a>
+        </p>
+      </div> -->
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-center text-xs text-slate-400 border-t border-white/5">
+    &copy; 2026 Southern University Bangladesh Computer Club (SUBCC). All Rights Reserved.
+  </footer>
+
+</body>
+</html>

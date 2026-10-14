@@ -1,0 +1,22 @@
+{
+  "name": "innovesta-2026-landing-page",
+  "version": "1.0.0",
+  "description": "Official Registration and Event Hub for Innovesta 2026 - Southern University Bangladesh Computer Club (SUBCC)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "serve": "python -m http.server 3000",
+    "dev": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "innovesta-2026",
+    "subcc",
+    "southern-university-bangladesh",
+    "landing-page",
+    "tech-fest",
+    "event-hub"
+  ],
+  "author": "Southern University Bangladesh Computer Club (SUBCC)",
+  "license": "MIT"
+}
+
