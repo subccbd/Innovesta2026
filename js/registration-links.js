@@ -73,7 +73,7 @@ const INNOVESTA_CONFIG = {
   links: {
     // 1. Main Register For Innovesta 2026 (1,000 BDT - Current Students All-Access Pass)
     // PASTE YOUR MAIN INNOVESTA 2026 GOOGLE FORM LINK HERE:
-    mainRegistration: "https://forms.google.com/",
+    mainRegistration: "https://forms.gle/NWAHsVR7KPWHEugj6",
 
     // 2. Alumni Farewell Registration (1,500 BDT - Farewell Pass via bKash Send Money)
     // PASTE YOUR ALUMNI FAREWELL GOOGLE FORM LINK HERE:
