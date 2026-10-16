@@ -81,7 +81,7 @@ const INNOVESTA_CONFIG = {
     // 1. Southern CSE & CSIT Students Festival Registration (1,000 BDT to Batch Rep)
     mainRegistration: "https://forms.gle/QyK7xbq6gfpCm2Y29",
 
-    // 2. Southern CSE & CSIT Alumni Farewell Gala (1,500 BDT via bKash)
+    // 2. Southern CSE & CSIT Alumni Farewell (1,500 BDT via bKash)
     alumniFarewell: "https://forms.gle/aY9GQFuZG6a84gYh9",
 
     // ---------------------------------------------------------------------

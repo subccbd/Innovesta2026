@@ -110,7 +110,7 @@ function initCountdown() {
 }
 
 /**
- * Live Navbar Countdown Timer to November 5, 2026 (Grand Gala / Day 2)
+ * Live Navbar Countdown Timer to November 5, 2026 (Grand Finale / Day 2)
  */
 function initNavCountdown() {
   const countdownEls = document.querySelectorAll('.nav-nov5-countdown, #nav-nov5-countdown');
@@ -499,7 +499,7 @@ const SEGMENT_DETAILS = {
       "Open to all university students (SUB and visiting universities nationwide)",
       "Team Size: Individual or teams of up to 2 members",
       "Registration Fee: BDT 300 for non-CSE/CSIT from any university (Covered for eligible SUB CSE/CSIT fest registrants)",
-      "Prize Pool: BDT 5,000 Total Prize Pool + Crest & Certificate recognition for all 3 winners",
+      "Awards & Recognition: Crest & Certificate recognition for winners",
       "Presentation required: explain idea, problem statement, real-world impact, and tech stack"
     ],
     targetKey: "projectShowcasing"
@@ -535,7 +535,7 @@ const SEGMENT_DETAILS = {
       "Format: MCQ-based IT Quiz testing knowledge, logic, and accuracy under time-bound rules",
       "Participation: Individual",
       "Registration Fee: BDT 100 for non-CSE/CSIT from any university (Covered for eligible SUB CSE/CSIT fest pass holders)",
-      "Prize Pool: BDT 4,000 Total Prize Pool + Crest & Certificate recognition for all 3 winners"
+      "Awards & Recognition: Crest & Certificate recognition for winners"
     ],
     targetKey: "itQuiz"
   },

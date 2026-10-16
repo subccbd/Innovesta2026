@@ -103,6 +103,17 @@
       box-shadow: 0 6px 28px rgba(245, 158, 11, 0.45);
       transform: translateY(-1px);
     }
+    .btn-glow-rose {
+      background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+      color: #ffffff !important;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(244, 63, 94, 0.3);
+      transition: all 0.25s ease;
+    }
+    .btn-glow-rose:hover {
+      box-shadow: 0 6px 28px rgba(244, 63, 94, 0.5);
+      transform: translateY(-1px);
+    }
     .btn-glow-cyan {
       background: linear-gradient(135deg, #00f0ff 0%, #0284c7 100%);
       color: #040810 !important;
@@ -274,13 +285,20 @@
            ===================================================================== -->
       <section id="competitions" class="space-y-6">
         
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold font-display text-white">
-            7 Featured Competitions
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">
-            Direct registration for all student participants across SUB and visiting universities nationwide.
-          </p>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold font-display text-white">
+              Featured Competitions
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+              Direct registration for tech, robotics, logic, and project showcases across SUB and visiting universities nationwide.
+            </p>
+          </div>
+          <a href="esports.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-rose-500/25 bg-rose-500/10 text-rose-400 hover:bg-rose-500/20 text-xs font-bold transition-all self-start sm:self-auto shrink-0">
+            <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+            <span>eSports Registrations</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -334,7 +352,6 @@
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-400/20">Tech Expo &bull; Idea Hunt</span>
-                <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">Prize: 5,000 BDT</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Project Showcasing &bull; Idea Hunt</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Web projects encouraged &amp; real-world ideas welcome. Working prototypes, simulations, and pitch presentations.</p>
@@ -357,7 +374,6 @@
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-400/20">MCQ Quiz &bull; Tech &amp; Logic</span>
-                <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">Prize: 4,000 BDT</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">IT Quiz</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">MCQ-based IT Quiz testing knowledge, logic, and accuracy under time-bound rules. Open to all university students.</p>
@@ -375,72 +391,26 @@
             </div>
           </div>
 
-          <!-- 5. Free Fire LAN Tournament -->
-          <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20">Esports LAN</span>
-              </div>
-              <h3 class="text-base sm:text-lg font-bold text-white font-display">Free Fire LAN</h3>
-              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Online prelims leading to campus big-screen LAN finals on stage.</p>
-              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Squad: 4 + 1 Sub</span>
-                <span>LAN Finals Nov 3</span>
-              </div>
+        </div>
+
+        <!-- Gaming & Esports Dedicated Portal Banner -->
+        <div class="glass-card p-5 sm:p-6 rounded-3xl border border-rose-500/30 bg-gradient-to-r from-rose-500/[0.08] via-transparent to-transparent flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-4 text-center sm:text-left">
+            <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-400/25 text-rose-400 flex items-center justify-center shrink-0">
+              <i data-lucide="gamepad-2" class="w-6 h-6"></i>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
-              <a href="coming-soon.html?segment=Free%20Fire%20LAN%20Tournament" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                <span>Register</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-              <button type="button" data-view-segment="freeFire" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div>
+              <div class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20 mb-1">
+                <span>Esports &bull; Dedicated Portal</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-white font-display">Looking for eSports &amp; Gaming Tournaments?</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Free Fire LAN, E-Football, and Street Fighter Console are now in the dedicated eSports Registrations portal.</p>
             </div>
           </div>
-
-          <!-- 6. E-Football -->
-          <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-400/20">Virtual Football</span>
-              </div>
-              <h3 class="text-base sm:text-lg font-bold text-white font-display">E-Football</h3>
-              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">1v1 tactical virtual football tournament played in online knockout brackets.</p>
-              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Format: 1v1 Solo</span>
-                <span>Day 1 Online</span>
-              </div>
-            </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
-              <a href="coming-soon.html?segment=E-Football%20Tournament" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                <span>Register</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-              <button type="button" data-view-segment="eFootball" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
-            </div>
-          </div>
-
-          <!-- 7. Street Fighter Console (CSE & CSIT Exclusive) -->
-          <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-400/20">CSE &amp; CSIT Exclusive</span>
-              </div>
-              <h3 class="text-base sm:text-lg font-bold text-white font-display">Console: Street Fighter</h3>
-              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Double elimination fighting game tournament live on campus lounge consoles.</p>
-              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Format: 1v1 Solo</span>
-                <span>Day 1 &bull; Nov 3, 2026</span>
-              </div>
-            </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
-              <a href="coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                <span>Register</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-              <button type="button" data-view-segment="consoleGaming" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
-            </div>
-          </div>
-
+          <a href="esports.html" class="btn-glow-rose py-2.5 px-5 rounded-xl text-xs font-bold inline-flex items-center gap-2 shrink-0 transition-all cursor-pointer">
+            <span>Open eSports Portal</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
         </div>
 
       </section>
@@ -456,6 +426,8 @@
       <span>&copy; 2026 SUBCC. Dept. of CSE &amp; CSIT, Southern University Bangladesh.</span>
       <div class="flex items-center gap-4">
         <a href="index.html" class="hover:text-amber-400">Main Portal</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="esports.html" class="hover:text-rose-400">eSports Portal</a>
         <span class="text-white/20">&bull;</span>
         <a href="farewell.html" class="hover:text-rose-400">Alumni Farewell</a>
       </div>

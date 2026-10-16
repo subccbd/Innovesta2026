@@ -85,7 +85,7 @@ Once updated, every button on the site will automatically redirect participants 
 1. **Step 1:** Pay **1,500 BDT** via **bKash Send Money** to `01610181160` before **October 17, 2026**.
 2. **Step 2:** Save your bKash Transaction ID (TrxID) and screenshot the payment.
 3. **Step 3:** Fill out and submit the Alumni Farewell Google Form with your TrxID before **October 27, 2026**.
-4. **Step 4:** SUBCC verifies the bKash TrxID and confirms your Grand Farewell Gala Pass.
+4. **Step 4:** SUBCC verifies the bKash TrxID and confirms your Alumni Farewell Pass.
 
 ### Assigned Event Representatives & bKash Hotline
 - **bKash Send Money Number:** `01610181160`
