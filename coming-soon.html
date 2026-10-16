@@ -338,7 +338,6 @@
       // Check URL search parameters
       const params = new URLSearchParams(window.location.search);
       const segment = params.get('segment');
-      const cat = params.get('cat');
 
       if (segment) {
         const cleanName = decodeURIComponent(segment);
@@ -346,20 +345,12 @@
         
         const badgeEl = document.getElementById('segment-badge-text');
         if (badgeEl) {
-          if (cat === 'sub') {
-            badgeEl.textContent = `${cleanName.toUpperCase()} • SOUTHERN CSE & CSIT • PUBLISHING SOON`;
-          } else {
-            badgeEl.textContent = `${cleanName.toUpperCase()} • PUBLISHING SOON`;
-          }
+          badgeEl.textContent = `${cleanName.toUpperCase()} • PUBLISHING SOON`;
         }
 
         const descEl = document.getElementById('announcement-desc');
         if (descEl) {
-          if (cat === 'sub') {
-            descEl.innerHTML = `The official competition registration form for <strong class="text-amber-300 font-bold">${cleanName}</strong> for <strong>Southern CSE &amp; CSIT students</strong> will be published here soon. All competitions are fully included with your festival registration. If you haven't completed your main fest registration yet, access the official form below.`;
-          } else {
-            descEl.innerHTML = `The official registration link and payment guidelines for <strong class="text-amber-300 font-bold">${cleanName}</strong> (open to other universities and academic departments) are being finalized by the organizing committee. This form will open right here very soon.`;
-          }
+          descEl.innerHTML = `The official registration form and guidelines for <strong class="text-amber-300 font-bold">${cleanName}</strong> are currently being finalized by the <strong class="text-white">Southern University Bangladesh Computer Club (SUBCC)</strong>. All student participants across Southern University and visiting universities nationwide will register directly through this form once live.`;
         }
       }
 

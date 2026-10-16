@@ -133,9 +133,11 @@
           <a href="farewell.html" class="hover:text-rose-400 transition-colors">Alumni Farewell</a>
         </div>
 
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full badge-pill text-[11px] font-semibold text-emerald-400">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Registrations Open</span>
+        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] font-medium border border-amber-400/25 bg-amber-500/5 whitespace-nowrap shadow-[0_0_15px_rgba(245,158,11,0.08)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
+          <span class="text-slate-400 font-semibold text-[10px] uppercase tracking-wider">Nov 5</span>
+          <span class="text-white/20">&bull;</span>
+          <span class="nav-nov5-countdown font-mono font-bold text-amber-300 text-xs tracking-tight">--d --h --m --s</span>
         </div>
       </div>
 
@@ -176,7 +178,7 @@
             7 Featured Competitions
           </h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-1">
-            Select your participant category from the dropdown on each card to register.
+            Direct registration for all student participants across SUB and visiting universities nationwide.
           </p>
         </div>
 
@@ -186,7 +188,7 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-2 py-0.5 rounded-full bg-cyan-500/10">All Southern Students</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-400/20">All Southern Students</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Competitive Programming</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Algorithmic problem-solving battle open to all students of Southern University Bangladesh across all departments.</p>
@@ -195,40 +197,12 @@
                 <span>Day 1 &bull; Nov 3, 2026</span>
               </div>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2 relative">
-              <div class="relative flex-1">
-                <button type="button" onclick="toggleCardDropdown(this, event)" class="reg-dropdown-btn w-full btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                  <span>Register</span>
-                  <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5 transition-transform duration-200"></i>
-                </button>
-                <!-- Dropdown -->
-                <div class="card-dropdown hidden absolute left-0 bottom-full mb-2 w-full min-w-[240px] rounded-2xl bg-[#0a0e17] border border-amber-400/30 p-1.5 shadow-2xl backdrop-blur-xl z-50">
-                  <div class="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-slate-400 border-b border-white/10 mb-1">
-                    Select Participant Category
-                  </div>
-                  <a href="coming-soon.html?segment=Competitive%20Programming&cat=sub" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-cyan-500/15 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-between group cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                        <span>Southern CSE &amp; CSIT Students</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">SUB Department of CSE &amp; CSIT</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                  <a href="coming-soon.html?segment=Competitive%20Programming&cat=external" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-amber-500/15 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-between group mt-0.5 cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-amber-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>Other Southern Departments</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">All Other Southern University Faculties</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-amber-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                </div>
-              </div>
-              <button type="button" data-view-segment="programmingContest" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
+              <a href="coming-soon.html?segment=Competitive%20Programming" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="programmingContest" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
@@ -236,99 +210,44 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-2 py-0.5 rounded-full bg-cyan-500/10">Robotics Arena</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-400/20">Robotics Arena</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Robo Soccer</h3>
-              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">High-octane robotic soccer showdown! Pilot custom wireless bots to strike goals.</p>
+              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">High-octane robotic soccer showdown! Pilot custom wireless bots to strike goals in the combat arena.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
                 <span>Team: 2-4 Members</span>
-                <span>Nov 3, 2026</span>
+                <span>Day 1 &bull; Nov 3, 2026</span>
               </div>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2 relative">
-              <div class="relative flex-1">
-                <button type="button" onclick="toggleCardDropdown(this, event)" class="reg-dropdown-btn w-full btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                  <span>Register</span>
-                  <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5 transition-transform duration-200"></i>
-                </button>
-                <!-- Dropdown -->
-                <div class="card-dropdown hidden absolute left-0 bottom-full mb-2 w-full min-w-[240px] rounded-2xl bg-[#0a0e17] border border-amber-400/30 p-1.5 shadow-2xl backdrop-blur-xl z-50">
-                  <div class="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-slate-400 border-b border-white/10 mb-1">
-                    Select Participant Category
-                  </div>
-                  <a href="coming-soon.html?segment=Robo%20Soccer&cat=sub" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-cyan-500/15 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-between group cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                        <span>Southern CSE &amp; CSIT Students</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">SUB Department of CSE &amp; CSIT</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                  <a href="coming-soon.html?segment=Robo%20Soccer&cat=external" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-amber-500/15 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-between group mt-0.5 cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-amber-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>Inter-University &amp; Other Departments</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">All Universities &amp; Other Southern Departments</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-amber-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                </div>
-              </div>
-              <button type="button" data-view-segment="roboSoccer" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
+              <a href="coming-soon.html?segment=Robo%20Soccer" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="roboSoccer" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
-          <!-- 3. Project Showcasing -->
+          <!-- 3. Project Showcasing — Idea Hunt -->
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 px-2 py-0.5 rounded-full bg-blue-500/10">Tech Expo</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-400/20">Tech Expo &bull; Idea Hunt</span>
+                <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">Prize: 5,000 BDT</span>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-white font-display">Project Showcasing</h3>
-              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Exhibit software, AI/ML models, IoT, and robotics hardware before corporate judges.</p>
+              <h3 class="text-base sm:text-lg font-bold text-white font-display">Project Showcasing &bull; Idea Hunt</h3>
+              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Web projects encouraged &amp; real-world ideas welcome. Working prototypes, simulations, and pitch presentations.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Team: 1-4 Members</span>
-                <span>Nov 3 &amp; 5, 2026</span>
+                <span>Team: 1-2 &bull; Fee: 300 BDT</span>
+                <span>Nov 3, 2026</span>
               </div>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2 relative">
-              <div class="relative flex-1">
-                <button type="button" onclick="toggleCardDropdown(this, event)" class="reg-dropdown-btn w-full btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                  <span>Register</span>
-                  <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5 transition-transform duration-200"></i>
-                </button>
-                <!-- Dropdown -->
-                <div class="card-dropdown hidden absolute left-0 bottom-full mb-2 w-full min-w-[240px] rounded-2xl bg-[#0a0e17] border border-amber-400/30 p-1.5 shadow-2xl backdrop-blur-xl z-50">
-                  <div class="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-slate-400 border-b border-white/10 mb-1">
-                    Select Participant Category
-                  </div>
-                  <a href="coming-soon.html?segment=Project%20Showcasing&cat=sub" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-cyan-500/15 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-between group cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                        <span>Southern CSE &amp; CSIT Students</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">SUB Department of CSE &amp; CSIT</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                  <a href="coming-soon.html?segment=Project%20Showcasing&cat=external" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-amber-500/15 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-between group mt-0.5 cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-amber-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>Inter-University &amp; Other Departments</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">All Universities &amp; Other Southern Departments</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-amber-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                </div>
-              </div>
-              <button type="button" data-view-segment="projectShowcasing" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
+              <a href="coming-soon.html?segment=Project%20Showcasing%20%E2%80%94%20Idea%20Hunt" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="projectShowcasing" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
@@ -336,49 +255,22 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 px-2 py-0.5 rounded-full bg-purple-500/10">CS Trivia</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-400/20">MCQ Quiz &bull; Tech &amp; Logic</span>
+                <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">Prize: 4,000 BDT</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">IT Quiz</h3>
-              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Rapid buzzer rounds covering algorithms, cybersecurity, AI, and computing history.</p>
+              <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">MCQ-based IT Quiz testing knowledge, logic, and accuracy under time-bound rules. Open to all university students.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Team: 2 Members</span>
-                <span>Nov 3, 2026</span>
+                <span>Individual &bull; Fee: 100 BDT</span>
+                <span>Day 2 &bull; Nov 5, 2026</span>
               </div>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2 relative">
-              <div class="relative flex-1">
-                <button type="button" onclick="toggleCardDropdown(this, event)" class="reg-dropdown-btn w-full btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                  <span>Register</span>
-                  <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5 transition-transform duration-200"></i>
-                </button>
-                <!-- Dropdown -->
-                <div class="card-dropdown hidden absolute left-0 bottom-full mb-2 w-full min-w-[240px] rounded-2xl bg-[#0a0e17] border border-amber-400/30 p-1.5 shadow-2xl backdrop-blur-xl z-50">
-                  <div class="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-slate-400 border-b border-white/10 mb-1">
-                    Select Participant Category
-                  </div>
-                  <a href="coming-soon.html?segment=IT%20Quiz&cat=sub" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-cyan-500/15 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-between group cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                        <span>Southern CSE &amp; CSIT Students</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">SUB Department of CSE &amp; CSIT</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                  <a href="coming-soon.html?segment=IT%20Quiz&cat=external" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-amber-500/15 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-between group mt-0.5 cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-amber-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>Inter-University &amp; Other Departments</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">All Universities &amp; Other Southern Departments</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-amber-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                </div>
-              </div>
-              <button type="button" data-view-segment="itQuiz" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
+              <a href="coming-soon.html?segment=IT%20Quiz" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="itQuiz" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
@@ -386,7 +278,7 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2 py-0.5 rounded-full bg-rose-500/10">Esports LAN</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20">Esports LAN</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Free Fire LAN</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Online prelims leading to campus big-screen LAN finals on stage.</p>
@@ -395,40 +287,12 @@
                 <span>LAN Finals Nov 3</span>
               </div>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2 relative">
-              <div class="relative flex-1">
-                <button type="button" onclick="toggleCardDropdown(this, event)" class="reg-dropdown-btn w-full btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                  <span>Register</span>
-                  <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5 transition-transform duration-200"></i>
-                </button>
-                <!-- Dropdown -->
-                <div class="card-dropdown hidden absolute left-0 bottom-full mb-2 w-full min-w-[240px] rounded-2xl bg-[#0a0e17] border border-amber-400/30 p-1.5 shadow-2xl backdrop-blur-xl z-50">
-                  <div class="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-slate-400 border-b border-white/10 mb-1">
-                    Select Participant Category
-                  </div>
-                  <a href="coming-soon.html?segment=Free%20Fire%20LAN%20Tournament&cat=sub" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-cyan-500/15 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-between group cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                        <span>Southern CSE &amp; CSIT Students</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">SUB Department of CSE &amp; CSIT</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                  <a href="coming-soon.html?segment=Free%20Fire%20LAN%20Tournament&cat=external" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-amber-500/15 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-between group mt-0.5 cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-amber-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>Inter-University &amp; Other Departments</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">All Universities &amp; Other Southern Departments</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-amber-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                </div>
-              </div>
-              <button type="button" data-view-segment="freeFire" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
+              <a href="coming-soon.html?segment=Free%20Fire%20LAN%20Tournament" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="freeFire" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
@@ -436,7 +300,7 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10">Virtual Football</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-400/20">Virtual Football</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">E-Football</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">1v1 tactical virtual football tournament played in online knockout brackets.</p>
@@ -445,40 +309,12 @@
                 <span>Day 1 Online</span>
               </div>
             </div>
-            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2 relative">
-              <div class="relative flex-1">
-                <button type="button" onclick="toggleCardDropdown(this, event)" class="reg-dropdown-btn w-full btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                  <span>Register</span>
-                  <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5 transition-transform duration-200"></i>
-                </button>
-                <!-- Dropdown -->
-                <div class="card-dropdown hidden absolute left-0 bottom-full mb-2 w-full min-w-[240px] rounded-2xl bg-[#0a0e17] border border-amber-400/30 p-1.5 shadow-2xl backdrop-blur-xl z-50">
-                  <div class="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-slate-400 border-b border-white/10 mb-1">
-                    Select Participant Category
-                  </div>
-                  <a href="coming-soon.html?segment=E-Football%20Tournament&cat=sub" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-cyan-500/15 text-slate-200 hover:text-cyan-300 transition-colors flex items-center justify-between group cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                        <span>Southern CSE &amp; CSIT Students</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">SUB Department of CSE &amp; CSIT</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                  <a href="coming-soon.html?segment=E-Football%20Tournament&cat=external" class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-amber-500/15 text-slate-200 hover:text-amber-300 transition-colors flex items-center justify-between group mt-0.5 cursor-pointer">
-                    <div>
-                      <div class="text-xs font-bold flex items-center gap-1.5 text-amber-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>Inter-University &amp; Other Departments</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 block pl-3">All Universities &amp; Other Southern Departments</span>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-amber-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0"></i>
-                  </a>
-                </div>
-              </div>
-              <button type="button" data-view-segment="eFootball" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+            <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
+              <a href="coming-soon.html?segment=E-Football%20Tournament" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="eFootball" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
@@ -486,7 +322,7 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 px-2 py-0.5 rounded-full bg-amber-500/10">CSE &amp; CSIT Exclusive</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-400/20">CSE &amp; CSIT Exclusive</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Console: Street Fighter</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Double elimination fighting game tournament live on campus lounge consoles.</p>
@@ -496,8 +332,11 @@
               </div>
             </div>
             <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
-              <a href="coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter&cat=sub" class="flex-1 btn-glow-amber py-2 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center cursor-pointer">Register (Southern CSE &amp; CSIT)</a>
-              <button type="button" data-view-segment="consoleGaming" class="px-3 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
+              <a href="coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter" class="flex-1 btn-glow-amber py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <span>Register</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <button type="button" data-view-segment="consoleGaming" class="px-3.5 py-2 badge-pill rounded-xl text-xs font-medium text-slate-300 hover:text-white shrink-0 cursor-pointer">Rules</button>
             </div>
           </div>
 
@@ -559,23 +398,12 @@
         <ul id="seg-modal-highlights" class="space-y-1.5 text-xs text-slate-300"></ul>
       </div>
 
-      <div class="pt-4 border-t border-white/10 space-y-2.5">
-        <div class="text-[11px] font-semibold text-slate-400">Select your registration category:</div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          <a id="seg-modal-sub-btn" href="coming-soon.html" class="w-full py-2.5 px-3 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/40 text-cyan-200 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span>Southern CSE &amp; CSIT Students</span>
-            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-70"></i>
-          </a>
-          <a id="seg-modal-ext-btn" href="coming-soon.html" class="w-full py-2.5 px-3 rounded-xl btn-glow-amber text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-            <span class="w-2 h-2 rounded-full bg-amber-950"></span>
-            <span>Inter-University &amp; Other Departments</span>
-            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-70"></i>
-          </a>
-        </div>
-        <div class="flex justify-end pt-1">
-          <button type="button" class="modal-close-btn px-4 py-1.5 text-xs font-medium text-slate-400 hover:text-white cursor-pointer">Close</button>
-        </div>
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+        <button type="button" class="modal-close-btn px-4 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 text-xs font-medium text-slate-300 hover:text-white cursor-pointer transition-colors">Close</button>
+        <a id="seg-modal-reg-btn" href="coming-soon.html" class="flex-1 btn-glow-amber py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+          <span>Register for this Contest</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
       </div>
     </div>
   </div>

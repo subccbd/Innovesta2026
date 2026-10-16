@@ -7,6 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
+  initNavCountdown();
   initNavigation();
   initSegmentFilters();
   initScheduleTabs();
@@ -52,6 +53,42 @@ function initCountdown() {
     hoursEl.textContent = String(hours).padStart(2, '0');
     minutesEl.textContent = String(minutes).padStart(2, '0');
     secondsEl.textContent = String(seconds).padStart(2, '0');
+  }
+
+  update();
+  setInterval(update, 1000);
+}
+
+/**
+ * Live Navbar Countdown Timer to November 5, 2026 (Grand Gala / Day 2)
+ */
+function initNavCountdown() {
+  const countdownEls = document.querySelectorAll('.nav-nov5-countdown, #nav-nov5-countdown');
+  if (!countdownEls.length) return;
+
+  // Target: November 5, 2026, 09:00:00 AM Bangladesh Standard Time (UTC+6)
+  const targetDate = new Date('2026-11-05T09:00:00+06:00').getTime();
+
+  function update() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      countdownEls.forEach(el => {
+        el.textContent = 'Live Today!';
+      });
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const formatted = `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+    countdownEls.forEach(el => {
+      el.textContent = formatted;
+    });
   }
 
   update();
@@ -215,7 +252,7 @@ function initRegistrationHandlers() {
   });
 }
 
-function handleRegistrationClick(targetKey, audience = 'auto') {
+function handleRegistrationClick(targetKey) {
   const config = window.INNOVESTA_CONFIG || {};
 
   // 1. Main Festival Registration Form
@@ -239,7 +276,7 @@ function handleRegistrationClick(targetKey, audience = 'auto') {
     if (typeof seg === 'string') {
       url = seg;
     } else if (seg && typeof seg === 'object') {
-      url = (audience === 'sub') ? (seg.subStudents || '') : (seg.external || '');
+      url = seg.url || '';
     }
 
     if (url && url.startsWith('http') && (url.includes('forms.gle/') || url.includes('docs.google.com/forms'))) {
@@ -250,7 +287,7 @@ function handleRegistrationClick(targetKey, audience = 'auto') {
 
   // 4. All other registrations redirect directly to coming-soon.html (NO POPUPS)
   const segTitle = formatSegmentTitle(targetKey);
-  const redirectUrl = `coming-soon.html?segment=${encodeURIComponent(segTitle)}&cat=${encodeURIComponent(audience)}`;
+  const redirectUrl = `coming-soon.html?segment=${encodeURIComponent(segTitle)}`;
   window.location.href = redirectUrl;
 }
 
@@ -260,7 +297,7 @@ function handleSegmentBranch(targetKey, audience, event) {
     event.stopPropagation();
   }
   closeAllCardDropdowns();
-  handleRegistrationClick(targetKey, audience);
+  handleRegistrationClick(targetKey);
 }
 
 function toggleCardDropdown(btn, event) {
@@ -315,7 +352,7 @@ window.closeAllCardDropdowns = closeAllCardDropdowns;
 function formatSegmentTitle(key) {
   const names = {
     programmingContest: 'Competitive Programming',
-    projectShowcasing: 'Project Showcasing',
+    projectShowcasing: 'Project Showcasing — Idea Hunt',
     roboSoccer: 'Robo Soccer',
     itQuiz: 'IT Quiz',
     freeFire: 'Free Fire LAN Tournament',
@@ -332,7 +369,7 @@ function formatSegmentTitle(key) {
  * Direct Registration Redirect (Popups removed per user request)
  */
 function openRegistrationNoticeModal(title, targetKey, currentUrl, audience = 'auto') {
-  handleRegistrationClick(targetKey, audience);
+  handleRegistrationClick(targetKey);
 }
 
 /**
@@ -383,13 +420,13 @@ function closeAllModals() {
  */
 const SEGMENT_DETAILS = {
   programmingContest: {
-    title: "Competitive Programming (All Southern University Students)",
-    badge: "All Southern Students",
+    title: "Competitive Programming",
+    badge: "Southern University Bangladesh",
     isInterUni: false,
     date: "Day 1: November 3, 2026",
     venue: "CSE Computer Labs, Southern University",
-    teamSize: "Individual / Team of up to 3",
-    fee: "Included for CSE & CSIT Students / Open to all Southern Depts",
+    teamSize: "Individual or Teams of 1-3",
+    fee: "Covered by Fest Pass for SUB CSE/CSIT / Open to all Southern Depts",
     description: "Flagship algorithmic problem-solving showdown open to all students of Southern University Bangladesh across all departments (CSE, CSIT, EEE, Civil, BBA, Pharmacy, Law, English, etc.).",
     highlights: [
       "Open to all students of Southern University Bangladesh",
@@ -400,31 +437,32 @@ const SEGMENT_DETAILS = {
     targetKey: "programmingContest"
   },
   projectShowcasing: {
-    title: "Project Showcasing (Open Competition)",
-    badge: "Inter-University & Other Departments",
+    title: "Project Showcasing — Idea Hunt",
+    badge: "Open to All Universities & Departments",
     isInterUni: true,
-    date: "November 3 & November 5, 2026",
-    venue: "Main Campus Tech Exhibit Arena",
-    teamSize: "1 to 4 Members per team",
-    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
-    description: "Display innovative software, AI/ML models, IoT systems, and robotics hardware before high-profile industry judges. Open to teams from all universities across Bangladesh as well as other departments of Southern University!",
+    date: "03 November 2026",
+    venue: "Main Campus Tech Exhibit Arena, Southern University Bangladesh",
+    teamSize: "Individual or teams of up to 2 members",
+    fee: "BDT 300 (Covered by Fest Registration for eligible SUB CSE/CSIT)",
+    description: "Web-based projects encouraged. Real-world ideas welcome. Ideas First. Impact Always. Working prototype or simulation recommended. Presentation required explaining idea, problem, impact, and solution.",
     highlights: [
-      "Open to university student teams nationwide and other Southern University departments",
-      "Live booth exhibit open to 1,000+ attendees",
-      "Direct pitching session to corporate tech recruiters & judges",
-      "Exclusive mentor feedback and awards for Best Innovation & Design"
+      "Open to all university students (SUB and visiting universities nationwide)",
+      "Team Size: Individual or teams of up to 2 members",
+      "Registration Fee: BDT 300 for non-CSE/CSIT from any university (Covered for eligible SUB CSE/CSIT fest registrants)",
+      "Prize Pool: BDT 5,000 Total Prize Pool + Crest & Certificate recognition for all 3 winners",
+      "Presentation required: explain idea, problem statement, real-world impact, and tech stack"
     ],
     targetKey: "projectShowcasing"
   },
   roboSoccer: {
-    title: "Robo Soccer (Open Competition)",
-    badge: "Inter-University & Other Departments",
+    title: "Robo Soccer",
+    badge: "Open to All Universities & Departments",
     isInterUni: true,
     date: "Day 1: November 3, 2026",
     venue: "Robotics Combat Arena, Ground Floor",
     teamSize: "2 to 4 Members per bot team",
-    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
-    description: "High-octane robotic soccer showdown! Build, pilot, and maneuver custom-engineered wireless soccer bots to dominate possession and strike goals in a tense stadium arena. Open nationwide and to other Southern departments!",
+    fee: "Segment Entry Fee via bKash / Covered for SUB CSE/CSIT Fest Pass",
+    description: "High-octane robotic soccer showdown! Build, pilot, and maneuver custom-engineered wireless soccer bots to dominate possession and strike goals in a tense stadium arena. Open nationwide and to all Southern departments!",
     highlights: [
       "Open to robotics teams from all universities and other Southern departments",
       "Custom regulations compliant with national robo soccer standards",
@@ -434,29 +472,31 @@ const SEGMENT_DETAILS = {
     targetKey: "roboSoccer"
   },
   itQuiz: {
-    title: "IT Quiz (Open Competition)",
-    badge: "Inter-University & Other Departments",
+    title: "IT Quiz",
+    badge: "Open to All Universities & Departments",
     isInterUni: true,
-    date: "Day 1: November 3, 2026",
-    venue: "Auditorium / Seminar Hall",
-    teamSize: "Teams of 2",
-    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
-    description: "Put your technical knowledge to the ultimate test. Topics span algorithms, CS fundamentals, cybersecurity, tech history, and breakthrough AI developments. Open to all universities and other Southern departments!",
+    date: "Day 2: 05 November 2026",
+    venue: "Auditorium / Seminar Hall, Southern University Bangladesh",
+    teamSize: "Individual Participation",
+    fee: "BDT 100 (Covered for eligible SUB CSE/CSIT by Fest Pass)",
+    description: "MCQ-based IT Quiz testing knowledge, logic, and accuracy under time-bound rules. Put your technical knowledge to the test across algorithms, computer fundamentals, cybersecurity, tech history, and breakthrough AI developments.",
     highlights: [
-      "Open to 2-member teams from all universities and other Southern departments",
-      "Rapid buzzer rounds, visual tech clues, and sudden-death questions",
-      "Exciting cash awards and trophies"
+      "Open to all university students (SUB and visiting universities nationwide)",
+      "Format: MCQ-based IT Quiz testing knowledge, logic, and accuracy under time-bound rules",
+      "Participation: Individual",
+      "Registration Fee: BDT 100 for non-CSE/CSIT from any university (Covered for eligible SUB CSE/CSIT fest pass holders)",
+      "Prize Pool: BDT 4,000 Total Prize Pool + Crest & Certificate recognition for all 3 winners"
     ],
     targetKey: "itQuiz"
   },
   freeFire: {
-    title: "Free Fire LAN Tournament (Open Competition)",
-    badge: "Inter-University & Other Departments",
+    title: "Free Fire LAN Tournament",
+    badge: "Open to All Universities & Departments",
     isInterUni: true,
     date: "Prelims Online • LAN Finals Nov 3, 2026",
     venue: "Esports Arena, Campus Hall",
     teamSize: "Squad (4 Players + 1 Sub)",
-    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    fee: "Segment Entry Fee via bKash / Covered for SUB CSE/CSIT Fest Pass",
     description: "Flagship Free Fire tournament. Open to squads from all universities across Bangladesh as well as students from other departments within Southern University! Qualify through online brackets for live campus LAN finals.",
     highlights: [
       "Open to squads from all universities and other Southern departments",
@@ -467,13 +507,13 @@ const SEGMENT_DETAILS = {
     targetKey: "freeFire"
   },
   eFootball: {
-    title: "E-Football Tournament (Online, Open Competition)",
-    badge: "Inter-University & Other Departments",
+    title: "E-Football Tournament",
+    badge: "Open to All Universities & Departments",
     isInterUni: true,
     date: "Day 1 Online Matches",
     venue: "Online Competitive Bracket",
     teamSize: "1v1 Solo",
-    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    fee: "Segment Entry Fee via bKash / Covered for SUB CSE/CSIT Fest Pass",
     description: "Test your tactical vision, pinpoint passing, and clutch goal-scoring in the official Innovesta E-Football tournament. Played online with live knockout brackets. Open to all universities and other Southern departments!",
     highlights: [
       "Open to students from all universities and other Southern departments",
@@ -484,13 +524,13 @@ const SEGMENT_DETAILS = {
     targetKey: "eFootball"
   },
   consoleGaming: {
-    title: "Console Gaming: Street Fighter (CSE & CSIT Only)",
-    badge: "Southern CSE & CSIT Only",
+    title: "Console Gaming: Street Fighter",
+    badge: "Southern CSE & CSIT Exclusive",
     isInterUni: false,
     date: "Day 1: November 3, 2026",
     venue: "Gaming Zone, Main Lounge",
     teamSize: "1v1 Solo",
-    fee: "Included with 1,000 BDT Student Registration",
+    fee: "Included with 1,000 BDT Student Festival Pass",
     description: "Classic fighting game mayhem on campus! Step up to the console controls to battle through a double-elimination Street Fighter tournament in the campus lounge.",
     highlights: [
       "Exclusively for Southern University CSE & CSIT students",
@@ -529,33 +569,12 @@ function openSegmentDetails(segId) {
   const regBtn = document.getElementById('seg-modal-reg-btn');
   if (regBtn) {
     regBtn.setAttribute('data-reg-target', data.targetKey);
-    // Remove old listeners and re-attach
+    regBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}`;
     regBtn.onclick = (e) => {
       e.preventDefault();
       closeAllModals();
       handleRegistrationClick(data.targetKey);
     };
-  }
-
-  const subBtn = document.getElementById('seg-modal-sub-btn');
-  const extBtn = document.getElementById('seg-modal-ext-btn');
-
-  if (subBtn) {
-    subBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}&cat=sub`;
-    subBtn.target = "_self";
-    subBtn.rel = "";
-    subBtn.onclick = null;
-  }
-
-  if (extBtn) {
-    if (data.targetKey === 'consoleGaming') {
-      extBtn.classList.add('hidden');
-    } else {
-      extBtn.classList.remove('hidden');
-      extBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}&cat=external`;
-      extBtn.target = "_self";
-      extBtn.onclick = null;
-    }
   }
 
   modal.classList.remove('modal-hidden');

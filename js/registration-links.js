@@ -86,58 +86,50 @@ const INNOVESTA_CONFIG = {
 
     // ---------------------------------------------------------------------
     // SEGMENT-SPECIFIC COMPETITION REGISTRATIONS (GOOGLE FORMS)
-    // Separate forms for:
-    // 1) subStudents: Enrolled students in Southern University (Dept. of CSE & CSIT)
-    // 2) external: Students from other universities & other Southern departments
+    // Single universal registration form per competition segment.
+    // Replace URL when organizers publish the corresponding Google Form.
     // ---------------------------------------------------------------------
     segments: {
       // 1. Competitive Programming
       programmingContest: {
         title: "Competitive Programming",
-        subStudents: "coming-soon.html?segment=Competitive%20Programming&cat=sub",
-        external: "coming-soon.html?segment=Competitive%20Programming&cat=external"
+        url: "coming-soon.html?segment=Competitive%20Programming"
       },
 
       // 2. Robo Soccer
       roboSoccer: {
         title: "Robo Soccer",
-        subStudents: "coming-soon.html?segment=Robo%20Soccer&cat=sub",
-        external: "coming-soon.html?segment=Robo%20Soccer&cat=external"
+        url: "coming-soon.html?segment=Robo%20Soccer"
       },
 
-      // 3. Project Showcasing
+      // 3. Project Showcasing — Idea Hunt
       projectShowcasing: {
-        title: "Project Showcasing",
-        subStudents: "coming-soon.html?segment=Project%20Showcasing&cat=sub",
-        external: "coming-soon.html?segment=Project%20Showcasing&cat=external"
+        title: "Project Showcasing — Idea Hunt",
+        url: "coming-soon.html?segment=Project%20Showcasing%20%E2%80%94%20Idea%20Hunt"
       },
 
       // 4. IT Quiz
       itQuiz: {
         title: "IT Quiz",
-        subStudents: "coming-soon.html?segment=IT%20Quiz&cat=sub",
-        external: "coming-soon.html?segment=IT%20Quiz&cat=external"
+        url: "coming-soon.html?segment=IT%20Quiz"
       },
 
       // 5. Free Fire LAN Tournament
       freeFire: {
         title: "Free Fire LAN Tournament",
-        subStudents: "coming-soon.html?segment=Free%20Fire%20LAN%20Tournament&cat=sub",
-        external: "coming-soon.html?segment=Free%20Fire%20LAN%20Tournament&cat=external"
+        url: "coming-soon.html?segment=Free%20Fire%20LAN%20Tournament"
       },
 
       // 6. E-Football Tournament
       eFootball: {
         title: "E-Football Tournament",
-        subStudents: "coming-soon.html?segment=E-Football%20Tournament&cat=sub",
-        external: "coming-soon.html?segment=E-Football%20Tournament&cat=external"
+        url: "coming-soon.html?segment=E-Football%20Tournament"
       },
 
       // 7. Console Gaming: Street Fighter
       consoleGaming: {
         title: "Console Gaming: Street Fighter",
-        subStudents: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter&cat=sub",
-        external: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter&cat=external"
+        url: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter"
       }
     }
   }
