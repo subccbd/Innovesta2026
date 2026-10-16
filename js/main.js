@@ -6,6 +6,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initCountdown();
   initNavCountdown();
   initNavigation();
@@ -15,6 +16,55 @@ document.addEventListener('DOMContentLoaded', () => {
   initRegistrationHandlers();
   initModals();
 });
+
+/**
+ * Theme Manager: Matches Device Theme (prefers-color-scheme)
+ * Supports live dynamic listener and optional manual toggle
+ */
+function initTheme() {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function applyTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    }
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  }
+
+  // Initial check: respect saved manual preference, otherwise strictly match device theme
+  const saved = localStorage.getItem('innovesta-theme');
+  if (saved === 'dark') {
+    applyTheme(true);
+  } else if (saved === 'light') {
+    applyTheme(false);
+  } else {
+    applyTheme(mediaQuery.matches);
+  }
+
+  // Listen to device theme changes in real time
+  mediaQuery.addEventListener('change', (e) => {
+    if (!localStorage.getItem('innovesta-theme')) {
+      applyTheme(e.matches);
+    }
+  });
+
+  // Handle click on any theme toggle buttons
+  document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isDark = document.documentElement.classList.contains('dark');
+      const newTheme = isDark ? 'light' : 'dark';
+      localStorage.setItem('innovesta-theme', newTheme);
+      applyTheme(newTheme === 'dark');
+    });
+  });
+}
 
 /**
  * Live Countdown Timer to November 3, 2026 08:30:00 AM (BST / GMT+6)

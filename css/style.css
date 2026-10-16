@@ -25,6 +25,15 @@
   --color-text-muted: #94a3b8;
 }
 
+html:not(.dark) {
+  --bg-dark: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #ffffff;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+}
+
 /* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
