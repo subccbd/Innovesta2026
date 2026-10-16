@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Link Will Be Published Soon | INNOVESTA 2026</title>
+  
+  <meta name="description" content="Registration portals for INNOVESTA 2026 competition segments are being finalized and will be published shortly by SUBCC.">
+  <meta name="theme-color" content="#06080d">
+  <link rel="icon" type="image/png" href="assets/logos/subcc-white.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              950: '#06080d',
+              900: '#0a0d14',
+              850: '#0f1420',
+              cyan: '#00f0ff',
+              blue: '#3b82f6',
+              rose: '#f43f5e',
+              amber: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .glass-nav {
+      background: rgba(10, 13, 20, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.01) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .badge-pill {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .btn-glow-cyan {
+      background: linear-gradient(135deg, #00f0ff 0%, #0284c7 100%);
+      color: #040810;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.25);
+      transition: all 0.25s ease;
+    }
+    .btn-glow-cyan:hover {
+      box-shadow: 0 6px 28px rgba(0, 240, 255, 0.45);
+      transform: translateY(-1px);
+    }
+    .btn-glow-amber {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #040810;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+      transition: all 0.25s ease;
+    }
+    .btn-glow-amber:hover {
+      box-shadow: 0 6px 28px rgba(245, 158, 11, 0.45);
+      transform: translateY(-1px);
+    }
+    .bg-grid-subtle {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    }
+    @keyframes floatSlow {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .animate-float-slow {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+    .animate-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-cyber-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen flex flex-col justify-between relative overflow-x-hidden bg-grid-subtle">
+
+  <!-- Ambient Luxury Lighting -->
+  <div class="fixed top-[-15%] left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-amber-500/[0.08] rounded-full blur-[160px] pointer-events-none -z-10 animate-glow"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-cyan-500/[0.05] rounded-full blur-[150px] pointer-events-none -z-10"></div>
+
+  <!-- =========================================================================
+       1. FLOATING NAVBAR
+       ========================================================================= -->
+  <header class="w-full pt-5 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto glass-nav rounded-2xl py-3 px-5 sm:px-6 flex items-center justify-between">
+      
+      <!-- Logos -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logos/subcc-white.png" alt="SUBCC Logo" class="h-7 sm:h-8 w-auto object-contain">
+        <div class="h-3.5 w-px bg-white/15"></div>
+        <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026 Logo" class="h-5 sm:h-6 w-auto object-contain">
+      </a>
+
+      <!-- Quick Links -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <div class="hidden sm:flex items-center gap-5 text-xs font-medium text-slate-400">
+          <a href="index.html" class="hover:text-white transition-colors">Home Portal</a>
+          <a href="contests.html" class="hover:text-amber-400 transition-colors">All Contests</a>
+          <a href="farewell.html" class="hover:text-rose-400 transition-colors">Alumni Farewell</a>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-pill text-[11px] font-semibold text-amber-400 border border-amber-400/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+          <span>Publishing Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO CARD (STUNNING ANNOUNCEMENT)
+       ========================================================================= -->
+  <main class="flex-1 flex flex-col justify-center py-10 sm:py-16 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto w-full text-center space-y-8">
+      
+      <!-- Animated Central Emblem -->
+      <div class="flex justify-center mb-2">
+        <div class="relative animate-float-slow">
+          <div class="absolute inset-0 bg-amber-500/20 rounded-full blur-2xl"></div>
+          <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026" class="h-20 sm:h-28 md:h-36 w-auto object-contain relative drop-shadow-[0_0_35px_rgba(245,158,11,0.35)]">
+        </div>
+      </div>
+
+      <!-- Segment Pill (Dynamic) -->
+      <div class="flex justify-center">
+        <div id="segment-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-pill text-xs font-bold text-amber-300 border border-amber-400/25">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400 animate-spin" style="animation-duration: 8s;"></i>
+          <span id="segment-badge-text">COMPETITION REGISTRATION PORTAL</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="space-y-3">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-white uppercase leading-tight">
+          Link Will Be <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-cyan-300">
+            Published Soon
+          </span>
+        </h1>
+
+        <p id="announcement-desc" class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed pt-1">
+          The official registration form and slot allocations for this competition segment are currently being finalized by the <strong class="text-white">Southern University Bangladesh Computer Club (SUBCC)</strong>. Links, rules, and entry instructions will go live shortly.
+        </p>
+      </div>
+
+      <!-- Live Event Countdown Minimal Bar -->
+      <div class="glass-card max-w-xl mx-auto p-4 sm:p-5 rounded-2xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-left">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block">Festival Launch</span>
+          <span class="text-xs sm:text-sm font-semibold text-white">November 3, 2026 &bull; Main Campus</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono font-bold text-cyan-300 bg-white/[0.03] px-3.5 py-1.5 rounded-xl border border-white/5">
+          <div><span id="cs-days">--</span><span class="text-[9px] text-slate-400 ml-0.5">d</span></div>
+          <span class="text-slate-600">:</span>
+          <div><span id="cs-hours">--</span><span class="text-[9px] text-slate-400 ml-0.5">h</span></div>
+          <span class="text-slate-600">:</span>
+          <div><span id="cs-mins">--</span><span class="text-[9px] text-slate-400 ml-0.5">m</span></div>
+          <span class="text-slate-600">:</span>
+          <div><span id="cs-secs">--</span><span class="text-[9px] text-slate-400 ml-0.5">s</span></div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           3. ACTIVE REGISTRATIONS CALLOUT (THE TWO FORMS THAT ARE OPEN)
+           ===================================================================== -->
+      <div class="pt-6 sm:pt-8 text-left max-w-3xl mx-auto">
+        <div class="flex items-center gap-2 mb-4 px-1">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 font-display">
+            Looking for Active Registrations? Currently Open Portals:
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Card 1: Southern CSE & CSIT Students -->
+          <div class="glass-card p-5 sm:p-6 rounded-3xl border border-cyan-400/25 flex flex-col justify-between relative overflow-hidden group">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-400/20">
+                  Currently Open
+                </span>
+                <span class="text-[11px] font-semibold text-slate-400">1,000 BDT</span>
+              </div>
+              <h3 class="text-lg font-bold text-white font-display group-hover:text-cyan-300 transition-colors">
+                Southern CSE &amp; CSIT Students
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Full festival registration including all 7 competitions, official t-shirt, delegate kit, fest lunch feast, and live rock concert.
+              </p>
+              <div class="text-[11px] text-cyan-400/90 pt-1">
+                Payment: Submit to assigned SUB Batch Representative
+              </div>
+            </div>
+
+            <div class="mt-5 pt-3 border-t border-white/5">
+              <a href="https://forms.gle/QyK7xbq6gfpCm2Y29" target="_blank" rel="noopener" class="w-full btn-glow-cyan py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+                <span>Complete Registration Form</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Alumni Farewell Gala -->
+          <div class="glass-card p-5 sm:p-6 rounded-3xl border border-rose-400/25 flex flex-col justify-between relative overflow-hidden group">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20">
+                  Currently Open
+                </span>
+                <span class="text-[11px] font-semibold text-slate-400">1,500 BDT</span>
+              </div>
+              <h3 class="text-lg font-bold text-white font-display group-hover:text-rose-300 transition-colors">
+                Alumni Farewell Gala
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Dedicated grand celebration for graduating seniors and alumni. Commemorative memorabilia, gala banquet, and festival entry.
+              </p>
+              <div class="text-[11px] text-rose-400/90 pt-1">
+                Payment: bKash Send Money to <strong class="text-white">01610181160</strong>
+              </div>
+            </div>
+
+            <div class="mt-5 pt-3 border-t border-white/5">
+              <a href="https://forms.gle/aY9GQFuZG6a84gYh9" target="_blank" rel="noopener" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 shadow-lg shadow-rose-500/20 flex items-center justify-center gap-2 transition-all">
+                <span>Open Alumni Farewell Form</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Navigation & Action Buttons -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
+        <a href="contests.html" class="px-5 py-2.5 rounded-xl badge-pill text-xs font-semibold text-slate-300 hover:text-white hover:border-amber-400/30 transition-all inline-flex items-center gap-2">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Back to All Competitions</span>
+        </a>
+        <a href="index.html" class="px-5 py-2.5 rounded-xl badge-pill text-xs font-semibold text-slate-300 hover:text-white hover:border-cyan-400/30 transition-all inline-flex items-center gap-2">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>Return to Home Portal</span>
+        </a>
+      </div>
+
+      <!-- Verification & Assistance Support -->
+      <div class="pt-6 border-t border-white/5 text-xs text-slate-400 max-w-xl mx-auto">
+        <span class="block text-[11px] uppercase tracking-wider text-slate-400 font-bold mb-2">Need Immediate Assistance? Contact Organizers</span>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-[11px]">
+          <a href="tel:01610181160" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3 h-3 text-amber-400"></i>
+            <span>Zihadul Islam: <strong>01610181160</strong></span>
+          </a>
+          <span class="text-white/20">&bull;</span>
+          <a href="tel:01852283056" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3 h-3 text-amber-400"></i>
+            <span>MD Farhad Hossen Imon: <strong>01852283056</strong></span>
+          </a>
+          <span class="text-white/20">&bull;</span>
+          <a href="tel:01749048044" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3 h-3 text-amber-400"></i>
+            <span>Diganta Das: <strong>01749048044</strong></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. FOOTER
+       ========================================================================= -->
+  <footer class="py-6 px-4 border-t border-white/5 text-[11px] text-slate-400 text-center">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span>&copy; 2026 SUBCC. Dept. of CSE &amp; CSIT, Southern University Bangladesh.</span>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white">Main Portal</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="contests.html" class="hover:text-amber-400">All Contests</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="farewell.html" class="hover:text-rose-400">Alumni Farewell</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: Dynamic Content & Live Countdown -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // Check URL search parameters
+      const params = new URLSearchParams(window.location.search);
+      const segment = params.get('segment');
+      const cat = params.get('cat');
+
+      if (segment) {
+        const cleanName = decodeURIComponent(segment);
+        document.title = `${cleanName} - Registration Link Will Be Published Soon | INNOVESTA 2026`;
+        
+        const badgeEl = document.getElementById('segment-badge-text');
+        if (badgeEl) {
+          if (cat === 'sub') {
+            badgeEl.textContent = `${cleanName.toUpperCase()} • SOUTHERN CSE & CSIT • PUBLISHING SOON`;
+          } else {
+            badgeEl.textContent = `${cleanName.toUpperCase()} • PUBLISHING SOON`;
+          }
+        }
+
+        const descEl = document.getElementById('announcement-desc');
+        if (descEl) {
+          if (cat === 'sub') {
+            descEl.innerHTML = `The official competition registration form for <strong class="text-amber-300 font-bold">${cleanName}</strong> for <strong>Southern CSE &amp; CSIT students</strong> will be published here soon. All competitions are fully included with your festival registration. If you haven't completed your main fest registration yet, access the official form below.`;
+          } else {
+            descEl.innerHTML = `The official registration link and payment guidelines for <strong class="text-amber-300 font-bold">${cleanName}</strong> (open to other universities and academic departments) are being finalized by the organizing committee. This form will open right here very soon.`;
+          }
+        }
+      }
+
+      // Minimal Countdown Timer
+      const targetDate = new Date('2026-11-03T08:30:00+06:00').getTime();
+      const daysEl = document.getElementById('cs-days');
+      const hoursEl = document.getElementById('cs-hours');
+      const minsEl = document.getElementById('cs-mins');
+      const secsEl = document.getElementById('cs-secs');
+
+      function updateCountdown() {
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          secsEl.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minsEl.textContent = String(minutes).padStart(2, '0');
+        secsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+
+</body>
+</html>
+

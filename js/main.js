@@ -215,43 +215,112 @@ function initRegistrationHandlers() {
   });
 }
 
-function handleRegistrationClick(targetKey) {
+function handleRegistrationClick(targetKey, audience = 'auto') {
   const config = window.INNOVESTA_CONFIG || {};
-  let url = '';
-  let title = 'Registration';
 
+  // 1. Main Festival Registration Form
   if (targetKey === 'main') {
-    url = config.links?.mainRegistration || '';
-    title = 'Innovesta 2026 - Main All-Access Pass Registration';
-  } else if (targetKey === 'alumni') {
-    url = config.links?.alumniFarewell || '';
-    title = 'Innovesta 2026 - Alumni Farewell Registration';
-  } else if (config.links?.segments && config.links.segments[targetKey]) {
-    url = config.links.segments[targetKey];
-    title = formatSegmentTitle(targetKey);
+    const url = config.links?.mainRegistration || 'https://forms.gle/QyK7xbq6gfpCm2Y29';
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return;
   }
 
-  // Check if link is a real custom Google Form (not just empty or default placeholder)
-  const isCustomConfigured = url && url.length > 25 && !url.endsWith('forms.google.com/') && !url.endsWith('#');
-
-  if (isCustomConfigured) {
-    // Open Google Form in new tab
+  // 2. Alumni Farewell -> Direct to farewell form
+  if (targetKey === 'alumni') {
+    const url = config.links?.alumniFarewell || 'https://forms.gle/aY9GQFuZG6a84gYh9';
     window.open(url, '_blank', 'noopener,noreferrer');
-  } else {
-    // Open the informative Registration Hub Modal
-    openRegistrationNoticeModal(title, targetKey, url);
+    return;
+  }
+
+  // 3. Segment with custom Google Form
+  if (config.links?.segments && config.links.segments[targetKey]) {
+    const seg = config.links.segments[targetKey];
+    let url = '';
+    if (typeof seg === 'string') {
+      url = seg;
+    } else if (seg && typeof seg === 'object') {
+      url = (audience === 'sub') ? (seg.subStudents || '') : (seg.external || '');
+    }
+
+    if (url && url.startsWith('http') && (url.includes('forms.gle/') || url.includes('docs.google.com/forms'))) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+  }
+
+  // 4. All other registrations redirect directly to coming-soon.html (NO POPUPS)
+  const segTitle = formatSegmentTitle(targetKey);
+  const redirectUrl = `coming-soon.html?segment=${encodeURIComponent(segTitle)}&cat=${encodeURIComponent(audience)}`;
+  window.location.href = redirectUrl;
+}
+
+function handleSegmentBranch(targetKey, audience, event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  closeAllCardDropdowns();
+  handleRegistrationClick(targetKey, audience);
+}
+
+function toggleCardDropdown(btn, event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  const parent = btn.closest('.relative');
+  if (!parent) return;
+  const dropdown = parent.querySelector('.card-dropdown');
+  const chevron = btn.querySelector('.dropdown-chevron, svg, i');
+
+  const isAlreadyOpen = dropdown && !dropdown.classList.contains('hidden');
+
+  closeAllCardDropdowns();
+
+  if (dropdown && !isAlreadyOpen) {
+    dropdown.classList.remove('hidden');
+    if (chevron) chevron.classList.add('rotate-180');
+    const card = btn.closest('.glass-card');
+    if (card) {
+      card.style.zIndex = '40';
+      card.classList.add('relative');
+    }
   }
 }
 
+function closeAllCardDropdowns() {
+  document.querySelectorAll('.card-dropdown').forEach(dd => {
+    dd.classList.add('hidden');
+  });
+  document.querySelectorAll('.dropdown-chevron, .reg-dropdown-btn i, .reg-dropdown-btn svg').forEach(ch => {
+    ch.classList.remove('rotate-180');
+  });
+  document.querySelectorAll('.glass-card').forEach(c => {
+    c.style.zIndex = '';
+  });
+}
+
+// Global click listener to close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.card-dropdown') && !e.target.closest('.reg-dropdown-btn')) {
+    closeAllCardDropdowns();
+  }
+});
+
+// Expose helpers globally
+window.toggleCardDropdown = toggleCardDropdown;
+window.handleSegmentBranch = handleSegmentBranch;
+window.closeAllCardDropdowns = closeAllCardDropdowns;
+
 function formatSegmentTitle(key) {
   const names = {
-    programmingContest: 'Programming Contest (Southern University Only)',
-    projectShowcasing: 'Project Showcasing (Inter-University)',
-    roboSoccer: 'Robo Soccer (Inter-University)',
-    itQuiz: 'IT Quiz (Inter-University)',
-    freeFire: 'Free Fire LAN Tournament (Inter-University)',
-    eFootball: 'E-Football Tournament (Online, Inter-University)',
-    consoleGaming: 'Console Gaming: Street Fighter (Southern University Only)'
+    programmingContest: 'Competitive Programming',
+    projectShowcasing: 'Project Showcasing',
+    roboSoccer: 'Robo Soccer',
+    itQuiz: 'IT Quiz',
+    freeFire: 'Free Fire LAN Tournament',
+    eFootball: 'E-Football Tournament',
+    consoleGaming: 'Console Gaming: Street Fighter'
   };
   return names[key] || 'Segment Registration';
 }
@@ -259,164 +328,11 @@ function formatSegmentTitle(key) {
 /**
  * Registration Notice Modal (Shown when organizer has yet to replace placeholder or when reviewing steps)
  */
-function openRegistrationNoticeModal(title, targetKey, currentUrl) {
-  const modal = document.getElementById('reg-notice-modal');
-  const modalTitle = document.getElementById('reg-modal-title');
-  const directBtn = document.getElementById('reg-modal-direct-btn');
-  const modalBadge = document.getElementById('reg-modal-badge');
-  const modalBody = document.getElementById('reg-modal-body');
-
-  if (!modal) return;
-
-  if (modalTitle) modalTitle.textContent = title;
-
-  if (directBtn) {
-    directBtn.href = currentUrl || 'https://forms.google.com/';
-  }
-
-  const interUniKeys = ['roboSoccer', 'projectShowcasing', 'itQuiz', 'freeFire', 'eFootball'];
-  const southernOnlyKeys = ['programmingContest', 'consoleGaming'];
-
-  // Tailor content based on registration category
-  if (targetKey === 'alumni') {
-    if (modalBadge) {
-      modalBadge.textContent = 'Farewell Pass • 1,500 BDT';
-      modalBadge.className = 'text-xs uppercase tracking-wider text-rose-400 font-bold';
-    }
-    if (modalBody) {
-      modalBody.innerHTML = `
-        <p class="text-slate-300 text-sm">
-          Farewell registrations must be confirmed by paying <strong class="text-rose-400 font-bold">1,500 BDT</strong> via <strong class="text-white">bKash Send Money</strong>:
-        </p>
-
-        <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/30 space-y-2 text-xs text-slate-200">
-          <div class="flex items-center justify-between pb-2 border-b border-rose-500/20">
-            <span class="text-rose-300 font-semibold">bKash Send Money Number:</span>
-            <div class="flex items-center gap-2">
-              <span class="font-mono font-bold text-white text-sm">01610181160</span>
-              <button type="button" onclick="copyToClipboard('01610181160', 'bKash Number Copied!')" class="text-cyan-400 hover:text-white underline text-[11px]">Copy</button>
-            </div>
-          </div>
-          <div class="flex items-start gap-2 pt-1">
-            <span class="text-rose-400 font-bold">1.</span>
-            <span>Send <strong class="text-white">1,500 BDT</strong> via bKash <strong>Send Money</strong> to the number above by <strong class="text-rose-300">Oct 17, 2026</strong>.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-rose-400 font-bold">2.</span>
-            <span>Save your <strong class="text-white">Transaction ID (TrxID)</strong> and screenshot the confirmation.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-rose-400 font-bold">3.</span>
-            <span>Fill out the Farewell Google Form with your TrxID before <strong class="text-cyan-300">Oct 27, 2026</strong>.</span>
-          </div>
-        </div>
-
-        <div class="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-xs text-cyan-200">
-          ℹ️ <strong>For Organizers / Admin:</strong> To link your official Alumni Farewell Google Form, open <code class="text-white bg-slate-800 px-1.5 py-0.5 rounded">js/registration-links.js</code> and paste the URL under <code class="text-white bg-slate-800 px-1.5 py-0.5 rounded">alumniFarewell</code>.
-        </div>
-      `;
-    }
-  } else if (interUniKeys.includes(targetKey)) {
-    if (modalBadge) {
-      modalBadge.textContent = '🌐 Inter-University Competition';
-      modalBadge.className = 'text-xs uppercase tracking-wider text-cyan-400 font-bold';
-    }
-    if (modalBody) {
-      modalBody.innerHTML = `
-        <p class="text-slate-300 text-sm">
-          Open to students from <strong class="text-white">all universities across Bangladesh</strong>!
-        </p>
-
-        <div class="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/30 space-y-2.5 text-xs text-slate-200">
-          <div class="flex items-center justify-between pb-2 border-b border-cyan-500/20">
-            <span class="text-cyan-300 font-semibold">bKash Send Money:</span>
-            <div class="flex items-center gap-2">
-              <span class="font-mono font-bold text-white text-sm">01610181160</span>
-              <button type="button" onclick="copyToClipboard('01610181160', 'bKash Number Copied!')" class="text-cyan-400 hover:text-white underline text-[11px]">Copy</button>
-            </div>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">&bull;</span>
-            <span><strong>Payment Method:</strong> Students from other universities pay their segment fee via <strong>bKash Send Money</strong>.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">&bull;</span>
-            <span><strong>Segment Fee:</strong> Entry fees for this contest will be announced directly inside the official registration form.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">&bull;</span>
-            <span>Save your <strong>bKash Transaction ID (TrxID)</strong> and submit it inside the segment registration form.</span>
-          </div>
-        </div>
-
-        <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
-          🏛️ <strong>For Southern University Students:</strong> If you hold the <strong class="text-white">1,000 BDT All-Access Student Pass</strong>, this competition is <strong class="text-cyan-400">100% Free</strong> with zero additional entry fee!
-        </div>
-      `;
-    }
-  } else if (southernOnlyKeys.includes(targetKey)) {
-    if (modalBadge) {
-      modalBadge.textContent = '🏛️ Southern University Only (CSE & CSIT)';
-      modalBadge.className = 'text-xs uppercase tracking-wider text-amber-400 font-bold';
-    }
-    if (modalBody) {
-      modalBody.innerHTML = `
-        <p class="text-slate-300 text-sm">
-          This competition is open exclusively to students of <strong class="text-white">Southern University Bangladesh (Dept. of CSE &amp; CSIT)</strong>.
-        </p>
-
-        <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2 text-xs text-slate-200">
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">&bull;</span>
-            <span>Included <strong>100% Free</strong> with your <strong class="text-white">1,000 BDT All-Access Student Pass</strong>.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">&bull;</span>
-            <span>Pay 1,000 BDT in cash directly to your assigned <strong>Batch Representative</strong> by Oct 17, 2026.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">&bull;</span>
-            <span>Submit the registration form with your receipt serial before Oct 27, 2026.</span>
-          </div>
-        </div>
-      `;
-    }
-  } else {
-    // Current Student Pass (targetKey === 'main')
-    if (modalBadge) {
-      modalBadge.textContent = 'Current Student Pass • 1,000 BDT';
-      modalBadge.className = 'text-xs uppercase tracking-wider text-cyan-400 font-bold';
-    }
-    if (modalBody) {
-      modalBody.innerHTML = `
-        <p class="text-slate-300 text-sm">
-          Current Southern University students must pay <strong class="text-cyan-400 font-bold">1,000 BDT</strong> directly to their <strong class="text-white">Batch Representative</strong> to confirm their registration:
-        </p>
-
-        <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2 text-xs text-slate-200">
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">1.</span>
-            <span>Pay <strong class="text-white">1,000 BDT in cash</strong> directly to your assigned <strong>Batch Representative</strong> by <strong class="text-rose-300">Oct 17, 2026</strong>.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">2.</span>
-            <span>Collect your <strong class="text-white">payment receipt or serial number</strong> from them.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">3.</span>
-            <span>Fill out the registration Google Form with your serial number before <strong class="text-cyan-300">Oct 27, 2026</strong>.</span>
-          </div>
-        </div>
-
-        <div class="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-xs text-cyan-200">
-          ℹ️ <strong>For Organizers / Admin:</strong> To link your official Google Form, open <code class="text-white bg-slate-800 px-1.5 py-0.5 rounded">js/registration-links.js</code> and paste the URL in the designated field.
-        </div>
-      `;
-    }
-  }
-
-  modal.classList.remove('modal-hidden');
-  document.body.classList.add('overflow-hidden');
+/**
+ * Direct Registration Redirect (Popups removed per user request)
+ */
+function openRegistrationNoticeModal(title, targetKey, currentUrl, audience = 'auto') {
+  handleRegistrationClick(targetKey, audience);
 }
 
 /**
@@ -467,15 +383,16 @@ function closeAllModals() {
  */
 const SEGMENT_DETAILS = {
   programmingContest: {
-    title: "Programming Contest (Southern University Only)",
-    badge: "Southern CSE & CSIT Only",
+    title: "Competitive Programming (All Southern University Students)",
+    badge: "All Southern Students",
     isInterUni: false,
     date: "Day 1: November 3, 2026",
     venue: "CSE Computer Labs, Southern University",
     teamSize: "Individual / Team of up to 3",
-    fee: "Free with 1,000 BDT Student Pass",
-    description: "Exclusive algorithmic showdown for students of Southern University Bangladesh (Dept. of CSE & CSIT). Test your algorithmic thinking, problem-solving, and implementation speed.",
+    fee: "Included for CSE & CSIT Students / Open to all Southern Depts",
+    description: "Flagship algorithmic problem-solving showdown open to all students of Southern University Bangladesh across all departments (CSE, CSIT, EEE, Civil, BBA, Pharmacy, Law, English, etc.).",
     highlights: [
+      "Open to all students of Southern University Bangladesh",
       "Rigorous problem set prepared by veteran competitive programmers",
       "Live dynamic scoreboard and balloon distribution",
       "Prestigious awards, crests, and certificates for top podium finishers"
@@ -483,16 +400,16 @@ const SEGMENT_DETAILS = {
     targetKey: "programmingContest"
   },
   projectShowcasing: {
-    title: "Project Showcasing (Inter-University)",
-    badge: "Open to All Universities",
+    title: "Project Showcasing (Open Competition)",
+    badge: "Inter-University & Other Departments",
     isInterUni: true,
     date: "November 3 & November 5, 2026",
     venue: "Main Campus Tech Exhibit Arena",
     teamSize: "1 to 4 Members per team",
-    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
-    description: "Display innovative software, AI/ML models, IoT systems, and robotics hardware before high-profile industry judges, venture mentors, and corporate sponsors. Open to teams from all universities across Bangladesh!",
+    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    description: "Display innovative software, AI/ML models, IoT systems, and robotics hardware before high-profile industry judges. Open to teams from all universities across Bangladesh as well as other departments of Southern University!",
     highlights: [
-      "Open to university student teams from across Bangladesh",
+      "Open to university student teams nationwide and other Southern University departments",
       "Live booth exhibit open to 1,000+ attendees",
       "Direct pitching session to corporate tech recruiters & judges",
       "Exclusive mentor feedback and awards for Best Innovation & Design"
@@ -500,16 +417,16 @@ const SEGMENT_DETAILS = {
     targetKey: "projectShowcasing"
   },
   roboSoccer: {
-    title: "Robo Soccer (Inter-University)",
-    badge: "Open to All Universities",
+    title: "Robo Soccer (Open Competition)",
+    badge: "Inter-University & Other Departments",
     isInterUni: true,
     date: "Day 1: November 3, 2026",
     venue: "Robotics Combat Arena, Ground Floor",
     teamSize: "2 to 4 Members per bot team",
-    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
-    description: "High-octane robotic soccer showdown! Build, pilot, and maneuver custom-engineered wireless soccer bots to dominate possession and strike goals in a tense, enclosed stadium. Open to all universities!",
+    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    description: "High-octane robotic soccer showdown! Build, pilot, and maneuver custom-engineered wireless soccer bots to dominate possession and strike goals in a tense stadium arena. Open nationwide and to other Southern departments!",
     highlights: [
-      "Open to university engineering & robotics teams nationwide",
+      "Open to robotics teams from all universities and other Southern departments",
       "Custom regulations compliant with national robo soccer standards",
       "High-speed wireless communication and obstacle navigation",
       "Huge cheering crowd and live stadium commentary"
@@ -517,32 +434,32 @@ const SEGMENT_DETAILS = {
     targetKey: "roboSoccer"
   },
   itQuiz: {
-    title: "IT Quiz (Inter-University)",
-    badge: "Open to All Universities",
+    title: "IT Quiz (Open Competition)",
+    badge: "Inter-University & Other Departments",
     isInterUni: true,
     date: "Day 1: November 3, 2026",
     venue: "Auditorium / Seminar Hall",
     teamSize: "Teams of 2",
-    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
-    description: "Put your technical knowledge to the ultimate test. Topics span algorithms, CS fundamentals, cybersecurity, tech history, breakthrough AI developments, and emerging hardware. Open to students from all universities!",
+    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    description: "Put your technical knowledge to the ultimate test. Topics span algorithms, CS fundamentals, cybersecurity, tech history, and breakthrough AI developments. Open to all universities and other Southern departments!",
     highlights: [
-      "Open to 2-member teams from all Bangladeshi universities",
+      "Open to 2-member teams from all universities and other Southern departments",
       "Rapid buzzer rounds, visual tech clues, and sudden-death questions",
       "Exciting cash awards and trophies"
     ],
     targetKey: "itQuiz"
   },
   freeFire: {
-    title: "Free Fire LAN Tournament (Inter-University)",
-    badge: "Open to All Universities",
+    title: "Free Fire LAN Tournament (Open Competition)",
+    badge: "Inter-University & Other Departments",
     isInterUni: true,
     date: "Prelims Online • LAN Finals Nov 3, 2026",
     venue: "Esports Arena, Campus Hall",
     teamSize: "Squad (4 Players + 1 Sub)",
-    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
-    description: "Southern University's largest Free Fire tournament yet. Open to squads from all universities across Bangladesh! Qualify through high-intensity online brackets and fight for the ultimate championship live on campus.",
+    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    description: "Flagship Free Fire tournament. Open to squads from all universities across Bangladesh as well as students from other departments within Southern University! Qualify through online brackets for live campus LAN finals.",
     highlights: [
-      "Open to university squads across Bangladesh",
+      "Open to squads from all universities and other Southern departments",
       "Official room matches with strict anti-cheat monitoring",
       "Live big-screen projection with real-time casting",
       "Champion trophy and official esports certificates"
@@ -550,16 +467,16 @@ const SEGMENT_DETAILS = {
     targetKey: "freeFire"
   },
   eFootball: {
-    title: "E-Football Tournament (Online, Inter-University)",
-    badge: "Open to All Universities",
+    title: "E-Football Tournament (Online, Open Competition)",
+    badge: "Inter-University & Other Departments",
     isInterUni: true,
     date: "Day 1 Online Matches",
     venue: "Online Competitive Bracket",
     teamSize: "1v1 Solo",
-    fee: "bKash (Fee announced in form) / Free for Southern Pass Holders",
-    description: "Test your tactical vision, pinpoint passing, and clutch goal-scoring in the official Innovesta E-Football tournament. Played online with live knockout brackets. Open to all university competitors nationwide!",
+    fee: "Segment Fee via bKash / Included for Southern CSE & CSIT Students",
+    description: "Test your tactical vision, pinpoint passing, and clutch goal-scoring in the official Innovesta E-Football tournament. Played online with live knockout brackets. Open to all universities and other Southern departments!",
     highlights: [
-      "Open to university students nationwide",
+      "Open to students from all universities and other Southern departments",
       "Official 1v1 competitive rule set",
       "Convenient online fixture scheduling",
       "Grand finals streamed to attendees"
@@ -567,16 +484,16 @@ const SEGMENT_DETAILS = {
     targetKey: "eFootball"
   },
   consoleGaming: {
-    title: "Console Gaming: Street Fighter (Southern University Only)",
-    badge: "Southern Students Only",
+    title: "Console Gaming: Street Fighter (CSE & CSIT Only)",
+    badge: "Southern CSE & CSIT Only",
     isInterUni: false,
     date: "Day 1: November 3, 2026",
     venue: "Gaming Zone, Main Lounge",
     teamSize: "1v1 Solo",
-    fee: "Free with 1,000 BDT Student Pass",
+    fee: "Included with 1,000 BDT Student Registration",
     description: "Classic fighting game mayhem on campus! Step up to the console controls to battle through a double-elimination Street Fighter tournament in the campus lounge.",
     highlights: [
-      "Exclusively for Southern University students",
+      "Exclusively for Southern University CSE & CSIT students",
       "Ultra-low latency tournament displays",
       "Instant crowd hype and quick-fire rounds"
     ],
@@ -618,6 +535,27 @@ function openSegmentDetails(segId) {
       closeAllModals();
       handleRegistrationClick(data.targetKey);
     };
+  }
+
+  const subBtn = document.getElementById('seg-modal-sub-btn');
+  const extBtn = document.getElementById('seg-modal-ext-btn');
+
+  if (subBtn) {
+    subBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}&cat=sub`;
+    subBtn.target = "_self";
+    subBtn.rel = "";
+    subBtn.onclick = null;
+  }
+
+  if (extBtn) {
+    if (data.targetKey === 'consoleGaming') {
+      extBtn.classList.add('hidden');
+    } else {
+      extBtn.classList.remove('hidden');
+      extBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}&cat=external`;
+      extBtn.target = "_self";
+      extBtn.onclick = null;
+    }
   }
 
   modal.classList.remove('modal-hidden');

@@ -24,24 +24,31 @@ const INNOVESTA_CONFIG = {
   studentFee: "1,000 BDT",
   farewellFee: "1,500 BDT",
 
-  paymentDeadline: "17th October, 2026",
+  registrationDeadline: "19th October, 2026",
+  paymentDeadline: "19th October, 2026",
   formDeadline: "27th October, 2026",
   contactEmail: "subccctg@gmail.com",
 
   // Payment Methods
   paymentInfo: {
-    // Current Students: Cash to Batch Representative
-    currentStudents: {
+    // CSE & CSIT Students: Cash to Batch Representative
+    cseCsitStudents: {
       fee: "1,000 BDT",
       method: "Cash Payment to Batch Representative",
-      instructions: "Pay 1,000 BDT in cash directly to your batch representative to confirm your registration. Collect your payment receipt or serial number and submit the form before October 27, 2026."
+      instructions: "For students of Dept. of CSE & Dept. of CSIT. Pay 1,000 BDT in cash directly to your batch representative to confirm your registration. Collect your payment receipt or serial number and submit the form before October 27, 2026."
     },
     // Farewell Registrations: bKash Send Money
     farewell: {
       fee: "1,500 BDT",
       method: "bKash Send Money",
-      bkashNumber: "01610181160", // Replace with official bKash Send Money Number if different
+      bkashNumber: "01610181160",
       instructions: "Send 1,500 BDT via bKash Send Money to the designated number. Keep the Transaction ID (TrxID) and screenshot, then fill out the farewell form before October 27, 2026."
+    },
+    // Open Competitions: Inter-University & Other Southern Departments
+    openCompetitions: {
+      fee: "Per-segment fee (stated in Google Form)",
+      method: "bKash Send Money to 01610181160",
+      instructions: "For students from other universities and students from other departments within Southern University (non-CSE/CSIT). Pay the individual contest entry fee via bKash Send Money to 01610181160 and submit the TrxID in the contest form."
     }
   },
 
@@ -71,38 +78,67 @@ const INNOVESTA_CONFIG = {
   // PRIMARY REGISTRATION LINKS (GOOGLE FORMS)
   // -----------------------------------------------------------------------
   links: {
-    // 1. Main Register For Innovesta 2026 (1,000 BDT - Current Students All-Access Pass)
-    // PASTE YOUR MAIN INNOVESTA 2026 GOOGLE FORM LINK HERE:
-    mainRegistration: "https://forms.gle/NWAHsVR7KPWHEugj6",
+    // 1. Southern CSE & CSIT Students Festival Registration (1,000 BDT to Batch Rep)
+    mainRegistration: "https://forms.gle/QyK7xbq6gfpCm2Y29",
 
-    // 2. Alumni Farewell Registration (1,500 BDT - Farewell Pass via bKash Send Money)
-    // PASTE YOUR ALUMNI FAREWELL GOOGLE FORM LINK HERE:
-    alumniFarewell: "https://forms.google.com/",
+    // 2. Southern CSE & CSIT Alumni Farewell Gala (1,500 BDT via bKash)
+    alumniFarewell: "https://forms.gle/aY9GQFuZG6a84gYh9",
 
     // ---------------------------------------------------------------------
     // SEGMENT-SPECIFIC COMPETITION REGISTRATIONS (GOOGLE FORMS)
+    // Separate forms for:
+    // 1) subStudents: Enrolled students in Southern University (Dept. of CSE & CSIT)
+    // 2) external: Students from other universities & other Southern departments
     // ---------------------------------------------------------------------
     segments: {
-      // 1. Programming Contest (Southern University Only - CSE & CSIT)
-      programmingContest: "https://forms.google.com/",
+      // 1. Competitive Programming
+      programmingContest: {
+        title: "Competitive Programming",
+        subStudents: "coming-soon.html?segment=Competitive%20Programming&cat=sub",
+        external: "coming-soon.html?segment=Competitive%20Programming&cat=external"
+      },
 
-      // 2. Project Showcasing (Inter-University)
-      projectShowcasing: "https://forms.google.com/",
+      // 2. Robo Soccer
+      roboSoccer: {
+        title: "Robo Soccer",
+        subStudents: "coming-soon.html?segment=Robo%20Soccer&cat=sub",
+        external: "coming-soon.html?segment=Robo%20Soccer&cat=external"
+      },
 
-      // 3. Robo Soccer (Inter-University)
-      roboSoccer: "https://forms.google.com/",
+      // 3. Project Showcasing
+      projectShowcasing: {
+        title: "Project Showcasing",
+        subStudents: "coming-soon.html?segment=Project%20Showcasing&cat=sub",
+        external: "coming-soon.html?segment=Project%20Showcasing&cat=external"
+      },
 
-      // 4. IT Quiz (Inter-University)
-      itQuiz: "https://forms.google.com/",
+      // 4. IT Quiz
+      itQuiz: {
+        title: "IT Quiz",
+        subStudents: "coming-soon.html?segment=IT%20Quiz&cat=sub",
+        external: "coming-soon.html?segment=IT%20Quiz&cat=external"
+      },
 
-      // 5. Free Fire LAN Tournament (Inter-University)
-      freeFire: "https://forms.google.com/",
+      // 5. Free Fire LAN Tournament
+      freeFire: {
+        title: "Free Fire LAN Tournament",
+        subStudents: "coming-soon.html?segment=Free%20Fire%20LAN%20Tournament&cat=sub",
+        external: "coming-soon.html?segment=Free%20Fire%20LAN%20Tournament&cat=external"
+      },
 
-      // 6. E-Football (Inter-University - Online)
-      eFootball: "https://forms.google.com/",
+      // 6. E-Football Tournament
+      eFootball: {
+        title: "E-Football Tournament",
+        subStudents: "coming-soon.html?segment=E-Football%20Tournament&cat=sub",
+        external: "coming-soon.html?segment=E-Football%20Tournament&cat=external"
+      },
 
-      // 7. Console Gaming / Street Fighter (Southern University Only)
-      consoleGaming: "https://forms.google.com/"
+      // 7. Console Gaming: Street Fighter
+      consoleGaming: {
+        title: "Console Gaming: Street Fighter",
+        subStudents: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter&cat=sub",
+        external: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter&cat=external"
+      }
     }
   }
 };
