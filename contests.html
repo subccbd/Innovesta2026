@@ -44,12 +44,14 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Theme Initialization: Matches Device Theme (prefers-color-scheme) immediately -->
+  <!-- Theme Initialization: Strictly follows Device Color Mode (prefers-color-scheme) -->
   <script>
     (function() {
       try {
-        var saved = localStorage.getItem('innovesta-theme');
-        var isDark = saved ? (saved === 'dark') : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        localStorage.removeItem('innovesta-theme');
+      } catch(e) {}
+      try {
+        var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (isDark) {
           document.documentElement.classList.add('dark');
           document.documentElement.classList.remove('light');
@@ -272,12 +274,6 @@
         <h1 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white uppercase">
           Contest <span class="text-amber-400">Registrations</span>
         </h1>
-
-        <p class="text-sm sm:text-base text-slate-400 mt-3 leading-relaxed">
-          Official competition registrations for <strong>INNOVESTA 2026</strong>. Welcoming students from the <strong>Department of CSE &amp; CSIT</strong>, all other academic departments of <strong>Southern University Bangladesh</strong>, and university teams nationwide. Compete on <strong>November 3 &amp; 5, 2026</strong>.
-        </p>
-
-
       </div>
 
       <!-- =====================================================================

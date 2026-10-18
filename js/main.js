@@ -18,11 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Theme Manager: Matches Device Theme (prefers-color-scheme)
- * Supports live dynamic listener and optional manual toggle
+ * Theme Manager: Strictly follows Device Theme (prefers-color-scheme)
+ * Listens to OS / Device theme switches in real-time
  */
 function initTheme() {
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  // Purge any stale manual overrides from browser storage
+  try {
+    localStorage.removeItem('innovesta-theme');
+  } catch(e) {}
+
+  const mediaQuery = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
   function applyTheme(isDark) {
     if (isDark) {
@@ -37,31 +42,25 @@ function initTheme() {
     }
   }
 
-  // Initial check: respect saved manual preference, otherwise strictly match device theme
-  const saved = localStorage.getItem('innovesta-theme');
-  if (saved === 'dark') {
-    applyTheme(true);
-  } else if (saved === 'light') {
-    applyTheme(false);
-  } else {
+  if (mediaQuery) {
+    // Strictly apply current device color mode immediately
     applyTheme(mediaQuery.matches);
+
+    // Live listener: automatically updates whenever device mode toggles
+    const handler = (e) => applyTheme(e.matches);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handler);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(handler);
+    }
   }
 
-  // Listen to device theme changes in real time
-  mediaQuery.addEventListener('change', (e) => {
-    if (!localStorage.getItem('innovesta-theme')) {
-      applyTheme(e.matches);
-    }
-  });
-
-  // Handle click on any theme toggle buttons
+  // Quick toggle button: allows switching on-page without locking to localStorage
   document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const isDark = document.documentElement.classList.contains('dark');
-      const newTheme = isDark ? 'light' : 'dark';
-      localStorage.setItem('innovesta-theme', newTheme);
-      applyTheme(newTheme === 'dark');
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      applyTheme(!isCurrentlyDark);
     });
   });
 }

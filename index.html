@@ -44,12 +44,14 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Theme Initialization: Matches Device Theme (prefers-color-scheme) immediately -->
+  <!-- Theme Initialization: Strictly follows Device Color Mode (prefers-color-scheme) -->
   <script>
     (function() {
       try {
-        var saved = localStorage.getItem('innovesta-theme');
-        var isDark = saved ? (saved === 'dark') : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        localStorage.removeItem('innovesta-theme');
+      } catch(e) {}
+      try {
+        var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (isDark) {
           document.documentElement.classList.add('dark');
           document.documentElement.classList.remove('light');
