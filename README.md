@@ -82,16 +82,10 @@ Once updated, every button on the site will automatically redirect participants 
 4. **Step 4:** SUBCC verifies offline payment with your batch representative and issues credentials.
 
 ### Method B: Farewell Registrations (1,500 BDT)
-1. **Step 1:** Pay **1,500 BDT** via **bKash Send Money** to `01610181160` before **October 17, 2026**.
+1. **Step 1:** Pay **1,500 BDT** via **bKash Send Money** according to the instructions inside the registration form before **October 17, 2026**.
 2. **Step 2:** Save your bKash Transaction ID (TrxID) and screenshot the payment.
 3. **Step 3:** Fill out and submit the Alumni Farewell Google Form with your TrxID before **October 27, 2026**.
 4. **Step 4:** SUBCC verifies the bKash TrxID and confirms your Alumni Farewell Pass.
-
-### Assigned Event Representatives & bKash Hotline
-- **bKash Send Money Number:** `01610181160`
-- **Zihadul Islam:** `01610181160`
-- **MD Farhad Hossen Imon:** `01852283056`
-- **Diganta Das:** `01749048044`
 
 ---
 

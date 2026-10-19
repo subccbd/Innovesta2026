@@ -41,38 +41,18 @@ const INNOVESTA_CONFIG = {
     farewell: {
       fee: "1,500 BDT",
       method: "bKash Send Money",
-      bkashNumber: "01610181160",
-      instructions: "Send 1,500 BDT via bKash Send Money to the designated number. Keep the Transaction ID (TrxID) and screenshot, then fill out the farewell form before October 27, 2026."
+      instructions: "Send 1,500 BDT via bKash Send Money according to the form instructions. Keep the Transaction ID (TrxID) and screenshot, then fill out the farewell form before October 27, 2026."
     },
     // Open Competitions: Inter-University & Other Southern Departments
     openCompetitions: {
       fee: "Per-segment fee (stated in Google Form)",
-      method: "bKash Send Money to 01610181160",
-      instructions: "For students from other universities and students from other departments within Southern University (non-CSE/CSIT). Pay the individual contest entry fee via bKash Send Money to 01610181160 and submit the TrxID in the contest form."
+      method: "bKash Send Money",
+      instructions: "For students from other universities and students from other departments within Southern University (non-CSE/CSIT). Follow the payment instructions stated inside each competition form and submit the TrxID."
     }
   },
 
   // Representatives for Batch & Event Verification
-  representatives: [
-    {
-      name: "Zihadul Islam",
-      phone: "01610181160",
-      role: "Event & Verification Representative",
-      formattedPhone: "+880 1610-181160"
-    },
-    {
-      name: "MD Farhad Hossen Imon",
-      phone: "01852283056",
-      role: "Event & Verification Representative",
-      formattedPhone: "+880 1852-283056"
-    },
-    {
-      name: "Diganta Das",
-      phone: "01749048044",
-      role: "Event & Verification Representative",
-      formattedPhone: "+880 1749-048044"
-    }
-  ],
+  representatives: [],
 
   // -----------------------------------------------------------------------
   // PRIMARY REGISTRATION LINKS (GOOGLE FORMS)
