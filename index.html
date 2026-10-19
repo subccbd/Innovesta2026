@@ -115,6 +115,11 @@
       box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.2);
     }
 
+    .glass-card-emerald:hover {
+      border-color: rgba(16, 185, 129, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.2);
+    }
+
     .badge-pill {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(12px);
@@ -183,6 +188,11 @@
     html:not(.dark) .glass-card-purple:hover {
       border-color: rgba(147, 51, 234, 0.45);
       box-shadow: 0 20px 35px -10px rgba(147, 51, 234, 0.16);
+    }
+
+    html:not(.dark) .glass-card-emerald:hover {
+      border-color: rgba(5, 150, 105, 0.45);
+      box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.16);
     }
 
     html:not(.dark) .badge-pill {
@@ -346,15 +356,15 @@
         <span class="text-white/20 hidden sm:inline">&bull;</span>
         <div class="flex items-center gap-2">
           <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span>Registration Deadline: <strong class="text-white">19th Oct, 2026</strong></span>
+          <span>Registration Deadline: <strong class="text-white">30th Oct, 2026</strong></span>
         </div>
       </div>
 
       <!-- =====================================================================
-           3. SLEEK 4 REGISTRATION CARDS (Ultra-Clean, Minimal)
+           3. SLEEK 5 REGISTRATION CARDS (Ultra-Clean, Minimal)
            ===================================================================== -->
       <div class="mt-12 sm:mt-16 text-left">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
 
           <!-- 1. Southern CSE & CSIT Registration -->
           <a href="https://forms.gle/QyK7xbq6gfpCm2Y29" target="_blank" rel="noopener" class="glass-card glass-card-cyan p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden">
@@ -464,6 +474,33 @@
             </div>
           </a>
 
+          <!-- 5. Stall & Booth Registration -->
+          <a href="https://forms.gle/8G6v3Rw7HyUPNsSE7" target="_blank" rel="noopener" class="glass-card glass-card-emerald p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden" data-reg-target="stallRegistration">
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="store" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20">
+                  Stall Booking
+                </span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-emerald-300 transition-colors">
+                Stall &amp; Booth Registration
+              </h2>
+
+              <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
+                Official stall and booth booking for commercial vendors, student clubs, tech demo showcases, and food items at INNOVESTA 2026.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
+              <span>Book a Stall</span>
+              <i data-lucide="external-link" class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            </div>
+          </a>
+
         </div>
       </div>
 
@@ -482,6 +519,8 @@
         <a href="esports.html" class="hover:text-purple-400">eSports</a>
         <span class="text-white/20">&bull;</span>
         <a href="alumni.html" class="text-slate-400 hover:text-white">Alumni &amp; Farewell</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="https://forms.gle/8G6v3Rw7HyUPNsSE7" target="_blank" rel="noopener" class="hover:text-emerald-400" data-reg-target="stallRegistration">Stall Booking</a>
       </div>
     </div>
   </footer>

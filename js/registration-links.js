@@ -24,8 +24,8 @@ const INNOVESTA_CONFIG = {
   studentFee: "1,000 BDT",
   farewellFee: "1,500 BDT",
 
-  registrationDeadline: "19th October, 2026",
-  paymentDeadline: "19th October, 2026",
+  registrationDeadline: "30th October, 2026",
+  paymentDeadline: "30th October, 2026",
   formDeadline: "27th October, 2026",
   contactEmail: "subccctg@gmail.com",
 
@@ -91,6 +91,9 @@ const INNOVESTA_CONFIG = {
     // 4. Graduated Students Registration (Replace URL when Google Form is ready)
     graduatedStudents: "coming-soon.html?segment=Graduated%20Students%20Registration",
 
+    // 5. Stall & Booth Registration
+    stallRegistration: "https://forms.gle/8G6v3Rw7HyUPNsSE7",
+
     // ---------------------------------------------------------------------
     // SEGMENT-SPECIFIC COMPETITION REGISTRATIONS (GOOGLE FORMS)
     // Single universal registration form per competition segment.
@@ -100,25 +103,25 @@ const INNOVESTA_CONFIG = {
       // 1. Competitive Programming
       programmingContest: {
         title: "Competitive Programming",
-        url: "coming-soon.html?segment=Competitive%20Programming"
+        url: "https://forms.gle/3ix56u1nXaaLXA9j9"
       },
 
       // 2. Robo Soccer
       roboSoccer: {
         title: "Robo Soccer",
-        url: "coming-soon.html?segment=Robo%20Soccer"
+        url: "https://forms.gle/YPXdUV6CL8gJSAXZA"
       },
 
       // 3. Project Showcasing — Idea Hunt
       projectShowcasing: {
         title: "Project Showcasing — Idea Hunt",
-        url: "coming-soon.html?segment=Project%20Showcasing%20%E2%80%94%20Idea%20Hunt"
+        url: "https://forms.gle/QJBghn53PMm37fQy7"
       },
 
       // 4. IT Quiz
       itQuiz: {
         title: "IT Quiz",
-        url: "coming-soon.html?segment=IT%20Quiz"
+        url: "https://forms.gle/nFArLbMBLxA492tn8"
       },
 
       // 5. Free Fire LAN Tournament
@@ -155,6 +158,12 @@ const INNOVESTA_CONFIG = {
       graduatedStudents: {
         title: "Graduated Students",
         url: "coming-soon.html?segment=Graduated%20Students%20Registration"
+      },
+
+      // 11. Stall & Booth Registration
+      stallRegistration: {
+        title: "Stall & Booth Registration",
+        url: "https://forms.gle/8G6v3Rw7HyUPNsSE7"
       }
     }
   }

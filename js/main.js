@@ -318,7 +318,15 @@ function handleRegistrationClick(targetKey) {
     return;
   }
 
-  // 3. Segment with custom Google Form
+  // 3. Segment or Custom Link with Google Form
+  if (config.links && config.links[targetKey]) {
+    const customUrl = config.links[targetKey];
+    if (typeof customUrl === 'string' && customUrl.startsWith('http') && (customUrl.includes('forms.gle/') || customUrl.includes('docs.google.com/forms'))) {
+      window.open(customUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+  }
+
   if (config.links?.segments && config.links.segments[targetKey]) {
     const seg = config.links.segments[targetKey];
     let url = '';
@@ -409,7 +417,8 @@ function formatSegmentTitle(key) {
     consoleGaming: 'Console Gaming: Street Fighter',
     alumniAssociation: 'Alumni Association Registration',
     farewellStudents: 'Farewell Students',
-    graduatedStudents: 'Graduated Students'
+    graduatedStudents: 'Graduated Students',
+    stallRegistration: 'Stall & Booth Registration'
   };
   return names[key] || 'Segment Registration';
 }
@@ -638,6 +647,22 @@ const SEGMENT_DETAILS = {
       "Networking with faculty, current seniors, and fellow alumni across industries"
     ],
     targetKey: "graduatedStudents"
+  },
+  stallRegistration: {
+    title: "Stall & Booth Registration",
+    badge: "Commercial & Campus Stalls",
+    date: "November 3 & 5, 2026",
+    venue: "Main Campus Grounds & Festival Arena, Southern University Bangladesh",
+    teamSize: "Commercial Vendors, Tech Startups & Student Clubs",
+    fee: "Stall Allocation Fee (Details in Form)",
+    description: "Official stall and booth registration for INNOVESTA 2026. Showcase products, merchandise, tech demos, games, or food items to thousands of visiting students, faculty, and festival attendees.",
+    highlights: [
+      "Prime festival stall locations on campus grounds",
+      "Massive footfall of university students and nationwide visitors",
+      "Electrical outlet and booth space provided",
+      "Brand visibility across festival banners and schedule"
+    ],
+    targetKey: "stallRegistration"
   }
 };
 
