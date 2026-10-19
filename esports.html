@@ -232,11 +232,11 @@
   <!-- =========================================================================
        1. MINIMAL FLOATING NAVBAR
        ========================================================================= -->
-  <header class="w-full pt-5 px-4 sm:px-6">
-    <div class="max-w-5xl mx-auto glass-nav rounded-2xl py-3 px-5 sm:px-6 flex items-center justify-between">
+  <header class="w-full pt-3 sm:pt-5 px-3 sm:px-6">
+    <div class="max-w-5xl mx-auto glass-nav rounded-2xl py-2.5 px-3.5 sm:px-6 sm:py-3 flex items-center justify-between">
       
       <!-- Back to Main Hub & Logos (Dark & Light Variants) -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
         <a href="index.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
           <i data-lucide="arrow-left" class="w-4 h-4 text-rose-500 dark:text-rose-400"></i>
           <span>Main Hub</span>
@@ -251,17 +251,16 @@
       </div>
 
       <!-- Quick Nav & Right Controls -->
-      <div class="flex items-center gap-2 sm:gap-4">
+      <div class="flex items-center gap-1.5 sm:gap-4">
 
-        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] font-medium border border-rose-500/30 dark:border-rose-400/25 bg-rose-500/10 dark:bg-rose-500/5 whitespace-nowrap shadow-[0_0_15px_rgba(244,63,94,0.08)]">
+        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] font-medium border border-rose-500/30 dark:border-rose-400/25 bg-rose-500/10 dark:bg-rose-500/5 whitespace-nowrap shadow-[0_0_15px_rgba(244,63,94,0.08)]">
           <span class="w-1.5 h-1.5 rounded-full bg-rose-500 dark:bg-rose-400 animate-pulse shrink-0"></span>
-          <span class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] uppercase tracking-wider">Nov 5</span>
-          <span class="text-slate-300 dark:text-white/20">&bull;</span>
-          <span class="nav-nov5-countdown font-mono font-bold text-rose-600 dark:text-rose-400 text-xs tracking-tight">--d --h --m --s</span>
+          <span class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] uppercase tracking-wider hidden min-[400px]:inline">Nov 5 &bull;</span>
+          <span class="nav-nov5-countdown font-mono font-bold text-rose-600 dark:text-rose-400 text-[11px] sm:text-xs tracking-tight">--d --h --m --s</span>
         </div>
 
         <!-- Theme Toggle (Auto Matches Device Theme + Manual Toggle) -->
-        <button type="button" class="theme-toggle-btn p-1.5 sm:p-2 rounded-xl badge-pill text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 dark:border-white/10" aria-label="Toggle theme" title="Toggle theme">
+        <button type="button" class="theme-toggle-btn p-2 rounded-xl badge-pill text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 dark:border-white/10 min-w-[34px] min-h-[34px]" aria-label="Toggle theme" title="Toggle theme">
           <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
           <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
         </button>
@@ -273,17 +272,17 @@
   <!-- =========================================================================
        2. MAIN CONTENT
        ========================================================================= -->
-  <main class="flex-1 py-10 sm:py-14 px-4 sm:px-6">
-    <div class="max-w-5xl mx-auto space-y-10 sm:space-y-12">
+  <main class="flex-1 py-6 sm:py-14 px-3.5 sm:px-6">
+    <div class="max-w-5xl mx-auto space-y-8 sm:space-y-12">
 
       <!-- HERO INTRO -->
       <div class="text-center max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-pill text-[11px] font-semibold text-rose-500 dark:text-rose-400 mb-4 border border-rose-500/20 bg-rose-500/10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-pill text-[11px] font-semibold text-rose-500 dark:text-rose-400 mb-3 sm:mb-4 border border-rose-500/20 bg-rose-500/10">
           <i data-lucide="gamepad-2" class="w-3.5 h-3.5 text-rose-500 dark:text-rose-400"></i>
           <span>Official eSports &bull; INNOVESTA 2026</span>
         </div>
         
-        <h1 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white uppercase">
+        <h1 class="text-2xl sm:text-5xl font-extrabold font-display tracking-tight text-white uppercase">
           eSports <span class="text-rose-500 dark:text-rose-400">Registrations</span>
         </h1>
       </div>
@@ -291,23 +290,23 @@
       <!-- =====================================================================
            3. THE 3 GAMING TOURNAMENTS (SLEEK, UNCLUTTERED)
            ===================================================================== -->
-      <section id="tournaments" class="space-y-6">
+      <section id="tournaments" class="space-y-5 sm:space-y-6">
         
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h2 class="text-2xl sm:text-3xl font-bold font-display text-white">
+            <h2 class="text-xl sm:text-3xl font-bold font-display text-white">
               Featured Gaming Tournaments
             </h2>
             <p class="text-xs sm:text-sm text-slate-400 mt-1">
               Direct registration for Free Fire LAN, E-Football, and Street Fighter Console tournaments.
             </p>
           </div>
-          <div class="flex items-center gap-2 self-start sm:self-auto shrink-0">
-            <a href="contests.html" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-amber-500/25 bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 text-xs font-bold transition-all">
+          <div class="flex items-center gap-2 self-start sm:self-auto shrink-0 w-full sm:w-auto">
+            <a href="contests.html" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-amber-500/25 bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 text-xs font-bold transition-all min-h-[38px]">
               <i data-lucide="trophy" class="w-3.5 h-3.5"></i>
               <span>Contests</span>
             </a>
-            <a href="alumni.html" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-rose-500/25 bg-rose-500/10 text-rose-400 hover:bg-rose-500/20 text-xs font-bold transition-all">
+            <a href="alumni.html" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-rose-500/25 bg-rose-500/10 text-rose-400 hover:bg-rose-500/20 text-xs font-bold transition-all min-h-[38px]">
               <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
               <span>Alumni &amp; Farewell</span>
             </a>
@@ -325,8 +324,8 @@
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Free Fire LAN</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Online prelims leading to campus big-screen LAN finals on stage with live casting. Open nationwide.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Squad: 4 + 1 Sub</span>
-                <span>LAN Finals Nov 3</span>
+                <span>Squad: 4+1 &bull; Free for all</span>
+                <span>Nov 5 &bull; 10:30 AM</span>
               </div>
             </div>
             <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
@@ -347,8 +346,8 @@
               <h3 class="text-base sm:text-lg font-bold text-white font-display">E-Football</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">1v1 tactical virtual football championship played in online knockout brackets. Open nationwide.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Format: 1v1 Solo</span>
-                <span>Day 1 Online</span>
+                <span>1v1 Solo &bull; Fee: 99 BDT</span>
+                <span>Nov 4, 2026</span>
               </div>
             </div>
             <div class="mt-5 pt-3 border-t border-white/5 flex items-center gap-2">
@@ -369,7 +368,7 @@
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Console: Street Fighter</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Double elimination fighting game tournament live on campus lounge consoles.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Format: 1v1 Solo</span>
+                <span>1v1 Solo &bull; Fest Pass</span>
                 <span>Day 1 &bull; Nov 3, 2026</span>
               </div>
             </div>
@@ -428,45 +427,45 @@
   <!-- =========================================================================
        5. SEGMENT RULES MODAL
        ========================================================================= -->
-  <div id="segment-detail-modal" class="modal-overlay modal-hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="glass-card border border-rose-400/30 rounded-3xl max-w-lg w-full p-6 sm:p-7 relative bg-cyber-950/95 shadow-2xl max-h-[90vh] overflow-y-auto">
-      <button class="modal-close-btn absolute top-4 right-4 p-2 text-slate-400 hover:text-white">
+  <div id="segment-detail-modal" class="modal-overlay modal-hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
+    <div class="glass-card border border-rose-400/30 rounded-2xl sm:rounded-3xl max-w-lg w-full p-4.5 sm:p-7 relative bg-cyber-950/95 shadow-2xl max-h-[88vh] overflow-y-auto">
+      <button class="modal-close-btn absolute top-3.5 right-3.5 p-2.5 sm:p-2 text-slate-400 hover:text-white min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Close modal">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
 
       <span id="seg-modal-badge" class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/10 text-rose-400 mb-2">Segment Details</span>
-      <h3 id="seg-modal-title" class="text-xl font-bold text-white font-display mb-2">Segment Title</h3>
-      <p id="seg-modal-desc" class="text-xs text-slate-300 leading-relaxed mb-4"></p>
+      <h3 id="seg-modal-title" class="text-lg sm:text-xl font-bold text-white font-display mb-1.5 sm:mb-2">Segment Title</h3>
+      <p id="seg-modal-desc" class="text-xs text-slate-300 leading-relaxed mb-3.5 sm:mb-4"></p>
 
       <div class="grid grid-cols-2 gap-2 text-xs mb-4">
-        <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-          <span class="text-slate-400 block text-[11px]">Schedule</span>
-          <span id="seg-modal-date" class="font-semibold text-white"></span>
+        <div class="p-2 sm:p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+          <span class="text-slate-400 block text-[10px] sm:text-[11px]">Schedule</span>
+          <span id="seg-modal-date" class="font-semibold text-white text-[11px] sm:text-xs leading-tight block mt-0.5"></span>
         </div>
-        <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-          <span class="text-slate-400 block text-[11px]">Venue</span>
-          <span id="seg-modal-venue" class="font-semibold text-white"></span>
+        <div class="p-2 sm:p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+          <span class="text-slate-400 block text-[10px] sm:text-[11px]">Venue</span>
+          <span id="seg-modal-venue" class="font-semibold text-white text-[11px] sm:text-xs leading-tight block mt-0.5"></span>
         </div>
-        <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-          <span class="text-slate-400 block text-[11px]">Team Size</span>
-          <span id="seg-modal-team" class="font-semibold text-white"></span>
+        <div class="p-2 sm:p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+          <span class="text-slate-400 block text-[10px] sm:text-[11px]">Team Size</span>
+          <span id="seg-modal-team" class="font-semibold text-white text-[11px] sm:text-xs leading-tight block mt-0.5"></span>
         </div>
-        <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-          <span class="text-slate-400 block text-[11px]">Entry Fee</span>
-          <span id="seg-modal-fee" class="font-semibold text-rose-400"></span>
+        <div class="p-2 sm:p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+          <span class="text-slate-400 block text-[10px] sm:text-[11px]">Entry Fee</span>
+          <span id="seg-modal-fee" class="font-semibold text-rose-400 text-[11px] sm:text-xs leading-tight block mt-0.5"></span>
         </div>
       </div>
 
-      <div class="mb-5">
-        <h4 class="text-[11px] uppercase tracking-wider font-bold text-slate-300 mb-2">Highlights</h4>
+      <div class="mb-4 sm:mb-5">
+        <h4 class="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-slate-300 mb-2">Highlights</h4>
         <ul id="seg-modal-highlights" class="space-y-1.5 text-xs text-slate-300"></ul>
       </div>
 
-      <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-        <button type="button" class="modal-close-btn px-4 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 text-xs font-medium text-slate-300 hover:text-white cursor-pointer transition-colors">Close</button>
-        <a id="seg-modal-reg-btn" href="coming-soon.html" class="flex-1 btn-glow-rose py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+      <div class="pt-3.5 sm:pt-4 border-t border-white/10 flex items-center justify-between gap-2.5 sm:gap-3">
+        <button type="button" class="modal-close-btn px-3.5 sm:px-4 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 text-xs font-medium text-slate-300 hover:text-white cursor-pointer transition-colors min-h-[42px]">Close</button>
+        <a id="seg-modal-reg-btn" href="coming-soon.html" class="flex-1 btn-glow-rose py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 sm:gap-2 transition-all cursor-pointer min-h-[42px] text-center">
           <span>Register for this Tournament</span>
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 shrink-0"></i>
         </a>
       </div>
     </div>

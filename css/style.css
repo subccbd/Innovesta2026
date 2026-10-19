@@ -45,6 +45,7 @@ html {
   background-color: var(--bg-dark);
   color: var(--color-text-main);
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -58,6 +59,12 @@ body {
     radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.04) 0%, transparent 50%);
   background-attachment: fixed;
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile Touch Polish */
+a, button, input, select {
+  touch-action: manipulation;
 }
 
 /* Custom Scrollbar */
@@ -301,10 +308,21 @@ body {
   transform: scale(0.95) translateY(10px);
 }
 
-/* Mobile responsive fixes */
+/* Mobile responsive enhancements */
 @media (max-width: 640px) {
   .hero-logo-img {
     height: 38px;
+  }
+
+  /* Smooth scrolling inside modals on iOS */
+  .modal-overlay > div {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Safe area handling */
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
 

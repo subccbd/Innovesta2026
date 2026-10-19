@@ -85,11 +85,11 @@ const INNOVESTA_CONFIG = {
     alumniFarewell: "https://forms.gle/aY9GQFuZG6a84gYh9",
     farewellStudents: "https://forms.gle/aY9GQFuZG6a84gYh9",
 
-    // 3. Alumni Association Registration (Replace URL when Google Form is ready)
-    alumniAssociation: "coming-soon.html?segment=Alumni%20Association%20Registration",
+    // 3. Alumni Association Registration
+    alumniAssociation: "https://forms.gle/CCAgFcktVxyTgtNq6",
 
-    // 4. Graduated Students Registration (Replace URL when Google Form is ready)
-    graduatedStudents: "coming-soon.html?segment=Graduated%20Students%20Registration",
+    // 4. Graduated Students Registration
+    graduatedStudents: "https://forms.gle/EWipNSYFqHY1KsYNA",
 
     // 5. Stall & Booth Registration
     stallRegistration: "https://forms.gle/8G6v3Rw7HyUPNsSE7",
@@ -145,7 +145,7 @@ const INNOVESTA_CONFIG = {
       // 8. Alumni Association Registration
       alumniAssociation: {
         title: "Alumni Association Registration",
-        url: "coming-soon.html?segment=Alumni%20Association%20Registration"
+        url: "https://forms.gle/CCAgFcktVxyTgtNq6"
       },
 
       // 9. Farewell Students Registration
@@ -157,7 +157,7 @@ const INNOVESTA_CONFIG = {
       // 10. Graduated Students Registration
       graduatedStudents: {
         title: "Graduated Students",
-        url: "coming-soon.html?segment=Graduated%20Students%20Registration"
+        url: "https://forms.gle/EWipNSYFqHY1KsYNA"
       },
 
       // 11. Stall & Booth Registration

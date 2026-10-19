@@ -289,29 +289,28 @@
   <!-- =========================================================================
        1. MINIMAL FLOATING NAVBAR
        ========================================================================= -->
-  <header class="w-full pt-5 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto glass-nav rounded-2xl py-3 px-5 sm:px-6 flex items-center justify-between">
+  <header class="w-full pt-3 sm:pt-5 px-3 sm:px-6">
+    <div class="max-w-7xl mx-auto glass-nav rounded-2xl py-2.5 px-3.5 sm:px-6 sm:py-3 flex items-center justify-between">
       
       <!-- Logos (Dark & Light Variants) -->
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/logos/subcc-white.png" alt="SUBCC Logo" class="h-7 sm:h-8 w-auto object-contain logo-dark">
-        <img src="assets/logos/subcc-black.png" alt="SUBCC Logo" class="h-7 sm:h-8 w-auto object-contain logo-light">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+        <img src="assets/logos/subcc-white.png" alt="SUBCC Logo" class="h-6 sm:h-8 w-auto object-contain logo-dark">
+        <img src="assets/logos/subcc-black.png" alt="SUBCC Logo" class="h-6 sm:h-8 w-auto object-contain logo-light">
         <div class="h-3.5 w-px bg-slate-300 dark:bg-white/15"></div>
-        <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026 Logo" class="h-5 sm:h-6 w-auto object-contain logo-dark">
-        <img src="assets/logos/innovesta-black.png" alt="Innovesta 2026 Logo" class="h-5 sm:h-6 w-auto object-contain logo-light">
+        <img src="assets/logos/innovesta-white.png" alt="Innovesta 2026 Logo" class="h-4 sm:h-6 w-auto object-contain logo-dark">
+        <img src="assets/logos/innovesta-black.png" alt="Innovesta 2026 Logo" class="h-4 sm:h-6 w-auto object-contain logo-light">
       </a>
 
       <!-- Right Controls: Countdown Badge & Theme Toggle -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] font-medium border border-cyan-500/30 dark:border-cyan-400/25 bg-cyan-500/10 dark:bg-cyan-500/5 whitespace-nowrap shadow-[0_0_15px_rgba(0,240,255,0.08)]">
+      <div class="flex items-center gap-1.5 sm:gap-3">
+        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] font-medium border border-cyan-500/30 dark:border-cyan-400/25 bg-cyan-500/10 dark:bg-cyan-500/5 whitespace-nowrap shadow-[0_0_15px_rgba(0,240,255,0.08)]">
           <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse shrink-0"></span>
-          <span class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] uppercase tracking-wider">Nov 5</span>
-          <span class="text-slate-300 dark:text-white/20">&bull;</span>
-          <span id="nav-nov5-countdown" class="nav-nov5-countdown font-mono font-bold text-cyan-600 dark:text-cyan-300 text-xs tracking-tight">--d --h --m --s</span>
+          <span class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] uppercase tracking-wider hidden min-[400px]:inline">Nov 5 &bull;</span>
+          <span id="nav-nov5-countdown" class="nav-nov5-countdown font-mono font-bold text-cyan-600 dark:text-cyan-300 text-[11px] sm:text-xs tracking-tight">--d --h --m --s</span>
         </div>
 
         <!-- Theme Toggle (Auto Matches Device Theme + Manual Toggle) -->
-        <button type="button" class="theme-toggle-btn p-1.5 sm:p-2 rounded-xl badge-pill text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 dark:border-white/10" aria-label="Toggle theme" title="Toggle theme">
+        <button type="button" class="theme-toggle-btn p-2 rounded-xl badge-pill text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 dark:border-white/10 min-w-[34px] min-h-[34px]" aria-label="Toggle theme" title="Toggle theme">
           <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
           <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
         </button>
@@ -323,181 +322,181 @@
   <!-- =========================================================================
        2. HERO SECTION (Punchy, Clean, Non-Cluttered)
        ========================================================================= -->
-  <main class="flex-1 flex flex-col justify-center py-10 sm:py-16 px-4 sm:px-6">
+  <main class="flex-1 flex flex-col justify-center py-6 sm:py-16 px-3.5 sm:px-6">
     <div class="max-w-7xl mx-auto w-full text-center">
       
 
       <!-- Main Title (Official Logo - Large & Floating) -->
-      <div class="flex justify-center my-4 sm:my-8">
+      <div class="flex justify-center my-3 sm:my-8">
         <img 
           src="assets/logos/innovesta-white.png" 
           alt="INNOVESTA 2026" 
-          class="h-28 sm:h-44 md:h-56 lg:h-64 w-auto max-w-[90vw] object-contain animate-float transition-all duration-300 logo-dark"
+          class="h-24 sm:h-44 md:h-56 lg:h-64 w-auto max-w-[88vw] object-contain animate-float transition-all duration-300 logo-dark"
         >
         <img 
           src="assets/logos/innovesta-black.png" 
           alt="INNOVESTA 2026" 
-          class="h-28 sm:h-44 md:h-56 lg:h-64 w-auto max-w-[90vw] object-contain animate-float transition-all duration-300 logo-light"
+          class="h-24 sm:h-44 md:h-56 lg:h-64 w-auto max-w-[88vw] object-contain animate-float transition-all duration-300 logo-light"
         >
         <h1 class="sr-only">INNOVESTA 2026</h1>
       </div>
 
       <!-- Minimal Event Metadata Bar -->
-      <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-300 badge-pill px-5 py-2.5 rounded-2xl">
-        <div class="flex items-center gap-2">
-          <i data-lucide="calendar" class="w-3.5 h-3.5 text-cyan-400"></i>
+      <div class="mt-4 sm:mt-6 inline-flex flex-wrap items-center justify-center gap-2.5 sm:gap-6 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 badge-pill px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl">
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400"></i>
           <span>Nov 3 &amp; Nov 5, 2026</span>
         </div>
-        <span class="text-white/20 hidden sm:inline">&bull;</span>
-        <div class="flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+        <span class="text-slate-300 dark:text-white/20 hidden sm:inline">&bull;</span>
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-500 dark:text-rose-400"></i>
           <span>Main Campus, Chattogram</span>
         </div>
-        <span class="text-white/20 hidden sm:inline">&bull;</span>
-        <div class="flex items-center gap-2">
-          <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span>Registration Deadline: <strong class="text-white">30th Oct, 2026</strong></span>
+        <span class="text-slate-300 dark:text-white/20 hidden sm:inline">&bull;</span>
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500 dark:text-amber-400"></i>
+          <span>Registration Deadline: <strong class="text-slate-900 dark:text-white font-bold">30th Oct, 2026</strong></span>
         </div>
       </div>
 
       <!-- =====================================================================
-           3. SLEEK 5 REGISTRATION CARDS (Ultra-Clean, Minimal)
+           3. SLEEK 5 REGISTRATION CARDS (Ultra-Clean, Balanced Proportions)
            ===================================================================== -->
-      <div class="mt-12 sm:mt-16 text-left">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
+      <div class="mt-8 sm:mt-12 text-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4">
 
           <!-- 1. Southern CSE & CSIT Registration -->
-          <a href="https://forms.gle/QyK7xbq6gfpCm2Y29" target="_blank" rel="noopener" class="glass-card glass-card-cyan p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden">
+          <a href="https://forms.gle/QyK7xbq6gfpCm2Y29" target="_blank" rel="noopener" class="glass-card glass-card-cyan p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="user-check" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="user-check" class="w-4 h-4 sm:w-4.5 sm:h-4.5"></i>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20">
+                <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-400/20">
                   Southern Only
                 </span>
               </div>
 
-              <h2 class="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-cyan-300 transition-colors">
+              <h2 class="text-base sm:text-lg font-bold text-white font-display group-hover:text-cyan-300 transition-colors leading-snug">
                 Southern CSE &amp; CSIT Registration
               </h2>
 
-              <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
-                Official festival registration for enrolled students in the Department of CSE and Department of CSIT at Southern University Bangladesh.
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Official festival pass &amp; registration for enrolled students in Dept. of CSE and CSIT.
               </p>
             </div>
 
-            <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-cyan-300">
+            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-cyan-300">
               <span>Register Now</span>
-              <i data-lucide="external-link" class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
             </div>
           </a>
 
           <!-- 2. Alumni & Farewell Registrations -->
-          <a href="alumni.html" class="glass-card glass-card-rose p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden">
+          <a href="alumni.html" class="glass-card glass-card-rose p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-rose-500/10 border border-rose-400/20 text-rose-400 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-rose-500/10 border border-rose-400/20 text-rose-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="graduation-cap" class="w-4 h-4 sm:w-4.5 sm:h-4.5"></i>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-400/20">
+                <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20">
                   Alumni &amp; Seniors
                 </span>
               </div>
 
-              <h2 class="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-rose-300 transition-colors">
+              <h2 class="text-base sm:text-lg font-bold text-white font-display group-hover:text-rose-300 transition-colors leading-snug">
                 Alumni &amp; Farewell Registration
               </h2>
 
-              <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
-                Dedicated registrations for Alumni Association membership, Farewell students (outgoing batch), and Graduated alumni reunion at INNOVESTA 2026.
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Alumni Association, Farewell (outgoing batch), and Graduated alumni reunion portals.
               </p>
             </div>
 
-            <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-rose-400 group-hover:text-rose-300">
+            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-rose-400 group-hover:text-rose-300">
               <span>Explore Registrations</span>
-              <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"></i>
             </div>
           </a>
 
           <!-- 3. Contests Registrations -->
-          <a href="contests.html" class="glass-card glass-card-amber p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden">
+          <a href="contests.html" class="glass-card glass-card-amber p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-400 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="trophy" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="trophy" class="w-4 h-4 sm:w-4.5 sm:h-4.5"></i>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-400/20">
+                <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-amber-400 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-400/20">
                   Open to All
                 </span>
               </div>
 
-              <h2 class="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-amber-300 transition-colors">
+              <h2 class="text-base sm:text-lg font-bold text-white font-display group-hover:text-amber-300 transition-colors leading-snug">
                 Contests Registrations
               </h2>
 
-              <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
-                Explore and register for all competitions across robotics, algorithmic problem solving, IT quiz, and idea showcase. Open to all universities.
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Programming Contest, Robo Soccer, IT Quiz, and Project Showcasing idea hunt.
               </p>
             </div>
 
-            <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-amber-400 group-hover:text-amber-300">
+            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-amber-400 group-hover:text-amber-300">
               <span>Explore Contests</span>
-              <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"></i>
             </div>
           </a>
 
           <!-- 4. eSports Registration -->
-          <a href="esports.html" class="glass-card glass-card-purple p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden">
+          <a href="esports.html" class="glass-card glass-card-purple p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-purple-500/10 border border-purple-400/20 text-purple-400 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-400/20 text-purple-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="gamepad-2" class="w-4 h-4 sm:w-4.5 sm:h-4.5"></i>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/20">
+                <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-purple-400 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-400/20">
                   Open to All
                 </span>
               </div>
 
-              <h2 class="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-purple-300 transition-colors">
+              <h2 class="text-base sm:text-lg font-bold text-white font-display group-hover:text-purple-300 transition-colors leading-snug">
                 eSports Registration
               </h2>
 
-              <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
-                Official tournament registrations for Free Fire LAN, E-Football, and Street Fighter Console. Open to squads and solo gamers nationwide.
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Tournament registrations for Free Fire LAN, E-Football, and Street Fighter Console.
               </p>
             </div>
 
-            <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-purple-400 group-hover:text-purple-300">
+            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-purple-400 group-hover:text-purple-300">
               <span>Explore eSports</span>
-              <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"></i>
             </div>
           </a>
 
           <!-- 5. Stall & Booth Registration -->
-          <a href="https://forms.gle/8G6v3Rw7HyUPNsSE7" target="_blank" rel="noopener" class="glass-card glass-card-emerald p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden" data-reg-target="stallRegistration">
+          <a href="https://forms.gle/8G6v3Rw7HyUPNsSE7" target="_blank" rel="noopener" class="glass-card glass-card-emerald p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300" data-reg-target="stallRegistration">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="store" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-3.5">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="store" class="w-4 h-4 sm:w-4.5 sm:h-4.5"></i>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20">
+                <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-400/20">
                   Stall Booking
                 </span>
               </div>
 
-              <h2 class="text-xl sm:text-2xl font-bold text-white font-display group-hover:text-emerald-300 transition-colors">
+              <h2 class="text-base sm:text-lg font-bold text-white font-display group-hover:text-emerald-300 transition-colors leading-snug">
                 Stall &amp; Booth Registration
               </h2>
 
-              <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
-                Official stall and booth booking for commercial vendors, student clubs, tech demo showcases, and food items at INNOVESTA 2026.
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Official booth &amp; stall booking for commercial vendors, student clubs, and food items.
               </p>
             </div>
 
-            <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
+            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
               <span>Book a Stall</span>
-              <i data-lucide="external-link" class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
             </div>
           </a>
 
