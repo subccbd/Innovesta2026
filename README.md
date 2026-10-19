@@ -8,7 +8,7 @@
 
 ## 📅 Event Overview
 
-- **Dates:** November 3 & November 5, 2026
+- **Dates:** November 3 to 5, 2026
 - **Venue:** Southern University Bangladesh (Main Campus, New/471, University Road, Arefin Nagar, Chattogram)
 - **Current Student Fee:** **1,000 BDT** (All-Access Pass, Paid to Batch Representative)
 - **Farewell Fee:** **1,500 BDT** (Farewell Pass, Paid via bKash Send Money)

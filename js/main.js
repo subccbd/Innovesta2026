@@ -660,7 +660,7 @@ const SEGMENT_DETAILS = {
   stallRegistration: {
     title: "Stall & Booth Registration",
     badge: "Commercial & Campus Stalls",
-    date: "November 3 & 5, 2026",
+    date: "November 3 to 5, 2026",
     venue: "Main Campus Grounds & Festival Arena, Southern University Bangladesh",
     teamSize: "Commercial Vendors, Tech Startups & Student Clubs",
     fee: "Stall Allocation Fee (Details in Form)",

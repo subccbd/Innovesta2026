@@ -265,6 +265,15 @@ a, button, input, select {
   animation: neonPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Atmospheric Hero Logo Glow */
+.hero-logo-glow {
+  filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.4)) drop-shadow(0 0 65px rgba(0, 240, 255, 0.2));
+}
+
+html:not(.dark) .hero-logo-glow {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}
+
 /* Tab active indicator */
 .segment-tab.active {
   background: rgba(0, 240, 255, 0.12);

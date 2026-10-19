@@ -17,7 +17,7 @@ const INNOVESTA_CONFIG = {
   // Event Metadata
   eventName: "INNOVESTA 2026",
   organizer: "Southern University Bangladesh Computer Club (SUBCC)",
-  dates: "November 3 & November 5, 2026",
+  dates: "November 3 to 5, 2026",
   venue: "Southern University Bangladesh (Main Campus, Arefin Nagar, Chattogram)",
   
   // Fees Structure
