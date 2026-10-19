@@ -312,8 +312,8 @@ function handleRegistrationClick(targetKey) {
   }
 
   // 2. Alumni Farewell -> Direct to farewell form
-  if (targetKey === 'alumni') {
-    const url = config.links?.alumniFarewell || 'https://forms.gle/aY9GQFuZG6a84gYh9';
+  if (targetKey === 'alumni' || targetKey === 'farewell' || targetKey === 'alumniFarewell' || targetKey === 'farewellStudents') {
+    const url = config.links?.alumniFarewell || config.links?.farewellStudents || 'https://forms.gle/aY9GQFuZG6a84gYh9';
     window.open(url, '_blank', 'noopener,noreferrer');
     return;
   }
@@ -406,7 +406,10 @@ function formatSegmentTitle(key) {
     itQuiz: 'IT Quiz',
     freeFire: 'Free Fire LAN Tournament',
     eFootball: 'E-Football Tournament',
-    consoleGaming: 'Console Gaming: Street Fighter'
+    consoleGaming: 'Console Gaming: Street Fighter',
+    alumniAssociation: 'Alumni Association Registration',
+    farewellStudents: 'Farewell Students',
+    graduatedStudents: 'Graduated Students'
   };
   return names[key] || 'Segment Registration';
 }
@@ -587,6 +590,54 @@ const SEGMENT_DETAILS = {
       "Instant crowd hype and quick-fire rounds"
     ],
     targetKey: "consoleGaming"
+  },
+  alumniAssociation: {
+    title: "Alumni Association Registration",
+    badge: "Dept. of CSE & CSIT",
+    date: "INNOVESTA 2026 & Lifelong Network",
+    venue: "Southern University Bangladesh",
+    teamSize: "Individual Alumni",
+    fee: "Free / Association Membership",
+    description: "Official registration for the Southern University Bangladesh CSE & CSIT Alumni Association directory and lifelong community. Connect with faculty, fellow graduates, career mentorship networks, and university initiatives.",
+    highlights: [
+      "Open to all graduated alumni of Dept. of CSE & CSIT",
+      "Official directory and lifelong alumni community network",
+      "Career networking, mentorship, and institutional collaboration",
+      "Invitations to future departmental reunions, symposiums, and fest sessions"
+    ],
+    targetKey: "alumniAssociation"
+  },
+  farewellStudents: {
+    title: "Farewell Students",
+    badge: "Outgoing Batch • Final Year",
+    date: "November 5, 2026 (Grand Farewell Session)",
+    venue: "Main Campus Auditorium, Southern University Bangladesh",
+    teamSize: "Individual Graduating Student",
+    fee: "1,500 BDT (via bKash to 01610181160)",
+    description: "Official farewell registration for graduating students of Southern University Bangladesh Dept. of CSE & CSIT. Celebrate your university journey with faculty and peers, receive special mementos and crests, and enjoy the farewell dinner and cultural evening.",
+    highlights: [
+      "For graduating/outgoing semester students of Dept. of CSE & CSIT",
+      "Exclusive farewell gifts, mementos, crests, and department souvenir",
+      "Grand dinner reception and cultural celebration access",
+      "Formal photo session with revered faculty members and batchmates"
+    ],
+    targetKey: "farewellStudents"
+  },
+  graduatedStudents: {
+    title: "Graduated Students",
+    badge: "Graduated Alumni • Reunion",
+    date: "November 5, 2026 (Alumni Gathering & Farewell)",
+    venue: "Main Campus Auditorium, Southern University Bangladesh",
+    teamSize: "Individual Graduated Alum",
+    fee: "1,500 BDT (via bKash to 01610181160)",
+    description: "Official registration for graduated alumni of Southern University Bangladesh (Dept. of CSE & CSIT) to return to campus, reunite with classmates and faculty, attend the grand farewell reception and celebration, and welcome the incoming alumni.",
+    highlights: [
+      "For all past graduated batches of Southern CSE & CSIT",
+      "Access to the Grand Farewell Reception, reunion, and campus festival",
+      "Commemorative alumni gift pack, badge, and fest credentials",
+      "Networking with faculty, current seniors, and fellow alumni across industries"
+    ],
+    targetKey: "graduatedStudents"
   }
 };
 

@@ -81,8 +81,15 @@ const INNOVESTA_CONFIG = {
     // 1. Southern CSE & CSIT Students Festival Registration (1,000 BDT to Batch Rep)
     mainRegistration: "https://forms.gle/QyK7xbq6gfpCm2Y29",
 
-    // 2. Southern CSE & CSIT Alumni Farewell (1,500 BDT via bKash)
+    // 2. Farewell Students (Outgoing Batch) Registration (1,500 BDT via bKash)
     alumniFarewell: "https://forms.gle/aY9GQFuZG6a84gYh9",
+    farewellStudents: "https://forms.gle/aY9GQFuZG6a84gYh9",
+
+    // 3. Alumni Association Registration (Replace URL when Google Form is ready)
+    alumniAssociation: "coming-soon.html?segment=Alumni%20Association%20Registration",
+
+    // 4. Graduated Students Registration (Replace URL when Google Form is ready)
+    graduatedStudents: "coming-soon.html?segment=Graduated%20Students%20Registration",
 
     // ---------------------------------------------------------------------
     // SEGMENT-SPECIFIC COMPETITION REGISTRATIONS (GOOGLE FORMS)
@@ -130,6 +137,24 @@ const INNOVESTA_CONFIG = {
       consoleGaming: {
         title: "Console Gaming: Street Fighter",
         url: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter"
+      },
+
+      // 8. Alumni Association Registration
+      alumniAssociation: {
+        title: "Alumni Association Registration",
+        url: "coming-soon.html?segment=Alumni%20Association%20Registration"
+      },
+
+      // 9. Farewell Students Registration
+      farewellStudents: {
+        title: "Farewell Students",
+        url: "https://forms.gle/aY9GQFuZG6a84gYh9"
+      },
+
+      // 10. Graduated Students Registration
+      graduatedStudents: {
+        title: "Graduated Students",
+        url: "coming-soon.html?segment=Graduated%20Students%20Registration"
       }
     }
   }
