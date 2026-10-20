@@ -647,7 +647,7 @@ const SEGMENT_DETAILS = {
     date: "November 5, 2026 (Alumni Gathering & Farewell)",
     venue: "Main Campus Auditorium, Southern University Bangladesh",
     teamSize: "Individual Graduated Alum",
-    fee: "1,500 BDT (via bKash)",
+    fee: "1,000 BDT (via bKash)",
     description: "Official registration for graduated alumni of Southern University Bangladesh (Dept. of CSE & CSIT) to return to campus, reunite with classmates and faculty, attend the grand farewell reception and celebration, and welcome the incoming alumni.",
     highlights: [
       "For all past graduated batches of Southern CSE & CSIT",
