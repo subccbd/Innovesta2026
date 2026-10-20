@@ -467,6 +467,28 @@ function initModals() {
       openSegmentDetails(segId);
     });
   });
+
+  // Programming Contest Eligibility Notice Modal (SUB Students Only)
+  const cpNoticeBtn = document.getElementById('btn-open-cp-notice');
+  const cpNoticeModal = document.getElementById('cp-notice-modal');
+  if (cpNoticeBtn && cpNoticeModal) {
+    cpNoticeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllModals();
+      cpNoticeModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+
+    const cpProceedBtn = document.getElementById('cp-modal-proceed-btn');
+    if (cpProceedBtn) {
+      cpProceedBtn.addEventListener('click', () => {
+        closeAllModals();
+      });
+    }
+  }
 }
 
 function closeAllModals() {
@@ -486,13 +508,14 @@ const SEGMENT_DETAILS = {
     isInterUni: false,
     date: "November 3, 2026 • 10:00 AM",
     venue: "CSE Computer Labs, Southern University",
-    teamSize: "Individual or Teams of 1-3",
-    fee: "700 BDT (Covered by Fest Pass for SUB CSE/CSIT)",
+    teamSize: "Teams of 3 Members",
+    fee: "700 BDT (Free for CSE & CSIT)",
     description: "Flagship algorithmic problem-solving showdown open to all students of Southern University Bangladesh across all departments (CSE, CSIT, EEE, Civil, BBA, Pharmacy, Law, English, etc.).",
     highlights: [
       "Open to all students of Southern University Bangladesh",
       "Contest Schedule: November 3, 2026 at 10:00 AM",
-      "Registration Fee: 700 BDT for outside/other departments (Covered for SUB CSE/CSIT fest pass holders)",
+      "Team Size: 3 Members per team",
+      "Registration Fee: 700 BDT for other departments (Free for CSE & CSIT)",
       "Rigorous problem set prepared by veteran competitive programmers",
       "Live dynamic scoreboard and balloon distribution",
       "Prestigious awards, crests, and certificates for top podium finishers"
@@ -524,12 +547,14 @@ const SEGMENT_DETAILS = {
     isInterUni: true,
     date: "November 5, 2026",
     venue: "Robotics Combat Arena, Ground Floor",
-    teamSize: "2 to 4 Members per bot team",
-    fee: "Covered for SUB CSE/CSIT Fest Pass / Segment Entry Fee for outsiders",
+    teamSize: "3 Members (Extra members allowed)",
+    fee: "1,500 BDT initially (3 Members) + 300 BDT for every extra member",
     description: "High-octane robotic soccer showdown! Build, pilot, and maneuver custom-engineered wireless soccer bots to dominate possession and strike goals in a tense stadium arena. Open nationwide and to all Southern departments!",
     highlights: [
       "Open to robotics teams from all universities and other Southern departments",
       "Tournament Date: November 5, 2026",
+      "Team Size: 3 Members (extra members allowed)",
+      "Registration Fee: 1,500 BDT initially (for 3 members) + 300 BDT for every extra member",
       "Custom regulations compliant with national robo soccer standards",
       "High-speed wireless communication and obstacle navigation",
       "Huge cheering crowd and live stadium commentary"
@@ -595,15 +620,17 @@ const SEGMENT_DETAILS = {
   },
   consoleGaming: {
     title: "Console Gaming: Street Fighter",
-    badge: "Southern CSE & CSIT Exclusive",
+    badge: "SUB Students Exclusive",
     isInterUni: false,
     date: "Day 1: November 3, 2026",
     venue: "Gaming Zone, Main Lounge",
     teamSize: "1v1 Solo",
-    fee: "Included with 1,000 BDT Student Festival Pass",
-    description: "Classic fighting game mayhem on campus! Step up to the console controls to battle through a double-elimination Street Fighter tournament in the campus lounge.",
+    fee: "Free (Exclusive to SUB Students)",
+    description: "Classic fighting game mayhem on campus! Step up to the console controls to battle through a double-elimination Street Fighter tournament in the campus lounge. Completely free and exclusive to students of Southern University Bangladesh (SUB).",
     highlights: [
-      "Exclusively for Southern University CSE & CSIT students",
+      "Exclusively for students of Southern University Bangladesh (SUB)",
+      "Entry Fee: Free",
+      "Double elimination fighting game bracket",
       "Ultra-low latency tournament displays",
       "Instant crowd hype and quick-fire rounds"
     ],

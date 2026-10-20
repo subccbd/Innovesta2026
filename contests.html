@@ -330,16 +330,16 @@
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Competitive Programming</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Algorithmic problem-solving battle open to all students of Southern University Bangladesh across all departments.</p>
-              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Team: 1-3 &bull; Fee: 700 BDT</span>
+              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-1">
+                <span>Team: 3 &bull; Fee: 700 BDT <span class="text-cyan-400 text-[10px]">(Free for CSE &amp; CSIT)</span></span>
                 <span>Nov 3 &bull; 10:00 AM</span>
               </div>
             </div>
             <div class="mt-5 pt-3 border-t border-white/5">
-              <a href="https://forms.gle/3ix56u1nXaaLXA9j9" target="_blank" rel="noopener" class="w-full btn-glow-amber min-h-[40px] py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer" data-reg-target="programmingContest">
+              <button type="button" id="btn-open-cp-notice" class="w-full btn-glow-amber min-h-[40px] py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer">
                 <span>Register</span>
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -351,8 +351,8 @@
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Robo Soccer</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">High-octane robotic soccer showdown! Pilot custom wireless bots to strike goals in the combat arena.</p>
-              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Team: 2-4 Members</span>
+              <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-1">
+                <span>Team: 3 Members &bull; Fee: 1,500 BDT <span class="text-cyan-400 text-[10px]">(+300 per extra member)</span></span>
                 <span>Nov 5, 2026</span>
               </div>
             </div>
@@ -495,6 +495,59 @@
       </div>
     </div>
   </div>
+
+  <!-- =========================================================================
+       6. PROGRAMMING CONTEST ELIGIBILITY NOTICE MODAL
+       ========================================================================= -->
+  <div id="cp-notice-modal" class="modal-overlay modal-hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
+    <div class="glass-card border border-cyan-400/30 rounded-2xl sm:rounded-3xl max-w-md w-full p-5 sm:p-6 relative bg-white dark:bg-cyber-950/95 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button class="modal-close-btn absolute top-3.5 right-3.5 p-2.5 sm:p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white min-w-[36px] min-h-[36px] flex items-center justify-center cursor-pointer" aria-label="Close modal">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-400/25 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-3.5">
+        <i data-lucide="alert-circle" class="w-5 h-5"></i>
+      </div>
+
+      <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-400/20 mb-2">
+        Eligibility Notice
+      </span>
+      <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-display mb-2">
+        Competitive Programming
+      </h3>
+      
+      <div class="p-3.5 rounded-xl bg-cyan-500/10 border border-cyan-400/25 text-xs text-cyan-900 dark:text-cyan-200 leading-relaxed mb-4">
+        <p class="font-bold text-slate-900 dark:text-white mb-1">Important Student Restriction:</p>
+        Please note that the <strong>Programming Contest</strong> is strictly and exclusively for enrolled students of <strong class="text-cyan-700 dark:text-cyan-300">Southern University Bangladesh</strong> (open to all departments: CSE, CSIT, EEE, Civil, BBA, Pharmacy, Law, English, etc.). Teams from other universities are not eligible for this contest segment.
+      </div>
+
+      <div class="space-y-2 text-xs text-slate-600 dark:text-slate-300 mb-5">
+        <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+          <span class="text-slate-500 dark:text-slate-400">Eligibility</span>
+          <span class="font-semibold text-slate-900 dark:text-white">SUB Students Only (All Depts)</span>
+        </div>
+        <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+          <span class="text-slate-500 dark:text-slate-400">Team Size</span>
+          <span class="font-semibold text-slate-900 dark:text-white">3 Members per team</span>
+        </div>
+        <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+          <span class="text-slate-500 dark:text-slate-400">Entry Fee</span>
+          <span class="font-semibold text-amber-600 dark:text-amber-400">700 BDT (Free for CSE &amp; CSIT)</span>
+        </div>
+      </div>
+
+      <div class="pt-3.5 border-t border-slate-200 dark:border-white/10 flex items-center justify-between gap-2.5 sm:gap-3">
+        <button type="button" class="modal-close-btn px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors min-h-[42px]">
+          Cancel
+        </button>
+        <a id="cp-modal-proceed-btn" href="https://forms.gle/3ix56u1nXaaLXA9j9" target="_blank" rel="noopener" class="flex-1 btn-glow-amber py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer min-h-[42px] text-center">
+          <span>I'm a SUB Student &bull; Proceed</span>
+          <i data-lucide="external-link" class="w-4 h-4 shrink-0"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
 
   <!-- SCRIPT IMPORTS -->
   <script src="js/registration-links.js"></script>
