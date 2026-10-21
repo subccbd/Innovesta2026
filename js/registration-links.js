@@ -24,9 +24,6 @@ const INNOVESTA_CONFIG = {
   studentFee: "1,000 BDT",
   farewellFee: "1,500 BDT",
 
-  registrationDeadline: "30th October, 2026",
-  paymentDeadline: "30th October, 2026",
-  formDeadline: "27th October, 2026",
   contactEmail: "subccctg@gmail.com",
 
   // Payment Methods
@@ -35,13 +32,13 @@ const INNOVESTA_CONFIG = {
     cseCsitStudents: {
       fee: "1,000 BDT",
       method: "Cash Payment to Batch Representative",
-      instructions: "For students of Dept. of CSE & Dept. of CSIT. Pay 1,000 BDT in cash directly to your batch representative to confirm your registration. Collect your payment receipt or serial number and submit the form before October 27, 2026."
+      instructions: "For students of Dept. of CSE & Dept. of CSIT. Pay 1,000 BDT in cash directly to your batch representative to confirm your registration. Collect your payment receipt or serial number and submit the form."
     },
     // Farewell Registrations: bKash Send Money
     farewell: {
       fee: "1,500 BDT",
       method: "bKash Send Money",
-      instructions: "Send 1,500 BDT via bKash Send Money according to the form instructions. Keep the Transaction ID (TrxID) and screenshot, then fill out the farewell form before October 27, 2026."
+      instructions: "Send 1,500 BDT via bKash Send Money according to the form instructions. Keep the Transaction ID (TrxID) and screenshot, then fill out the farewell form."
     },
     // Open Competitions: Inter-University & Other Southern Departments
     openCompetitions: {

@@ -12,8 +12,6 @@
 - **Venue:** Southern University Bangladesh (Main Campus, New/471, University Road, Arefin Nagar, Chattogram)
 - **Current Student Fee:** **1,000 BDT** (All-Access Pass, Paid to Batch Representative)
 - **Farewell Fee:** **1,500 BDT** (Farewell Pass, Paid via bKash Send Money)
-- **Payment Deadline:** **17th October, 2026**
-- **Form Submission Deadline:** **27th October, 2026**
 - **Official Contact:** `subccctg@gmail.com`
 
 ---
@@ -76,15 +74,15 @@ Once updated, every button on the site will automatically redirect participants 
 ## 💳 Payment & Verification Workflows
 
 ### Method A: Current Students (1,000 BDT)
-1. **Step 1:** Pay **1,000 BDT in cash** directly to your assigned **Batch Representative** before **October 17, 2026** to confirm registration.
+1. **Step 1:** Pay **1,000 BDT in cash** directly to your assigned **Batch Representative** to confirm registration.
 2. **Step 2:** Collect physical payment receipt or verification serial number.
-3. **Step 3:** Fill out and submit the online registration form with your serial number before **October 27, 2026**.
+3. **Step 3:** Fill out and submit the online registration form with your serial number.
 4. **Step 4:** SUBCC verifies offline payment with your batch representative and issues credentials.
 
 ### Method B: Farewell Registrations (1,500 BDT)
-1. **Step 1:** Pay **1,500 BDT** via **bKash Send Money** according to the instructions inside the registration form before **October 17, 2026**.
+1. **Step 1:** Pay **1,500 BDT** via **bKash Send Money** according to the instructions inside the registration form.
 2. **Step 2:** Save your bKash Transaction ID (TrxID) and screenshot the payment.
-3. **Step 3:** Fill out and submit the Alumni Farewell Google Form with your TrxID before **October 27, 2026**.
+3. **Step 3:** Fill out and submit the Alumni Farewell Google Form with your TrxID.
 4. **Step 4:** SUBCC verifies the bKash TrxID and confirms your Alumni Farewell Pass.
 
 ---
