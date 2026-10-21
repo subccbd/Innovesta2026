@@ -529,13 +529,13 @@ const SEGMENT_DETAILS = {
     date: "November 3, 2026 • 2:20 PM",
     venue: "Main Campus Tech Exhibit Arena, Southern University Bangladesh",
     teamSize: "Individual or teams of up to 2 members",
-    fee: "300 BDT (Covered by Fest Registration for eligible SUB CSE/CSIT)",
+    fee: "500 BDT (Covered by Fest Registration for eligible SUB CSE/CSIT)",
     description: "Web-based projects encouraged. Real-world ideas welcome. Ideas First. Impact Always. Working prototype or simulation recommended. Presentation required explaining idea, problem, impact, and solution.",
     highlights: [
       "Open to all university students (SUB and visiting universities nationwide)",
       "Showcase Schedule: November 3, 2026 at 2:20 PM",
       "Team Size: Individual or teams of up to 2 members",
-      "Registration Fee: 300 BDT for non-CSE/CSIT from any university",
+      "Registration Fee: 500 BDT for non-CSE/CSIT from any university",
       "Awards & Recognition: Crest & Certificate recognition for winners",
       "Presentation required: explain idea, problem statement, real-world impact, and tech stack"
     ],
