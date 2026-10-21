@@ -509,13 +509,13 @@ const SEGMENT_DETAILS = {
     date: "November 3, 2026 • 10:00 AM",
     venue: "CSE Computer Labs, Southern University",
     teamSize: "Teams of 3 Members",
-    fee: "700 BDT (Free for CSE & CSIT)",
+    fee: "750 BDT (Free for CSE & CSIT)",
     description: "Flagship algorithmic problem-solving showdown open to all students of Southern University Bangladesh across all departments (CSE, CSIT, EEE, Civil, BBA, Pharmacy, Law, English, etc.).",
     highlights: [
       "Open to all students of Southern University Bangladesh",
       "Contest Schedule: November 3, 2026 at 10:00 AM",
       "Team Size: 3 Members per team",
-      "Registration Fee: 700 BDT for other departments (Free for CSE & CSIT)",
+      "Registration Fee: 750 BDT for other departments (Free for CSE & CSIT)",
       "Rigorous problem set prepared by veteran competitive programmers",
       "Live dynamic scoreboard and balloon distribution",
       "Prestigious awards, crests, and certificates for top podium finishers"
