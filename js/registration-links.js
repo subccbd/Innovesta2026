@@ -110,7 +110,7 @@ const INNOVESTA_CONFIG = {
       // 6. E-Football Tournament
       eFootball: {
         title: "E-Football Tournament",
-        url: "coming-soon.html?segment=E-Football%20Tournament"
+        url: "https://forms.gle/HrLAQY28ajXFMW5R7"
       },
 
       // 7. Console Gaming: Street Fighter
