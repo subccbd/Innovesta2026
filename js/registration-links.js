@@ -104,7 +104,7 @@ const INNOVESTA_CONFIG = {
       // 5. Free Fire LAN Tournament
       freeFire: {
         title: "Free Fire LAN Tournament",
-        url: "coming-soon.html?segment=Free%20Fire%20LAN%20Tournament"
+        url: "https://tinyurl.com/SUB-Edition"
       },
 
       // 6. E-Football Tournament
