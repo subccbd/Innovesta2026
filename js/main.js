@@ -321,7 +321,7 @@ function handleRegistrationClick(targetKey) {
   // 3. Segment or Custom Link with Google Form
   if (config.links && config.links[targetKey]) {
     const customUrl = config.links[targetKey];
-    if (typeof customUrl === 'string' && customUrl.startsWith('http') && (customUrl.includes('forms.gle/') || customUrl.includes('docs.google.com/forms'))) {
+    if (typeof customUrl === 'string' && customUrl.startsWith('http') && !customUrl.includes('coming-soon.html')) {
       window.open(customUrl, '_blank', 'noopener,noreferrer');
       return;
     }
@@ -336,7 +336,7 @@ function handleRegistrationClick(targetKey) {
       url = seg.url || '';
     }
 
-    if (url && url.startsWith('http') && (url.includes('forms.gle/') || url.includes('docs.google.com/forms'))) {
+    if (url && url.startsWith('http') && !url.includes('coming-soon.html')) {
       window.open(url, '_blank', 'noopener,noreferrer');
       return;
     }
