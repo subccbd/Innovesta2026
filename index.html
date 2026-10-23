@@ -312,7 +312,7 @@
     <div class="max-w-7xl mx-auto glass-nav rounded-2xl py-2.5 px-3.5 sm:px-6 sm:py-3 flex items-center justify-between">
       
       <!-- Logos (Dark & Light Variants) -->
-      <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 shrink-0">
         <img src="assets/logos/subcc-white.png" alt="SUBCC Logo" class="h-6 sm:h-8 w-auto object-contain logo-dark">
         <img src="assets/logos/subcc-black.png" alt="SUBCC Logo" class="h-6 sm:h-8 w-auto object-contain logo-light">
         <div class="h-3.5 w-px bg-slate-300 dark:bg-white/15"></div>
@@ -321,19 +321,20 @@
       </a>
 
       <!-- Right Controls: Countdown Badge & Theme Toggle -->
-      <div class="flex items-center gap-1.5 sm:gap-3">
-        <a href="representative.html" class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] sm:text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-cyan-500 dark:hover:text-cyan-400 hover:border-cyan-400/40 transition-all">
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+        <a href="representative.html" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[10px] sm:text-xs font-semibold whitespace-nowrap shrink-0 text-slate-700 dark:text-slate-200 hover:text-cyan-500 dark:hover:text-cyan-400 hover:border-cyan-400/40 transition-all">
           <i data-lucide="users" class="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400"></i>
-          <span>Batch Representative</span>
+          <span class="hidden min-[480px]:inline">Batch Representative</span>
+          <span class="inline min-[480px]:hidden">Batch Reps</span>
         </a>
-        <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-pill text-[11px] font-medium border border-cyan-500/30 dark:border-cyan-400/25 bg-cyan-500/10 dark:bg-cyan-500/5 whitespace-nowrap shadow-[0_0_15px_rgba(0,240,255,0.08)]">
+        <div class="hidden min-[420px]:inline-flex items-center gap-1 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1.5 rounded-full badge-pill text-[10px] sm:text-[11px] font-medium border border-cyan-500/30 dark:border-cyan-400/25 bg-cyan-500/10 dark:bg-cyan-500/5 whitespace-nowrap shrink-0 shadow-[0_0_15px_rgba(0,240,255,0.08)]">
           <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse shrink-0"></span>
           <span class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] uppercase tracking-wider hidden min-[400px]:inline">Nov 5 &bull;</span>
           <span id="nav-nov5-countdown" class="nav-nov5-countdown font-mono font-bold text-cyan-600 dark:text-cyan-300 text-[11px] sm:text-xs tracking-tight">--d --h --m --s</span>
         </div>
 
         <!-- Theme Toggle (Auto Matches Device Theme + Manual Toggle) -->
-        <button type="button" class="theme-toggle-btn p-2 rounded-xl badge-pill text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 dark:border-white/10 min-w-[34px] min-h-[34px]" aria-label="Toggle theme" title="Toggle theme">
+        <button type="button" class="theme-toggle-btn p-1.5 sm:p-2 rounded-xl badge-pill text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 dark:border-white/10 min-w-[30px] min-h-[30px] sm:min-w-[34px] sm:min-h-[34px]" aria-label="Toggle theme" title="Toggle theme">
           <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
           <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
         </button>
