@@ -49,7 +49,54 @@ const INNOVESTA_CONFIG = {
   },
 
   // Representatives for Batch & Event Verification
-  representatives: [],
+  representatives: [
+    // Batch 67
+    { batch: "67", section: "B1", name: "Niloy", id: "666-65-27", phone: "01322560288" },
+    { batch: "67", section: "B1", name: "Ayrin", id: "666-67-26", phone: "01835336826" },
+    { batch: "67", section: "B2", name: "Bijoy Rudra", id: "666-67-51", phone: "01821902200" },
+    { batch: "67", section: "B2", name: "Jannat", id: "666-67-60", phone: "01777463082" },
+    { batch: "67", section: "B3", name: "Ifti", id: "666-67-130", phone: "01846631861" },
+    { batch: "67", section: "B3", name: "Anindita", id: "032-67-01", phone: "01522141547" },
+
+    // Batch 66
+    { batch: "66", section: "NA", name: "Shaifullah", id: "666-66-01", phone: "01877921645" },
+    { batch: "66", section: "NA", name: "Atifa", id: "666-66-17", phone: "01576608309" },
+
+    // Batch 65
+    { batch: "65", section: "B1", name: "Rafsan", id: "666-65-01", phone: "01516556310" },
+    { batch: "65", section: "B1", name: "Marlin", id: "666-65-17", phone: "01998194384" },
+    { batch: "65", section: "B1", name: "Rayhan", id: "666-65-42", phone: "01521226893" },
+    { batch: "65", section: "B2", name: "Hassan", id: "666-65-77", phone: "01889868757" },
+    { batch: "65", section: "B2", name: "Anik", id: "666-65-95", phone: "01795423375" },
+    { batch: "65", section: "B2", name: "Tahasin", id: "666-65-109", phone: "01977660216" },
+    { batch: "65", section: "B2", name: "Aklima", id: "666-65-102", phone: "01319014865" },
+
+    // Batch 64
+    { batch: "64", section: "NA", name: "Abir", id: "666-64-26", phone: "01772319830" },
+    { batch: "64", section: "NA", name: "Jihan", id: "666-64-30", phone: "01308796619" },
+    { batch: "64", section: "NA", name: "Ishita", id: "666-64-23", phone: "01818369543" },
+
+    // Batch 63
+    { batch: "63", section: "NA", name: "Aymon", id: "666-63-29", phone: "01897677045" },
+    { batch: "63", section: "NA", name: "Maher", id: "666-63-43", phone: "01765920638" },
+    { batch: "63", section: "NA", name: "Sadia", id: "666-63-60", phone: "01893043996" },
+
+    // Batch 62
+    { batch: "62", section: "NA", name: "Bayzid", id: "666-62-36", phone: "01613259996" },
+    { batch: "62", section: "NA", name: "Dihan", id: "666-62-03", phone: "01533919817" },
+
+    // Batch 61
+    { batch: "61", section: "NA", name: "Diganta", id: "666-61-22", phone: "01749048044" },
+    { batch: "61", section: "NA", name: "Prashanta", id: "666-61-38", phone: "01836404065" },
+    { batch: "61", section: "NA", name: "Sanjida", id: "666-61-28", phone: "01854537326" },
+    { batch: "61", section: "NA", name: "Sanim", id: "666-61-51", phone: "01827329174" },
+
+    // Batch 60
+    { batch: "60", section: "NA", name: "Munni", id: "666-60-40", phone: "01879382521" },
+    { batch: "60", section: "NA", name: "Zarifa", id: "666-60-29", phone: "01531328184" },
+    { batch: "60", section: "NA", name: "Arman", id: "666-60-25", phone: "01875323765" },
+    { batch: "60", section: "NA", name: "Sakera", id: "666-60-23", phone: "01867654632" }
+  ],
 
   // -----------------------------------------------------------------------
   // PRIMARY REGISTRATION LINKS (GOOGLE FORMS)
