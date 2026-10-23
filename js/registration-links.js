@@ -116,7 +116,7 @@ const INNOVESTA_CONFIG = {
       // 7. Console Gaming: Street Fighter
       consoleGaming: {
         title: "Console Gaming: Street Fighter",
-        url: "coming-soon.html?segment=Console%20Gaming%3A%20Street%20Fighter"
+        url: "https://forms.gle/HkZo22cnxwy7ZZAx6"
       },
 
       // 8. Alumni Association Registration
