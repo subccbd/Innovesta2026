@@ -127,7 +127,9 @@ const INNOVESTA_CONFIG = {
       // 1. Competitive Programming
       programmingContest: {
         title: "Competitive Programming",
-        url: "https://forms.gle/3ix56u1nXaaLXA9j9"
+        status: "closed",
+        closedMessage: "Registration for Programming Contest has been closed as deadline is reached. Best of luck for next contest.",
+        url: ""
       },
 
       // 2. Robo Soccer

@@ -304,6 +304,20 @@ function initRegistrationHandlers() {
 function handleRegistrationClick(targetKey) {
   const config = window.INNOVESTA_CONFIG || {};
 
+  // 0. Closed Registration: Programming Contest
+  if (targetKey === 'programmingContest') {
+    const cpModal = document.getElementById('cp-notice-modal');
+    if (cpModal) {
+      closeAllModals();
+      cpModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      if (window.lucide) lucide.createIcons();
+    } else {
+      showToast("Registration for Programming Contest has been closed as deadline is reached. Best of luck for next contest.");
+    }
+    return;
+  }
+
   // 1. Main Festival Registration Form
   if (targetKey === 'main') {
     const url = config.links?.mainRegistration || 'https://forms.gle/QyK7xbq6gfpCm2Y29';
@@ -504,12 +518,12 @@ function closeAllModals() {
 const SEGMENT_DETAILS = {
   programmingContest: {
     title: "Competitive Programming",
-    badge: "Southern University Bangladesh",
+    badge: "Registration Closed",
     isInterUni: false,
     date: "November 3, 2026 • 10:00 AM",
     venue: "CSE Computer Labs, Southern University",
     teamSize: "Teams of 3 Members",
-    fee: "750 BDT (Free for CSE & CSIT)",
+    fee: "Registration Closed (Deadline Reached)",
     description: "Flagship algorithmic problem-solving showdown open to all students of Southern University Bangladesh across all departments (CSE, CSIT, EEE, Civil, BBA, Pharmacy, Law, English, etc.).",
     highlights: [
       "Open to all students of Southern University Bangladesh",
