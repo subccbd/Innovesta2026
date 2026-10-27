@@ -118,6 +118,12 @@ const INNOVESTA_CONFIG = {
     // 5. Stall & Booth Registration
     stallRegistration: "https://forms.gle/8G6v3Rw7HyUPNsSE7",
 
+    // 6. Direct eSports & Gaming Links
+    miniMilitia: "https://forms.gle/ZpDHvhwXRCxJKTRD6",
+    freeFire: "https://tinyurl.com/SUB-Edition",
+    eFootball: "https://forms.gle/HrLAQY28ajXFMW5R7",
+    consoleGaming: "https://forms.gle/HkZo22cnxwy7ZZAx6",
+
     // ---------------------------------------------------------------------
     // SEGMENT-SPECIFIC COMPETITION REGISTRATIONS (GOOGLE FORMS)
     // Single universal registration form per competition segment.

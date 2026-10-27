@@ -294,8 +294,22 @@ function initFaqAccordion() {
 function initRegistrationHandlers() {
   document.querySelectorAll('[data-reg-target]').forEach(button => {
     button.addEventListener('click', (e) => {
-      e.preventDefault();
       const target = button.getAttribute('data-reg-target');
+
+      // 0. Closed Registration: Programming Contest
+      if (target === 'programmingContest') {
+        e.preventDefault();
+        handleRegistrationClick(target);
+        return;
+      }
+
+      // If button already has a direct valid external URL, allow native navigation (target="_blank")
+      const href = button.getAttribute('href');
+      if (href && href.startsWith('http') && !href.includes('coming-soon.html')) {
+        return;
+      }
+
+      e.preventDefault();
       handleRegistrationClick(target);
     });
   });
@@ -328,6 +342,34 @@ function handleRegistrationClick(targetKey) {
   // 2. Alumni Farewell -> Direct to farewell form
   if (targetKey === 'alumni' || targetKey === 'farewell' || targetKey === 'alumniFarewell' || targetKey === 'farewellStudents') {
     const url = config.links?.alumniFarewell || config.links?.farewellStudents || 'https://forms.gle/aY9GQFuZG6a84gYh9';
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
+  // 2.1 Mini Militia Mobile Combat (Direct Form Link Fallback)
+  if (targetKey === 'miniMilitia') {
+    const url = config.links?.miniMilitia || config.links?.segments?.miniMilitia?.url || 'https://forms.gle/ZpDHvhwXRCxJKTRD6';
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
+  // 2.2 Free Fire LAN Tournament
+  if (targetKey === 'freeFire') {
+    const url = config.links?.freeFire || config.links?.segments?.freeFire?.url || 'https://tinyurl.com/SUB-Edition';
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
+  // 2.3 E-Football Tournament
+  if (targetKey === 'eFootball') {
+    const url = config.links?.eFootball || config.links?.segments?.eFootball?.url || 'https://forms.gle/HrLAQY28ajXFMW5R7';
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
+  // 2.4 Console Gaming: Street Fighter
+  if (targetKey === 'consoleGaming' || targetKey === 'streetFighter') {
+    const url = config.links?.consoleGaming || config.links?.segments?.consoleGaming?.url || 'https://forms.gle/HkZo22cnxwy7ZZAx6';
     window.open(url, '_blank', 'noopener,noreferrer');
     return;
   }
@@ -763,8 +805,31 @@ function openSegmentDetails(segId) {
   const regBtn = document.getElementById('seg-modal-reg-btn');
   if (regBtn) {
     regBtn.setAttribute('data-reg-target', data.targetKey);
-    regBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}`;
+    const config = window.INNOVESTA_CONFIG || {};
+    const segUrl = config.links?.[data.targetKey] || 
+                   config.links?.segments?.[data.targetKey]?.url || 
+                   (typeof config.links?.segments?.[data.targetKey] === 'string' ? config.links.segments[data.targetKey] : '') ||
+                   '';
+    if (segUrl && segUrl.startsWith('http') && !segUrl.includes('coming-soon.html')) {
+      regBtn.href = segUrl;
+      regBtn.target = "_blank";
+      regBtn.rel = "noopener";
+    } else {
+      regBtn.href = `coming-soon.html?segment=${encodeURIComponent(data.title)}`;
+      regBtn.removeAttribute('target');
+      regBtn.removeAttribute('rel');
+    }
     regBtn.onclick = (e) => {
+      if (data.targetKey === 'programmingContest') {
+        e.preventDefault();
+        closeAllModals();
+        handleRegistrationClick(data.targetKey);
+        return;
+      }
+      if (regBtn.href && regBtn.href.startsWith('http') && !regBtn.href.includes('coming-soon.html')) {
+        closeAllModals();
+        return;
+      }
       e.preventDefault();
       closeAllModals();
       handleRegistrationClick(data.targetKey);
