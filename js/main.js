@@ -429,6 +429,7 @@ function formatSegmentTitle(key) {
     freeFire: 'Free Fire LAN Tournament',
     eFootball: 'E-Football Tournament',
     consoleGaming: 'Console Gaming: Street Fighter',
+    miniMilitia: 'Mini Militia',
     alumniAssociation: 'Alumni Association Registration',
     farewellStudents: 'Farewell Students',
     graduatedStudents: 'Graduated Students',
@@ -649,6 +650,24 @@ const SEGMENT_DETAILS = {
       "Instant crowd hype and quick-fire rounds"
     ],
     targetKey: "consoleGaming"
+  },
+  miniMilitia: {
+    title: "Mini Militia",
+    badge: "All Southern Students • Mobile Combat",
+    isInterUni: false,
+    date: "INNOVESTA 2026 • Main Campus",
+    venue: "Main Campus, Southern University Bangladesh",
+    teamSize: "Squad (Up to 6 Players)",
+    fee: "Free (All SUB Departments)",
+    description: "Exclusive on-campus Mini Militia multiplayer battle! Open to students across all departments of Southern University Bangladesh. Form your squad of up to 6 players and battle through tactical 2D combat action.",
+    highlights: [
+      "Open to all departments of Southern University Bangladesh",
+      "Registration Fee: Completely Free",
+      "Team Format: Squad of up to 6 players (Team Leader + 5 Members)",
+      "Venue: Southern University Bangladesh Main Campus",
+      "Match timings and lobby rules shared with registered players"
+    ],
+    targetKey: "miniMilitia"
   },
   alumniAssociation: {
     title: "Alumni Association Registration",

@@ -168,6 +168,12 @@ const INNOVESTA_CONFIG = {
         url: "https://forms.gle/HkZo22cnxwy7ZZAx6"
       },
 
+      // 8. Mini Militia Mobile Combat
+      miniMilitia: {
+        title: "Mini Militia",
+        url: "https://forms.gle/ZpDHvhwXRCxJKTRD6"
+      },
+
       // 8. Alumni Association Registration
       alumniAssociation: {
         title: "Alumni Association Registration",
