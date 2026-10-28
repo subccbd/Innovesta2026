@@ -343,20 +343,20 @@
           <div class="glass-card p-5 sm:p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20">Esports LAN &bull; Battle Royale</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-400/20">Registration Closed</span>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-white font-display">Free Fire LAN</h3>
               <p class="text-xs text-slate-400 mt-1.5 line-clamp-2">Online prelims leading to campus big-screen LAN finals on stage with live casting. Open nationwide.</p>
               <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Squad: 4+1 &bull; Free for all</span>
+                <span>Squad: 4+1 &bull; <span class="text-rose-400 text-[10px] font-semibold">(Deadline Reached)</span></span>
                 <span>Nov 5 &bull; 10:30 AM</span>
               </div>
             </div>
             <div class="mt-5 pt-3 border-t border-white/5">
-              <a href="https://tinyurl.com/SUB-Edition" target="_blank" rel="noopener" class="w-full btn-glow-rose min-h-[40px] py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer" data-reg-target="freeFire">
-                <span>Register</span>
-                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
+              <button type="button" id="btn-open-ff-notice" class="w-full py-2 px-3 rounded-xl text-xs font-bold text-center inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 hover:text-white border border-rose-400/30 min-h-[40px]" title="Registration Closed - Click to view notice" data-reg-target="freeFire">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-rose-400"></i>
+                <span>Registration Closed</span>
+              </button>
             </div>
           </div>
 
@@ -515,9 +515,58 @@
     </div>
   </div>
 
+  <!-- =========================================================================
+       6. FREE FIRE LAN TOURNAMENT REGISTRATION CLOSED NOTICE MODAL
+       ========================================================================= -->
+  <div id="ff-notice-modal" class="modal-overlay modal-hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
+    <div class="glass-card border border-rose-400/30 rounded-2xl sm:rounded-3xl max-w-md w-full p-5 sm:p-6 relative bg-white dark:bg-cyber-950/95 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button class="modal-close-btn absolute top-3.5 right-3.5 p-2.5 sm:p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white min-w-[36px] min-h-[36px] flex items-center justify-center cursor-pointer" aria-label="Close modal">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="w-11 h-11 rounded-2xl bg-rose-500/15 border border-rose-400/25 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-3.5">
+        <i data-lucide="lock" class="w-5 h-5"></i>
+      </div>
+
+      <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-400/20 mb-2">
+        Registration Closed
+      </span>
+      <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-display mb-2">
+        Free Fire LAN Tournament
+      </h3>
+      
+      <div class="p-4 rounded-xl bg-rose-500/10 border border-rose-400/25 text-xs text-rose-950 dark:text-rose-200 leading-relaxed mb-4">
+        <p class="font-bold text-slate-900 dark:text-white mb-1.5 text-sm">Notice: Registration Deadline Reached</p>
+        Registration for the <strong>Free Fire LAN Tournament</strong> has been closed as the deadline is reached. Best of luck for the next tournament!
+      </div>
+
+      <div class="space-y-2 text-xs text-slate-600 dark:text-slate-300 mb-5">
+        <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+          <span class="text-slate-500 dark:text-slate-400">Tournament Status</span>
+          <span class="font-semibold text-rose-600 dark:text-rose-400">Registration Closed</span>
+        </div>
+        <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+          <span class="text-slate-500 dark:text-slate-400">Tournament Schedule</span>
+          <span class="font-semibold text-slate-900 dark:text-white">November 5, 2026 &bull; 10:30 AM</span>
+        </div>
+        <div class="flex items-center justify-between p-2 rounded-lg bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+          <span class="text-slate-500 dark:text-slate-400">Venue</span>
+          <span class="font-semibold text-slate-900 dark:text-white">Main Campus Stage LAN, Southern University</span>
+        </div>
+      </div>
+
+      <div class="pt-3.5 border-t border-slate-200 dark:border-white/10">
+        <button type="button" class="modal-close-btn w-full py-2.5 px-4 rounded-xl btn-glow-rose text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer min-h-[42px] text-center">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>Understood</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- SCRIPT IMPORTS -->
-  <script src="js/registration-links.js?v=2.91"></script>
-  <script src="js/main.js?v=2.91"></script>
+  <script src="js/registration-links.js?v=2.92"></script>
+  <script src="js/main.js?v=2.92"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (window.lucide) {

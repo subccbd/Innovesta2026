@@ -296,8 +296,8 @@ function initRegistrationHandlers() {
     button.addEventListener('click', (e) => {
       const target = button.getAttribute('data-reg-target');
 
-      // 0. Closed Registration: Programming Contest
-      if (target === 'programmingContest') {
+      // 0. Closed Registration: Programming Contest & Free Fire
+      if (target === 'programmingContest' || target === 'freeFire') {
         e.preventDefault();
         handleRegistrationClick(target);
         return;
@@ -332,6 +332,20 @@ function handleRegistrationClick(targetKey) {
     return;
   }
 
+  // 0.1 Closed Registration: Free Fire LAN Tournament
+  if (targetKey === 'freeFire') {
+    const ffModal = document.getElementById('ff-notice-modal');
+    if (ffModal) {
+      closeAllModals();
+      ffModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      if (window.lucide) lucide.createIcons();
+    } else {
+      showToast("Registration for Free Fire LAN Tournament has been closed as deadline is reached. Best of luck for next tournament.");
+    }
+    return;
+  }
+
   // 1. Main Festival Registration Form
   if (targetKey === 'main') {
     const url = config.links?.mainRegistration || 'https://forms.gle/QyK7xbq6gfpCm2Y29';
@@ -353,12 +367,7 @@ function handleRegistrationClick(targetKey) {
     return;
   }
 
-  // 2.2 Free Fire LAN Tournament
-  if (targetKey === 'freeFire') {
-    const url = config.links?.freeFire || config.links?.segments?.freeFire?.url || 'https://tinyurl.com/SUB-Edition';
-    window.open(url, '_blank', 'noopener,noreferrer');
-    return;
-  }
+
 
   // 2.3 E-Football Tournament
   if (targetKey === 'eFootball') {
@@ -546,6 +555,21 @@ function initModals() {
       });
     }
   }
+
+  // Free Fire LAN Tournament Closed Notice Modal
+  const ffNoticeBtn = document.getElementById('btn-open-ff-notice');
+  const ffNoticeModal = document.getElementById('ff-notice-modal');
+  if (ffNoticeBtn && ffNoticeModal) {
+    ffNoticeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllModals();
+      ffNoticeModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  }
 }
 
 function closeAllModals() {
@@ -639,20 +663,19 @@ const SEGMENT_DETAILS = {
   },
   freeFire: {
     title: "Free Fire LAN Tournament",
-    badge: "Open to All Universities & Departments",
+    badge: "Registration Closed",
     isInterUni: true,
     date: "November 5, 2026 • 10:30 AM",
-    venue: "Esports Arena, Campus Hall",
+    venue: "Main Campus Stage LAN, Southern University Bangladesh",
     teamSize: "Squad (4 Players + 1 Sub)",
-    fee: "Free for all",
+    fee: "Registration Closed (Deadline Reached)",
     description: "Flagship Free Fire tournament. Open to squads from all universities across Bangladesh as well as students from other departments within Southern University! Live campus LAN finals on stage.",
     highlights: [
-      "Open to squads from all universities and other Southern departments",
-      "Match Schedule: November 5, 2026 at 10:30 AM",
-      "Registration Fee: Free for all",
-      "Official room matches with strict anti-cheat monitoring",
-      "Live big-screen projection with real-time casting",
-      "Champion trophy and official esports certificates"
+      "Open to squads from all universities across Bangladesh",
+      "Registration Status: Closed (Deadline Reached)",
+      "Team Format: Squad (4 players + 1 substitute)",
+      "Online prelims leading to campus stage LAN finals",
+      "Live big-screen casting with audience hype"
     ],
     targetKey: "freeFire"
   },
@@ -820,7 +843,7 @@ function openSegmentDetails(segId) {
       regBtn.removeAttribute('rel');
     }
     regBtn.onclick = (e) => {
-      if (data.targetKey === 'programmingContest') {
+      if (data.targetKey === 'programmingContest' || data.targetKey === 'freeFire') {
         e.preventDefault();
         closeAllModals();
         handleRegistrationClick(data.targetKey);
