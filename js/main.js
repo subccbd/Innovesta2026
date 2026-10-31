@@ -296,8 +296,8 @@ function initRegistrationHandlers() {
     button.addEventListener('click', (e) => {
       const target = button.getAttribute('data-reg-target');
 
-      // 0. Closed Registration: Programming Contest & Free Fire
-      if (target === 'programmingContest' || target === 'freeFire') {
+      // 0. Closed Registration: Programming Contest, Free Fire & E-Football
+      if (target === 'programmingContest' || target === 'freeFire' || target === 'eFootball') {
         e.preventDefault();
         handleRegistrationClick(target);
         return;
@@ -346,6 +346,20 @@ function handleRegistrationClick(targetKey) {
     return;
   }
 
+  // 0.2 Closed Registration: E-Football Tournament
+  if (targetKey === 'eFootball') {
+    const efModal = document.getElementById('efootball-notice-modal');
+    if (efModal) {
+      closeAllModals();
+      efModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      if (window.lucide) lucide.createIcons();
+    } else {
+      showToast("Registration for E-Football Tournament has been closed as deadline is reached. Best of luck for next tournament.");
+    }
+    return;
+  }
+
   // 1. Main Festival Registration Form
   if (targetKey === 'main') {
     const url = config.links?.mainRegistration || 'https://forms.gle/QyK7xbq6gfpCm2Y29';
@@ -369,12 +383,7 @@ function handleRegistrationClick(targetKey) {
 
 
 
-  // 2.3 E-Football Tournament
-  if (targetKey === 'eFootball') {
-    const url = config.links?.eFootball || config.links?.segments?.eFootball?.url || 'https://forms.gle/HrLAQY28ajXFMW5R7';
-    window.open(url, '_blank', 'noopener,noreferrer');
-    return;
-  }
+
 
   // 2.4 Console Gaming: Street Fighter
   if (targetKey === 'consoleGaming' || targetKey === 'streetFighter') {
@@ -570,6 +579,21 @@ function initModals() {
       }
     });
   }
+
+  // E-Football Tournament Closed Notice Modal
+  const efNoticeBtn = document.getElementById('btn-open-efootball-notice');
+  const efNoticeModal = document.getElementById('efootball-notice-modal');
+  if (efNoticeBtn && efNoticeModal) {
+    efNoticeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeAllModals();
+      efNoticeModal.classList.remove('modal-hidden');
+      document.body.classList.add('overflow-hidden');
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  }
 }
 
 function closeAllModals() {
@@ -681,17 +705,17 @@ const SEGMENT_DETAILS = {
   },
   eFootball: {
     title: "E-Football Tournament",
-    badge: "Open to All Universities & Departments",
+    badge: "Registration Closed",
     isInterUni: true,
     date: "November 4, 2026 (Finale: 9:45 AM)",
     venue: "Online Competitive Bracket & Finale",
     teamSize: "1v1 Solo",
-    fee: "99 BDT (Covered for eligible SUB CSE/CSIT Fest Pass)",
+    fee: "Registration Closed (Deadline Reached)",
     description: "Test your tactical vision, pinpoint passing, and clutch goal-scoring in the official Innovesta E-Football tournament. Played online with live knockout brackets and grand finale from 9:45 AM. Open to all universities and other Southern departments!",
     highlights: [
       "Open to students from all universities and other Southern departments",
+      "Registration Status: Closed (Deadline Reached)",
       "Tournament Date: November 4, 2026 (Grand Finale: 9:45 AM)",
-      "Registration Fee: 99 BDT",
       "Official 1v1 competitive rule set",
       "Convenient online fixture scheduling",
       "Grand finals streamed to attendees"
@@ -843,7 +867,7 @@ function openSegmentDetails(segId) {
       regBtn.removeAttribute('rel');
     }
     regBtn.onclick = (e) => {
-      if (data.targetKey === 'programmingContest' || data.targetKey === 'freeFire') {
+      if (data.targetKey === 'programmingContest' || data.targetKey === 'freeFire' || data.targetKey === 'eFootball') {
         e.preventDefault();
         closeAllModals();
         handleRegistrationClick(data.targetKey);

@@ -121,7 +121,7 @@ const INNOVESTA_CONFIG = {
     // 6. Direct eSports & Gaming Links
     miniMilitia: "https://forms.gle/ZpDHvhwXRCxJKTRD6",
     freeFire: "", // Closed - deadline reached
-    eFootball: "https://forms.gle/HrLAQY28ajXFMW5R7",
+    eFootball: "", // Closed - deadline reached
     consoleGaming: "https://forms.gle/HkZo22cnxwy7ZZAx6",
 
     // ---------------------------------------------------------------------
@@ -167,7 +167,9 @@ const INNOVESTA_CONFIG = {
       // 6. E-Football Tournament
       eFootball: {
         title: "E-Football Tournament",
-        url: "https://forms.gle/HrLAQY28ajXFMW5R7"
+        status: "closed",
+        closedMessage: "Registration for E-Football Tournament has been closed as deadline is reached. Best of luck for next tournament.",
+        url: ""
       },
 
       // 7. Console Gaming: Street Fighter
